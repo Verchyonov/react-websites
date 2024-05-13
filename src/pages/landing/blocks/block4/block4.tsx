@@ -11,10 +11,10 @@ export const Block4 = () => {
     window.open("/game", "_blank");
   };
   return (
-    <div className="w-full min-h-screen bg-black justify-center items-center flex flex-col relative">
+    <div className="w-full min-h-screen bg-black justify-center align-middle items-center flex flex-col relative">
       <motion.div
         className={
-          "w-11/12 md:w-11/12 max-w-screen-2x flex flex-col md:flex-row p-8 gap-4"
+          "w-11/12 md:w-9/12 max-w-screen-2x flex flex-col md:flex-row p-8 gap-4"
         }
         initial={{
           opacity: 0,
@@ -32,7 +32,7 @@ export const Block4 = () => {
             customClass={"text-[#00BCF8] md:mb-0 mb-16"}
             text="Lorem ipsun ipsun"
           />
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 items-start">
             <TextReg
               customClass={"text-[#00BCF8] text-left"}
               text={"•  Lorem ipsun ipsun ipsun ipsun"}
@@ -71,7 +71,7 @@ export const Block4 = () => {
           </div>
         </div>
         <div className="w-full md:w-4/12 flex p-4 justify-center items-center text-white">
-          <img className="md:h-[80vh]" src="./block4/card.jpg" alt="card" />
+          <img className="md:h-[50vh]" src="./block4/card.jpg" alt="card" />
         </div>
       </motion.div>
     </div>

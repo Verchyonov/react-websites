@@ -13,7 +13,7 @@ export const Block1 = () => {
     <div className="w-full min-h-screen bg-[#A06767] justify-center items-center flex flex-col relative">
       <motion.div
         className={
-          "w-11/12 max-w-screen-2xl bg-white flex flex-col p-4 gap-2 rounded-lg"
+          "w-11/12 max-w-screen-2xl bg-white flex flex-col p-4 py-12 gap-12 rounded-lg justify-center items-center"
         }
         initial={{
           opacity: 0,

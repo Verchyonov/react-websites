@@ -14,43 +14,43 @@ const cardsStack = [
     id: 0,
     img: "./landing/cards/card.png",
     isFlipped: false,
-    description: "Lorem pupem",
+    description: "Lorem pupem poem poem poem poem poem",
   },
   {
     id: 1,
     img: "./landing/cards/card.png",
     isFlipped: false,
-    description: "Lorem pupem",
+    description: "Lorem pupem poem poem poem poem poem",
   },
   {
     id: 2,
     img: "./landing/cards/back.png",
     isFlipped: false,
-    description: "Lorem pupem",
+    description: "Lorem pupem poem poem poem poem poem",
   },
   {
     id: 3,
     img: "./landing/cards/card.png",
     isFlipped: false,
-    description: "Lorem pupem",
+    description: "Lorem pupem poem poem poem poem poem",
   },
   {
     id: 4,
     img: "./landing/cards/back.png",
     isFlipped: false,
-    description: "Lorem pupem",
+    description: "Lorem pupem poem poem poem poem poem",
   },
   {
     id: 5,
     img: "./landing/cards/card.png",
     isFlipped: false,
-    description: "Lorem pupem",
+    description: "Lorem pupem poem poem poem poem poem",
   },
   {
     id: 6,
     img: "./landing/cards/card.png",
     isFlipped: false,
-    description: "Lorem pupem",
+    description: "Lorem pupem poem poem poem poem poem",
   },
 ] as Card[];
 
@@ -111,20 +111,20 @@ export const Cards2 = () => {
   };
 
   return (
-    <div className="flex w-full  justify-center align-middle items-center relative">
-      <div className="flex gap-2 items-center justify-center overflow-x-hidden mx-4">
+    <div className="flex w-full min-h-fit justify-center align-middle items-center relative">
+      <div className="flex gap-8 align-top justify-start items-start overflow-x-hidden min-h-fit mx-4">
         <div className="z-50 inline">
           <img
             alt="deck"
             onClick={onDeckPress}
-            className="w-[33vh] bg-white cursor-pointer select-none z-50 inline"
+            className="w-[25vh] bg-white cursor-pointer select-none z-50 inline"
             src="./landing/cards/deck.png"
           />
         </div>
         {cards.map((card, index) => {
           return (
             <motion.div
-              className="relative overflow-visible"
+              className="relative min-h-fit"
               animate={controls}
               onAnimationStart={turnCardsBack}
               onAnimationComplete={resetCards}
@@ -134,18 +134,19 @@ export const Cards2 = () => {
                 animate={{ rotateY: card.isFlipped ? 0 : 180 }}
               >
                 <motion.div
+                  className="w-fit h-fit"
                   transition={{ duration: 0.7 }}
                   animate={{ rotateY: card.isFlipped ? 0 : 180 }}
                 >
                   {card.isFlipped ? (
                     <motion.div
-                      className="front"
+                      className="front w-fit h-fit"
                       transition={{ duration: 0.7 }}
                       animate={{ rotateY: card.isFlipped ? 0 : 180 }}
                     >
                       <img
                         alt="card"
-                        className="w-[20vh] cursor-pointer"
+                        className="w-[15vh] cursor-pointer"
                         onClick={() => {
                           flipCard(card.id);
                         }}
@@ -161,7 +162,7 @@ export const Cards2 = () => {
                       transition={{ duration: 0.7 }}
                     >
                       <img
-                        className="w-[20vh] cursor-pointer"
+                        className="w-[15vh] cursor-pointer"
                         alt="back"
                         onClick={() => {
                           flipCard(card.id);
@@ -171,8 +172,14 @@ export const Cards2 = () => {
                     </motion.div>
                   )}
                 </motion.div>
+                <p
+                  className={
+                    "w-[15vh] " + (card.isFlipped ? "text-black" : "text-white")
+                  }
+                >
+                  {card.description}
+                </p>
               </motion.div>
-              {card.isFlipped && <p className="">{card.description}</p>}
             </motion.div>
           );
         })}

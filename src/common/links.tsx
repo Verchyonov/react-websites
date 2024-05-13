@@ -16,7 +16,7 @@ import { XIcon } from "./icons/x-icon";
 const buttonClass =
   " select-none font-bold cursor-pointer rounded-full flex flex-row content-center items-center transform transition duration-500 hover:scale-105 z-50";
 
-const iconClass = "w-10 h-10 md:w-12 md:h-12 fill-[#0b1d21]";
+const iconClass = "w-10 h-10 md:w-10 md:h-10 fill-[#0b1d21]";
 
 const Checker = (props: any) => {
   return <>{props.val.length !== 0 && props.children}</>;
@@ -26,7 +26,7 @@ export const Links = (props: any) => {
   return (
     <div
       className={
-        "w-full z-50 flex justify-evenly gap-8 flex-row flex-wrap max-w-screen-2xl ms-auto" +
+        "w-full z-50 flex gap-8 flex-row flex-wrap max-w-screen-2xl ms-auto justify-center content-center " +
         props.customClass
       }
     >
