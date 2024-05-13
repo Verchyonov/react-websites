@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: white;
+    /* font-family: "Permanent Marker", cursive; */
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
+.img-hor {
+  transform: rotateY(180deg);
+}
+
+.img-vert {
+  transform: rotateX(180deg);
+}
+
+.updated-dark .react-tweet-theme {
+  --tweet-body-font-size: 0.75rem;
+  --tweet-body-line-height: 1rem;
+}
