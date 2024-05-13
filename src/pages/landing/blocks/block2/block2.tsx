@@ -21,8 +21,11 @@ export const Block2 = () => {
         viewport={{ once: true }}
       >
         <div className="w-full md:w-6/12 flex p-4 flex-col gap-4 text-white items-center justify-center">
-          <TextReg customClass={"text-[#00BCF8] mb-8"} text={"Lorem ipsun"} />
-          <div className="flex flex-col gap-8">
+          <TextReg
+            customClass={"text-[#00BCF8] mb-auto"}
+            text={"Lorem ipsun"}
+          />
+          <div className="flex flex-col gap-8 my-auto">
             <TextReg
               customClass={"text-[#00BCF8]"}
               text={"Lorem ipsun Lorem ipsun Lorem ipsun"}
