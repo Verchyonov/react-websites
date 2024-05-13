@@ -14,43 +14,43 @@ const cardsStack = [
     id: 0,
     img: "./landing/cards/card.png",
     isFlipped: false,
-    description: "Lorem pupem poem poem poem poem poem",
+    description: "Lorem pupem pupem pupem pupem pupem pupem",
   },
   {
     id: 1,
     img: "./landing/cards/card.png",
     isFlipped: false,
-    description: "Lorem pupem poem poem poem poem poem",
+    description: "Lorem pupem pupem pupem pupem pupem pupem",
   },
   {
     id: 2,
     img: "./landing/cards/back.png",
     isFlipped: false,
-    description: "Lorem pupem poem poem poem poem poem",
+    description: "Lorem pupem pupem pupem pupem pupem pupem",
   },
   {
     id: 3,
     img: "./landing/cards/card.png",
     isFlipped: false,
-    description: "Lorem pupem poem poem poem poem poem",
+    description: "Lorem pupem pupem pupem pupem pupem pupem",
   },
   {
     id: 4,
     img: "./landing/cards/back.png",
     isFlipped: false,
-    description: "Lorem pupem poem poem poem poem poem",
+    description: "Lorem pupem pupem pupem pupem pupem pupem",
   },
   {
     id: 5,
     img: "./landing/cards/card.png",
     isFlipped: false,
-    description: "Lorem pupem poem poem poem poem poem",
+    description: "Lorem pupem pupem pupem pupem pupem pupem",
   },
   {
     id: 6,
     img: "./landing/cards/card.png",
     isFlipped: false,
-    description: "Lorem pupem poem poem poem poem poem",
+    description: "Lorem pupem pupem pupem pupem pupem pupem",
   },
 ] as Card[];
 
@@ -111,20 +111,20 @@ export const Cards2 = () => {
   };
 
   return (
-    <div className="flex w-full min-h-fit justify-center align-middle items-center relative">
-      <div className="flex gap-8 align-top justify-start items-start overflow-x-hidden min-h-fit mx-4">
-        <div className="z-50 inline">
+    <div className="flex w-full  justify-center align-middle items-center relative">
+      <div className="flex gap-8 justify-center overflow-x-hidden mx-4 items-start">
+        <div className="relative overflow-visible z-50 inline-flex">
           <img
             alt="deck"
             onClick={onDeckPress}
-            className="w-[25vh] bg-white cursor-pointer select-none z-50 inline"
+            className="w-[35vh] bg-white cursor-pointer select-none z-50 inline"
             src="./landing/cards/deck.png"
           />
         </div>
         {cards.map((card, index) => {
           return (
             <motion.div
-              className="relative min-h-fit"
+              className="relative overflow-visible"
               animate={controls}
               onAnimationStart={turnCardsBack}
               onAnimationComplete={resetCards}
@@ -134,13 +134,12 @@ export const Cards2 = () => {
                 animate={{ rotateY: card.isFlipped ? 0 : 180 }}
               >
                 <motion.div
-                  className="w-fit h-fit"
                   transition={{ duration: 0.7 }}
                   animate={{ rotateY: card.isFlipped ? 0 : 180 }}
                 >
                   {card.isFlipped ? (
                     <motion.div
-                      className="front w-fit h-fit"
+                      className="front"
                       transition={{ duration: 0.7 }}
                       animate={{ rotateY: card.isFlipped ? 0 : 180 }}
                     >
@@ -171,14 +170,14 @@ export const Cards2 = () => {
                       />
                     </motion.div>
                   )}
+                  <p
+                    className={
+                      "w-8/12 " + (card.isFlipped ? "text-blac" : "text-white")
+                    }
+                  >
+                    {card.description}
+                  </p>
                 </motion.div>
-                <p
-                  className={
-                    "w-[15vh] " + (card.isFlipped ? "text-black" : "text-white")
-                  }
-                >
-                  {card.description}
-                </p>
               </motion.div>
             </motion.div>
           );
