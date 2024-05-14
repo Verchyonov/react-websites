@@ -77,8 +77,8 @@ export const Cards = () => {
 
   return (
     <div className="flex w-full -full justify-center align-middle items-center relative">
-      <div className="flex gap-2 md:gap-4 justify-center mx-0 md:mx-4 items-center">
-        <div className="relative overflow-x-visible overflow-y-visible z-50 flex">
+      <div className="flex gap-2 md:gap-4 justify-center mx-0 md:mx-4 items-center overflow-hidden">
+        <div className="relative overflow-x-visible overflow-y-hidden z-50 flex">
           <img
             alt="deck"
             onClick={onDeckPress}
