@@ -112,8 +112,8 @@ export const Cards2 = () => {
 
   return (
     <div className="flex w-full  justify-center align-middle items-center relative">
-      <div className="flex gap-8 justify-center overflow-x-hidden mx-4 items-start">
-        <div className="relative overflow-visible z-50 inline-flex">
+      <div className="flex gap-2 md:gap-4 justify-center overflow-x-hidden mx-0 md:mx-4 items-center">
+        <div className="relative overflow-visible z-50 flex">
           <img
             alt="deck"
             onClick={onDeckPress}
@@ -138,20 +138,22 @@ export const Cards2 = () => {
                   animate={{ rotateY: card.isFlipped ? 0 : 180 }}
                 >
                   {card.isFlipped ? (
-                    <motion.div
-                      className="front"
-                      transition={{ duration: 0.7 }}
-                      animate={{ rotateY: card.isFlipped ? 0 : 180 }}
-                    >
-                      <img
-                        alt="card"
-                        className="w-[15vh] cursor-pointer"
-                        onClick={() => {
-                          flipCard(card.id);
-                        }}
-                        src={card.img}
-                      />
-                    </motion.div>
+                    <>
+                      <motion.div
+                        className="front"
+                        transition={{ duration: 0.7 }}
+                        animate={{ rotateY: card.isFlipped ? 0 : 180 }}
+                      >
+                        <img
+                          alt="card"
+                          className="w-[18vh] cursor-pointer"
+                          onClick={() => {
+                            flipCard(card.id);
+                          }}
+                          src={card.img}
+                        />
+                      </motion.div>
+                    </>
                   ) : (
                     <motion.div
                       className="back"
@@ -161,7 +163,7 @@ export const Cards2 = () => {
                       transition={{ duration: 0.7 }}
                     >
                       <img
-                        className="w-[15vh] cursor-pointer"
+                        className="w-[18vh] cursor-pointer"
                         alt="back"
                         onClick={() => {
                           flipCard(card.id);
@@ -170,13 +172,6 @@ export const Cards2 = () => {
                       />
                     </motion.div>
                   )}
-                  <p
-                    className={
-                      "w-8/12 " + (card.isFlipped ? "text-blac" : "text-white")
-                    }
-                  >
-                    {card.description}
-                  </p>
                 </motion.div>
               </motion.div>
             </motion.div>

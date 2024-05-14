@@ -9,11 +9,15 @@
     box-sizing: border-box;
   }
   body {
-    background-color: white;
+    background-color: black;
     /* font-family: "Permanent Marker", cursive; */
     font-weight: 400;
     font-style: normal;
   }
+}
+
+#root {
+  overflow: hidden;
 }
 
 .img-hor {
@@ -33,4 +37,35 @@
   background-image: url("../public/banner.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.block1 {
+  background-image: url("../public/block1/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rfm-marquee-container {
+  overflow: unset !important;
+  height: 50vh;
+  overflow-x: hidden;
+}
+
+.fade {
+  animation: fadeInOut 3s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

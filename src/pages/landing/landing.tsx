@@ -14,20 +14,20 @@ export const Landing = () => {
 
   return (
     <>
-      {showBanner ? (
+      {/* {showBanner ? (
         <Banner close={setShowBanner} />
-      ) : (
-        <>
-          <Block1 />
-          <Block2 />
-          <Block3 />
-          <Block4 />
-          {/* <Block5 /> */}
-          {/* <Block6 /> */}
-          <Block7 />
-          <FooterSection />
-        </>
-      )}
+      ) : ( */}
+      <>
+        <Block1 />
+        <Block2 />
+        <Block3 />
+        <Block4 />
+        {/* <Block5 /> */}
+        {/* <Block6 /> */}
+        <Block7 />
+        <FooterSection />
+      </>
+      {/* )} */}
     </>
   );
 };

@@ -3,17 +3,35 @@ import { Links } from "../../../../common/links";
 import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
 import { Cards2 } from "../../../game/cards/cards2";
+import Marquee from "react-fast-marquee";
 
 export const Block1 = () => {
-  const onPlay = () => {
-    window.open("/game", "_blank");
-  };
-
   return (
-    <div className="w-full min-h-screen bg-[#A06767] justify-center items-center flex flex-col relative">
+    <div className="w-full min-h-[100vh] py-20 block1 justify-center items-center flex flex-col relative overflow-hidden">
+      <img
+        className="absolute top-0 left-0 h-[100vh] z-20 w-48"
+        src="./block1/rain.gif"
+      />
+      <img
+        className="absolute top-0 right-0 h-[100vh] z-20 w-48 img-hor"
+        src="./block1/rain.gif"
+      />
+
+      <img
+        className="absolute top-[-10%] lg:top-[-30%] w-[100vh] img-hor z-40"
+        src="./block1/pepe.png"
+      />
+      <img
+        src="./block1/oblako.png"
+        className="absolute top-[-10vh] left-[-10vh] z-20 w-[50vh]"
+      />
+      <img
+        src="./block1/oblakol.png"
+        className="absolute top-[-10vh] right-[-10vh] z-20 w-[50vh]"
+      />
       <motion.div
         className={
-          "w-11/12 max-w-screen-2xl bg-white flex flex-col p-4 py-12 gap-12 rounded-lg justify-center items-center"
+          "w-11/12 max-w-screen-2xl bg-white flex flex-col p-4 py-12 gap-12 rounded-lg justify-center items-center z-50"
         }
         initial={{
           opacity: 0,

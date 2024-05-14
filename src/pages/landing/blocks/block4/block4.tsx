@@ -2,14 +2,30 @@ import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
 import { BUY_LINK } from "../../../../common/urls";
 
+import { useEffect, useState } from "react";
+
+const imageArray = [
+  "./block4/card.jpg",
+  "./block4/card.jpg",
+  "./block4/card.jpg",
+];
+
 export const Block4 = () => {
+  const [count, setCount] = useState(0);
   const onBuy = () => {
     window.open(BUY_LINK, "_blank");
   };
 
-  const onPlay = () => {
-    window.open("/game", "_blank");
-  };
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      setCount((count) => count + 1);
+    }, 3000);
+
+    return () => clearInterval(timerId);
+  }, []);
+
+  const image = imageArray[count % imageArray.length];
+
   return (
     <div className="w-full min-h-screen bg-black justify-center align-middle items-center flex flex-col relative">
       <motion.div
@@ -71,7 +87,7 @@ export const Block4 = () => {
           </div>
         </div>
         <div className="w-full md:w-4/12 flex p-4 justify-center items-center text-white">
-          <img className="md:h-[50vh]" src="./block4/card.jpg" alt="card" />
+          <img className="md:h-[50vh] fade" src={image} alt="card" />
         </div>
       </motion.div>
     </div>
