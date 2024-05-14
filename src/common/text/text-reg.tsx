@@ -1,5 +1,5 @@
+import React from "react";
+
 export const TextReg = (props: any) => {
-  return (
-    <p className={"text-3xl text-center " + props.customClass}>{props.text}</p>
-  );
+  return <p className={"text-2xl  " + props.customClass}>{props.text}</p>;
 };

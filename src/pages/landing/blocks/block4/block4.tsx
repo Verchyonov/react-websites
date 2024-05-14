@@ -42,30 +42,36 @@ export const Block4 = () => {
         }}
         viewport={{ once: true }}
       >
-        <div className="w-full md:w-8/12 flex p-4 flex-col gap-4 text-white items-center justify-around">
+        <div className="w-full md:w-8/12 flex p-4 flex-col gap-4 text-white  justify-around">
           <TextReg
-            customClass={"text-[#00BCF8] md:mb-0 mb-16"}
-            text="Lorem ipsun ipsun"
+            customClass={"text-[#00BCF8] "}
+            text="Coin Distribution:
+We are launching the coin on pump.fun to ensure transparency for the community. There will be a significant developer buy and burn, along with technical solutions for better coin spread.
+"
           />
-          <div className="flex flex-col gap-8 items-start">
+          <div className="flex flex-col gap-8 my-auto items-start">
             <TextReg
               customClass={"text-[#00BCF8] text-left"}
-              text={"•  Lorem ipsun ipsun ipsun ipsun"}
+              text={"• 40% initial developer buy and burn"}
             />
 
             <TextReg
               customClass={"text-[#00BCF8] text-left"}
-              text={"•  Lorem ipsun ipsun ipsun ipsun"}
+              text={"• 10% free airdrop"}
             />
 
             <TextReg
               customClass={"text-[#00BCF8] text-left"}
-              text={"•  Lorem ipsun ipsun ipsun"}
+              text={"• 10% post-Raydium developer buy and burn"}
             />
 
             <TextReg
               customClass={"text-[#00BCF8] text-left md:mb-0 mb-8"}
-              text={"•  Lorem ipsun ipsun ipsun"}
+              text={"• 5% team allocation"}
+            />
+            <TextReg
+              customClass={"text-[#00BCF8] text-left md:mb-0 mb-8"}
+              text={"• 35% in circulation"}
             />
           </div>
           <div className="flex w-full justify-center">
