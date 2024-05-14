@@ -18,11 +18,11 @@ export const Landing = () => {
       ) : ( */}
       <>
         <Block1 />
-        <Block2 />
+        {/* <Block2 />
         <Block3 />
         <Block4 />
 
-        <Block7 />
+        <Block7 /> */}
         <FooterSection />
       </>
       {/* )} */}
