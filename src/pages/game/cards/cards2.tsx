@@ -78,11 +78,11 @@ export const Cards = () => {
   return (
     <div className="flex w-full -full justify-center align-middle items-center relative">
       <div className="flex gap-2 md:gap-4 justify-center mx-0 md:mx-4 items-center overflow-hidden">
-        <div className="relative overflow-x-visible overflow-y-hidden z-50 flex">
+        <div className="relative overflow-x-hidden overflow-y-hidden z-[100] flex">
           <img
             alt="deck"
             onClick={onDeckPress}
-            className="w-[35vh] bg-white cursor-pointer select-none z-50 inline hover:scale-[1.02] transition-transform duration-500 ease-in-out"
+            className="w-[35vh] bg-white cursor-pointer select-none z-50 inline hover:scale-[1.01] transition-transform duration-500 ease-in-out"
             src="./game/deck.webp"
           />
         </div>

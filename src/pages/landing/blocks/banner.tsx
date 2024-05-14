@@ -22,8 +22,8 @@ export const Banner = (props: any) => {
         <img src="./tarot.webp" />
         <img
           className={
-            "w-12/12 md:w-6/12 my-auto cursor-pointer transition duration-500 ease-in-out" +
-            (isButtonEnabled ? "" : " opacity-50")
+            "w-12/12 md:w-6/12 my-auto cursor-pointer transition duration-500 ease-in-out transform " +
+            (isButtonEnabled ? "hover:scale-[1.05]" : " opacity-50")
           }
           onClick={() => {
             if (isButtonEnabled) {

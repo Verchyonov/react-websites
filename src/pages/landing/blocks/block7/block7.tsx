@@ -2,6 +2,7 @@ import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
 import { BUY_LINK } from "../../../../common/urls";
+import { AppearWrapper } from "../../../../common/appear-wrapper";
 
 export const Block7 = () => {
   const onPlay = () => {
@@ -15,20 +16,10 @@ export const Block7 = () => {
   return (
     <>
       <div className="w-full min-h-screen bg-black justify-center items-center flex flex-col relative">
-        <motion.div
-          className={
+        <AppearWrapper
+          customClass={
             "w-11/12 md:w-9/12 max-w-screen-2x flex flex-col md:flex-row p-8 gap-4"
           }
-          initial={{
-            opacity: 0,
-          }}
-          whileInView={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 3,
-          }}
-          viewport={{ once: true }}
         >
           <div className="w-full md:w-6/12 flex p-4 flex-col gap-4 text-white items-center justify-center">
             <div className="flex flex-col gap-16">
@@ -71,23 +62,13 @@ export const Block7 = () => {
           <div className="w-full md:w-6/12 flex p-4 justify-center items-center text-white">
             <img className="md:h-[50vh]" src="./block7/naked.webp" alt="card" />
           </div>
-        </motion.div>
+        </AppearWrapper>
       </div>
       <div className="w-full min-h-screen bg-black justify-center items-center flex flex-col relative">
-        <motion.div
-          className={
+        <AppearWrapper
+          customClass={
             "w-11/12 md:w-9/12 max-w-screen-2x flex flex-col md:flex-row p-8 gap-4"
           }
-          initial={{
-            opacity: 0,
-          }}
-          whileInView={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 3,
-          }}
-          viewport={{ once: true }}
         >
           <div className="w-full md:w-4/12 flex p-4 justify-center items-center text-white">
             <img
@@ -123,7 +104,7 @@ export const Block7 = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </AppearWrapper>
       </div>
     </>
   );

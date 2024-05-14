@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export const Block2 = () => {
   return (
-    <div className="w-full min-h-screen bg-black justify-center items-center flex flex-col relative">
+    <div className="w-full min-h-screen bg-black justify-center items-center flex flex-col relative blurred-border-top">
       <motion.div
         className={
           "w-11/12 md:w-9/12 max-w-screen-2x flex flex-col md:flex-row p-8 gap-4"
