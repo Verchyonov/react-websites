@@ -3,7 +3,7 @@ import { CopyCa } from "../../../../common/copy-ca";
 import { Links } from "../../../../common/links";
 import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
-import { Cards2 } from "../../../game/cards/cards2";
+import { Cards } from "../../../game/cards/cards2";
 
 export const Block1 = () => {
   return (
@@ -52,7 +52,7 @@ export const Block1 = () => {
         />
 
         <div className="flex w-full flex-col gap-4 justify-center items-center">
-          <Cards2 />
+          <Cards />
         </div>
       </motion.div>
     </div>

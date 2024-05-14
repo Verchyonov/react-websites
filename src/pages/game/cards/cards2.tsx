@@ -19,7 +19,7 @@ const cardsStack = Array.from({ length: 77 }, (_, i) => {
   } as Card;
 }) as Card[];
 
-export const Cards2 = () => {
+export const Cards = () => {
   const controls = useAnimationControls();
   const getRandomCards = (): any => {
     const shuffled = Array.from(cardsStack).sort(() => 0.5 - Math.random());
@@ -76,14 +76,14 @@ export const Cards2 = () => {
   };
 
   return (
-    <div className="flex w-full  justify-center align-middle items-center relative">
-      <div className="flex gap-2 md:gap-4 justify-center overflow-x-hidden mx-0 md:mx-4 items-center">
-        <div className="relative overflow-visible z-50 flex">
+    <div className="flex w-full -full justify-center align-middle items-center relative">
+      <div className="flex gap-2 md:gap-4 justify-center mx-0 md:mx-4 items-center">
+        <div className="relative overflow-x-visible overflow-y-visible z-50 flex">
           <img
             alt="deck"
             onClick={onDeckPress}
-            className="w-[35vh] bg-white cursor-pointer select-none z-50 inline"
-            src="./landing/cards/deck.png"
+            className="w-[35vh] bg-white cursor-pointer select-none z-50 inline hover:scale-[1.02] transition-transform duration-500 ease-in-out"
+            src="./game/deck.webp"
           />
         </div>
         {cards.map((card, index) => {
@@ -133,7 +133,7 @@ export const Cards2 = () => {
                         onClick={() => {
                           flipCard(card.id);
                         }}
-                        src={"./landing/cards/back.jpg"}
+                        src={"./game/back.webp"}
                       />
                     </motion.div>
                   )}

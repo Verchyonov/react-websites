@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./layout";
 import { Landing } from "./pages/landing/landing";
 import { Form } from "./pages/form/form";
-import { Cards2 } from "./pages/game/cards/cards2";
+import { NotFound } from "./pages/not-found";
 
 export const MyRouter = () => {
   return (
@@ -13,7 +13,7 @@ export const MyRouter = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Landing />} />
           {/* <Route path="/drop" element={<Form />} />
-          <Route path="/game" element={<Cards2 />} /> */}
+          <Route path="*" element={<NotFound />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

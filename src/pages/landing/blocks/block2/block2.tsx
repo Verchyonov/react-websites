@@ -36,7 +36,11 @@ export const Block2 = () => {
           </div>
         </div>
         <div className="w-full md:w-6/12 flex p-4 justify-center items-center text-white">
-          <img className="md:h-[50vh]" src="./block2/gnom.png" alt="gendalph" />
+          <img
+            className="md:h-[50vh]"
+            src="./block2/gnom.webp"
+            alt="gendalph"
+          />
         </div>
       </motion.div>
     </div>

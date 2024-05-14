@@ -2,6 +2,7 @@ import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
 import { BUY_LINK } from "../../../../common/urls";
+import React from "react";
 
 export const Block7 = () => {
   const onPlay = () => {
@@ -59,7 +60,7 @@ export const Block7 = () => {
             </div>
           </div>
           <div className="w-full md:w-4/12 flex p-4 justify-center items-center text-white">
-            <img className="md:h-[50vh]" src="./block7/naked.png" alt="card" />
+            <img className="md:h-[50vh]" src="./block7/naked.webp" alt="card" />
           </div>
         </motion.div>
       </div>
@@ -82,7 +83,7 @@ export const Block7 = () => {
           <div className="w-full md:w-4/12 flex p-4 justify-center items-center text-white">
             <img
               className="md:h-[50vh] rounded-xl"
-              src="./landing/cards/back.jpg"
+              src="./game/back.webp"
               alt="card"
             />
           </div>

@@ -46,9 +46,9 @@
 }
 
 .block1 {
-  background-image: url("../public/block1/bg.png");
+  background-image: url("../public/block1/bg.webp");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .rfm-marquee-container {

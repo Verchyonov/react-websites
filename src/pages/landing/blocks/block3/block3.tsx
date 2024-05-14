@@ -37,7 +37,7 @@ export const Block3 = () => {
         <div className="flex w-full md:w-3/12 flex-col gap-4 p-4 justify-center align-center">
           <img
             className="w-full md:w-10/12 rounded-xl"
-            src="./block3/2.png"
+            src="./block3/2.webp"
             alt="card"
           />
           <TextReg
@@ -68,7 +68,7 @@ export const Block3 = () => {
         <div className="flex w-full md:w-3/12 flex-col gap-4 p-4 justify-center align-center items-center">
           <img
             className="w-full md:w-10/12 rounded-xl"
-            src="./block3/4.png"
+            src="./block3/4.webp"
             alt="card"
           />
           <TextReg customClass={"text-[#00BCF8]"} text={"Stage 4:"} />

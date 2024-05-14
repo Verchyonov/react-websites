@@ -16,18 +16,21 @@ export const Banner = (props: any) => {
   return (
     <div
       id={"banner"}
-      className="w-full min-h-screen bg-[url(~/public/block1/bg.png)] bg-black flex justify-center items-center"
+      className="w-full min-h-screen bg-[url(~/public/block1/bg.webp)] bg-black flex justify-center items-center"
     >
       <div className="flex flex-col items-center gap-12 w-11/12 min-h-screen p-16 md:w-6/12">
-        <img src="./tarot.png" />
+        <img src="./tarot.webp" />
         <img
-          className="w-12/12 md:w-6/12 my-auto cursor-pointer"
+          className={
+            "w-12/12 md:w-6/12 my-auto cursor-pointer" +
+            (isButtonEnabled ? "" : " opacity-50")
+          }
           onClick={() => {
             if (isButtonEnabled) {
               props.close();
             }
           }}
-          src="./enter.png"
+          src="./enter.webp"
         />
       </div>
     </div>
