@@ -1,3 +1,4 @@
+import React from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { useState } from "react";
 import "./card.css";
@@ -9,50 +10,14 @@ type Card = {
   description: string;
 };
 
-const cardsStack = [
-  {
-    id: 0,
-    img: "./landing/cards/card.png",
+const cardsStack = Array.from({ length: 77 }, (_, i) => {
+  return {
+    id: i,
+    img: `./cards/cardio_${i}.webp`,
     isFlipped: false,
-    description: "Lorem pupem pupem pupem pupem pupem pupem",
-  },
-  {
-    id: 1,
-    img: "./landing/cards/card.png",
-    isFlipped: false,
-    description: "Lorem pupem pupem pupem pupem pupem pupem",
-  },
-  {
-    id: 2,
-    img: "./landing/cards/back.png",
-    isFlipped: false,
-    description: "Lorem pupem pupem pupem pupem pupem pupem",
-  },
-  {
-    id: 3,
-    img: "./landing/cards/card.png",
-    isFlipped: false,
-    description: "Lorem pupem pupem pupem pupem pupem pupem",
-  },
-  {
-    id: 4,
-    img: "./landing/cards/back.png",
-    isFlipped: false,
-    description: "Lorem pupem pupem pupem pupem pupem pupem",
-  },
-  {
-    id: 5,
-    img: "./landing/cards/card.png",
-    isFlipped: false,
-    description: "Lorem pupem pupem pupem pupem pupem pupem",
-  },
-  {
-    id: 6,
-    img: "./landing/cards/card.png",
-    isFlipped: false,
-    description: "Lorem pupem pupem pupem pupem pupem pupem",
-  },
-] as Card[];
+    description: "test",
+  } as Card;
+}) as Card[];
 
 export const Cards2 = () => {
   const controls = useAnimationControls();

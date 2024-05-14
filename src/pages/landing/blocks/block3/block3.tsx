@@ -1,3 +1,4 @@
+import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
 

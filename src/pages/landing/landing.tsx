@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Block1 } from "./blocks/block1/block1";
 import { Block2 } from "./blocks/block2/block2";

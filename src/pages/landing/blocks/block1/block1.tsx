@@ -1,9 +1,9 @@
+import React from "react";
 import { CopyCa } from "../../../../common/copy-ca";
 import { Links } from "../../../../common/links";
 import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
 import { Cards2 } from "../../../game/cards/cards2";
-import Marquee from "react-fast-marquee";
 
 export const Block1 = () => {
   return (
@@ -19,14 +19,14 @@ export const Block1 = () => {
 
       <img
         className="absolute top-[-10%] lg:top-[-30%] w-[100vh] img-hor z-40"
-        src="./block1/pepe.png"
+        src="./block1/pepe.webp"
       />
       <img
-        src="./block1/oblako.png"
+        src="./block1/oblako.webp"
         className="absolute top-[-10vh] left-[-10vh] z-20 w-[50vh]"
       />
       <img
-        src="./block1/oblakol.png"
+        src="./block1/oblakol.webp"
         className="absolute top-[-10vh] right-[-10vh] z-20 w-[50vh]"
       />
       <motion.div

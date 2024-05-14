@@ -1,14 +1,13 @@
+import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
 import { BUY_LINK } from "../../../../common/urls";
 
 import { useEffect, useState } from "react";
 
-const imageArray = [
-  "./block4/card.jpg",
-  "./block4/card.jpg",
-  "./block4/card.jpg",
-];
+const imageArray = Array.from({ length: 77 }, (_, i) => {
+  return `./cards/cardio_${i}.webp`;
+});
 
 export const Block4 = () => {
   const [count, setCount] = useState(0);
