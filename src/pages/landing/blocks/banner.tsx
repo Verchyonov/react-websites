@@ -14,7 +14,10 @@ export const Banner = (props: any) => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-black flex justify-center items-center">
+    <div
+      id={"banner"}
+      className="w-full min-h-screen bg-black flex justify-center items-center"
+    >
       <div className="flex flex-col gap-12">
         <h1 className="text-4xl text-white font-bold capitalize">
           Taro Cards Memes

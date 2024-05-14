@@ -28,3 +28,9 @@
   --tweet-body-font-size: 0.75rem;
   --tweet-body-line-height: 1rem;
 }
+
+#banner {
+  background-image: url("../public/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
