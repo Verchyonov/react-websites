@@ -13,19 +13,19 @@ export const Landing = () => {
 
   return (
     <>
-      {showBanner ? (
+      {/* {showBanner ? (
         <Banner close={setShowBanner} />
-      ) : (
-        <>
-          <Block1 />
-          <Block2 />
-          <Block3 />
-          <Block4 />
+      ) : ( */}
+      <>
+        <Block1 />
+        <Block2 />
+        <Block3 />
+        <Block4 />
 
-          <Block7 />
-          <FooterSection />
-        </>
-      )}
+        <Block7 />
+        <FooterSection />
+      </>
+      {/* )} */}
     </>
   );
 };
