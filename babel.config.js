@@ -1,16 +1,16 @@
 module.exports = (api) => {
-  api.cache(true);
+  api.cache.using(() => process.env.NODE_ENV);
+  const isTest = process.env.NODE_ENV === "test";
 
   return {
     presets: [
       [
         "@babel/env",
         {
-          // use ES modules for rollup and commonjs for jest
-          modules: false,
+          modules: isTest ? `commonjs` : false,
           shippedProposals: true,
           targets: {
-            node: "10.13.0",
+            node: "current",
           },
         },
       ],

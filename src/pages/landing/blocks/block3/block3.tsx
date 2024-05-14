@@ -23,7 +23,7 @@ export const Block3 = () => {
         <div className="flex w-full md:w-3/12 flex-col gap-4 p-4 justify-center align-center items-center">
           <img
             className="w-full md:w-10/12 rounded-xl"
-            src="./block3/1.gif"
+            src="./block3/old.gif"
             alt="card"
           />
           <TextReg customClass={"text-[#00BCF8]"} text={"Stage 1:"} />
@@ -37,7 +37,7 @@ export const Block3 = () => {
         <div className="flex w-full md:w-3/12 flex-col gap-4 p-4 justify-center align-center">
           <img
             className="w-full md:w-10/12 rounded-xl"
-            src="./block3/2.webp"
+            src="./block3/treasure.webp"
             alt="card"
           />
           <TextReg
@@ -54,7 +54,7 @@ export const Block3 = () => {
         <div className="flex w-full md:w-3/12 flex-col gap-4 p-4 justify-center align-center items-center">
           <img
             className="w-full md:w-10/12 rounded-xl"
-            src="./block3/3.gif"
+            src="./block3/hand.gif"
             alt="card"
           />
           <TextReg customClass={"text-[#00BCF8]"} text={"Stage 3:"} />
@@ -68,7 +68,7 @@ export const Block3 = () => {
         <div className="flex w-full md:w-3/12 flex-col gap-4 p-4 justify-center align-center items-center">
           <img
             className="w-full md:w-10/12 rounded-xl"
-            src="./block3/4.webp"
+            src="./block3/tavern.webp"
             alt="card"
           />
           <TextReg customClass={"text-[#00BCF8]"} text={"Stage 4:"} />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Bounce, toast } from "react-toastify";
 import { CA } from "./urls";
 import { CopyIcon } from "./icons/copy-icon";

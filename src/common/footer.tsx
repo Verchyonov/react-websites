@@ -1,7 +1,7 @@
+import React from "react";
 import { TgIcon } from "./icons/tg-icon";
 import { XIcon } from "./icons/x-icon";
 import { TELEGRAM_DEV, TWITTER_DEV } from "./urls";
-import React from "react";
 
 const iconClass = "w-6 h-6 fill-white";
 

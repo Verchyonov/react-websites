@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
 import {
   FormattedMessages,
   sendErrorNotification,
@@ -8,7 +8,7 @@ import {
 } from "../utils";
 import SearchIcon from "@mui/icons-material/Search";
 
-export const SERVER = process.env.SERVER;
+export const SERVER = process.env.REACT_APP_SERVER;
 
 export const CheckElegibility = () => {
   const [wallet, setWallet] = useState("");

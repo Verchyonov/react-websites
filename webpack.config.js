@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const dotenv = require("dotenv");
+const DefinePlugin = require("webpack").DefinePlugin;
 const path = require("path");
+dotenv.config();
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -8,10 +11,14 @@ module.exports = {
     historyApiFallback: true,
   },
   mode: "development",
+  devServer: {
+    historyApiFallback: true,
+  },
   output: {
     publicPath: "/",
     filename: "bundle.[fullhash].js",
     path: path.resolve(__dirname, "build"),
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -19,6 +26,9 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [{ from: "public", to: "" }],
+    }),
+    new DefinePlugin({
+      "process.env": JSON.stringify(process.env),
     }),
   ],
   resolve: {

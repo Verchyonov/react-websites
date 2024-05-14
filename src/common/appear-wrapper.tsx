@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 
 export const AppearWrapper = (props: any) => {
@@ -11,7 +12,7 @@ export const AppearWrapper = (props: any) => {
         opacity: 1,
       }}
       transition={{
-        duration: 3,
+        duration: 1.5,
       }}
       viewport={{ once: true }}
     >

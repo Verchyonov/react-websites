@@ -18,14 +18,14 @@ export const AboutDrop = (props: any) => {
           <CircularProgress size={32} />
         )}
       </div>
-      <div className="flex flex-col w-full lg:w-[30%] items-center lg:items-end justify-center px-1 py-2 md:px-8 lg:py-4 border-2 rounded-xl border-[#ebebeb] text-white">
+      <div className="flex flex-col w-full lg:w-[33%] items-center lg:items-end justify-center px-1 py-2 md:px-8 lg:py-4 border-2 rounded-xl border-[#ebebeb] text-white text-lg">
         {!props.isLoading ? (
           <>
-            <h1 className="lg:text-xl font-bold text-center md:text-right">
+            <h1 className="font-bold text-center md:text-right">
               Airdrop enrolls: {props.dropInfo.numberOfAirdropUsers}/
               {props.dropInfo.numberOfMaxAirdropUsers}
             </h1>
-            <h1 className="lg:text-xl font-bold text-center md:text-right">
+            <h1 className="font-bold text-center md:text-right">
               Presale enrolls: {props.dropInfo.numberOfPresaleUsers}/
               {props.dropInfo.numberOfMaxPresaleUsers} | Total:{" "}
               {props.dropInfo.presaleSolAmount.toFixed(2)} SOL
