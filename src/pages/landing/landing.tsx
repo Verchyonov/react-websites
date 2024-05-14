@@ -3,8 +3,6 @@ import { Block1 } from "./blocks/block1/block1";
 import { Block2 } from "./blocks/block2/block2";
 import { Block3 } from "./blocks/block3/block3";
 import { Block4 } from "./blocks/block4/block4";
-import { Block5 } from "./blocks/block5/block5";
-import { Block6 } from "./blocks/block6/block6";
 import { Block7 } from "./blocks/block7/block7";
 import { Banner } from "./blocks/banner";
 import { FooterSection } from "../../common/footer";
@@ -14,20 +12,19 @@ export const Landing = () => {
 
   return (
     <>
-      {/* {showBanner ? (
+      {showBanner ? (
         <Banner close={setShowBanner} />
-      ) : ( */}
-      <>
-        <Block1 />
-        <Block2 />
-        <Block3 />
-        <Block4 />
-        {/* <Block5 /> */}
-        {/* <Block6 /> */}
-        <Block7 />
-        <FooterSection />
-      </>
-      {/* )} */}
+      ) : (
+        <>
+          <Block1 />
+          <Block2 />
+          <Block3 />
+          <Block4 />
+
+          <Block7 />
+          <FooterSection />
+        </>
+      )}
     </>
   );
 };
