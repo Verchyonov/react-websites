@@ -40,6 +40,7 @@
 }
 
 .block1 {
+  background-image: url("../public/block1/bg.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
