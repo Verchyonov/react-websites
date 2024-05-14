@@ -7,7 +7,7 @@ import Marquee from "react-fast-marquee";
 
 export const Block1 = () => {
   return (
-    <div className="w-full min-h-[100vh] py-20 block1 justify-center items-center flex flex-col relative overflow-hidden">
+    <div className="w-full min-h-[100vh] py-20 block1 justify-center items-center flex flex-col relative overflow-hidden blurred-border-bottom">
       <img
         className="absolute top-0 left-0 h-[100vh] z-20 w-48"
         src="./block1/rain.gif"

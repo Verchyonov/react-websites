@@ -42,7 +42,7 @@
 .block1 {
   background-image: url("../public/block1/bg.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .rfm-marquee-container {

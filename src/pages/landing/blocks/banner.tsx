@@ -18,21 +18,17 @@ export const Banner = (props: any) => {
       id={"banner"}
       className="w-full min-h-screen bg-black flex justify-center items-center"
     >
-      <div className="flex flex-col gap-12">
-        <h1 className="text-4xl text-white font-bold capitalize">
-          Taro Cards Memes
-        </h1>
-        <button
-          className={`proceed-btn  text-black font-bold p-4 rounded-xl ${
-            !isButtonEnabled
-              ? "bg-gray-600 text-gray-800 cursor-not-allowed"
-              : "bg-white"
-          }`}
-          onClick={() => props.close()}
-          disabled={!isButtonEnabled}
-        >
-          Enter the dungeon
-        </button>
+      <div className="flex flex-col items-center gap-12 w-11/12 min-h-screen p-16 md:w-6/12">
+        <img src="./tarot.png" />
+        <img
+          className="w-12/12 md:w-6/12 my-auto cursor-pointer"
+          onClick={() => {
+            if (isButtonEnabled) {
+              props.close();
+            }
+          }}
+          src="./enter.png"
+        />
       </div>
     </div>
   );
