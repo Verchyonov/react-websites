@@ -2,7 +2,6 @@ import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
 import { BUY_LINK } from "../../../../common/urls";
-import React from "react";
 
 export const Block7 = () => {
   const onPlay = () => {
