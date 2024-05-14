@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useCompensateScrollbar } from "../../../../hooks/useCompensateScrollbar";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
@@ -22,7 +22,9 @@ export const PresaleForm = (props: any) => {
   useCompensateScrollbar();
   const [solAmount, setSolAmount] = useState<number>(0.1);
   const [solBalance, setSolBalance] = useState(0.0);
-  const [isSending, setIsSending] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isSending, setIsSending] = useState(false);
+  const [solEnrolled, setSolEnrolled] = useState(0.0);
 
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
@@ -36,6 +38,27 @@ export const PresaleForm = (props: any) => {
     });
   }, [publicKey, connection, sendTransaction]);
 
+  useEffect(() => {
+    if (!publicKey) {
+      return;
+    }
+    axios
+      .get(process.env.REACT_APP_SERVER + "/drop/presale/user", {
+        params: {
+          wallet: publicKey,
+        },
+      })
+      .then((response) => {
+        setIsLoading(false);
+        setSolEnrolled(response.data.solAmount ? response.data.solAmount : 0.0);
+      })
+      .catch((error) => {
+        sendErrorNotification(
+          "Couldn't load Drop Information. Contact dev please."
+        );
+      });
+  }, [publicKey]);
+
   const clearForm = () => {
     setSolAmount(Number(props.dropInfo.presaleMinSolAmount));
   };
@@ -47,6 +70,7 @@ export const PresaleForm = (props: any) => {
   const onPresale = async (e: any) => {
     e.preventDefault();
     let toastId: Id = "";
+    setIsSending(true);
 
     if (!publicKey) {
       sendErrorNotification("Please, connect the wallet first");
@@ -61,8 +85,12 @@ export const PresaleForm = (props: any) => {
       return;
     }
 
+    if (solAmount + solEnrolled > props.dropInfo.presaleMaxSolAmount) {
+      sendErrorNotification("You can't enroll more than max amount");
+      return;
+    }
+
     try {
-      setIsSending(true);
       const tx = new Transaction().add(
         SystemProgram.transfer({
           fromPubkey: publicKey,
@@ -86,7 +114,7 @@ export const PresaleForm = (props: any) => {
       );
 
       axios
-        .post(process.env.REACT_APP_SERVER + "/drop/addUpdatePresaleUser", {
+        .post(process.env.REACT_APP_SERVER + "/drop/presale/add", {
           user: {
             wallet: publicKey,
             solAmount: solAmount,
@@ -149,8 +177,8 @@ export const PresaleForm = (props: any) => {
   };
 
   return (
-    <div className="flex flex-col gap-2 w-full h-full justify-between">
-      <p className="text-lg font-bold text-center">Sign up for presale</p>
+    <div className="flex flex-col gap-2 w-full h-full justify-between text-white">
+      <p className="text-2xl font-bold text-center">Sign up for presale</p>
       <form className="">
         <div className="relative flex mb-4 justify-between w-full flex-col gap-2 items-center">
           <WalletMultiButton />
@@ -159,31 +187,35 @@ export const PresaleForm = (props: any) => {
           </p>
         </div>
         <div className="relative">
-          <p>Solana Amount</p>
+          <p className="text-lg">Solana Wallet</p>
           <input
+            disabled={isLoading}
             value={solAmount}
             onChange={onSolAmountChange}
             type="number"
             id="sol-amount"
-            className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white"
+            className={
+              "block w-full p-4 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937] " +
+              (isLoading ? "cursor-not-allowed blur-[1px]" : "")
+            }
             placeholder={props.dropInfo.presaleMinSolAmount}
             required
           />
-          <p className="mb-4 text-xs text-slate-400">
-            Min: {props.dropInfo.presaleMinSolAmount} SOL, Max:{" "}
+          <p className="mb-4 mt-2 text-slate-400">
+            Min: {props.dropInfo.presaleMinSolAmount}, Max:{" "}
             {props.dropInfo.presaleMaxSolAmount} SOL
           </p>
         </div>
         <div className="w-full">
           <button
-            disabled={isSending}
+            disabled={isLoading || isSending}
             onClick={onPresale}
             type="submit"
             className={
-              "text-white w-full bg-[#1f2937]  focus:outline-none font-medium rounded-lg px-6 py-4 transition-transform duration-75 ease-in-out" +
-              (isSending
-                ? " opacity-70 cursor-not-allowed"
-                : "hover:bg-[#1f2937dc] focus:ring-2 focus:ring-[#1f293785] hover:scale-[1.02]")
+              "text-white w-full bg-[#1f2937]  focus:outline-none font-medium rounded-lg px-6 py-4 transition-transform duration-75 ease-in-out " +
+              (isSending || isLoading
+                ? "opacity-50 cursor-not-allowed"
+                : "hover:bg-[#2f4560dc] focus:ring-2 focus:ring-[#1f293785] hover:scale-[1.02]")
             }
           >
             Buy Presale

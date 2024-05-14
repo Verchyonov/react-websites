@@ -1,11 +1,12 @@
 import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   FormattedMessages,
   sendErrorNotification,
   sendSuccessNotification,
   sendWarningNotification,
 } from "../utils";
+import SearchIcon from "@mui/icons-material/Search";
 
 export const SERVER = process.env.SERVER;
 
@@ -26,20 +27,26 @@ export const CheckElegibility = () => {
     }
 
     axios
-      .post(process.env.REACT_APP_SERVER + "/drop/checkUserByWallet", {
+      .post(process.env.REACT_APP_SERVER + "/drop/check", {
         wallet: walletToSend,
       })
       .then((response) => {
-        const { isValidWallet, isAirdropEnrolled, errorMsgs } = response.data;
-        if (isValidWallet && isAirdropEnrolled) {
+        const {
+          isValidWallet,
+          isPresaleEnrolled,
+          isAirdropEnrolled,
+          errorMsgs,
+          presaleAmount,
+        } = response.data;
+        if (isValidWallet && (isPresaleEnrolled || isAirdropEnrolled)) {
           let msgs: string[] = [];
           if (isAirdropEnrolled) msgs.push(`Airdrop enrolled`);
+          if (isPresaleEnrolled)
+            msgs.push(`Presale enrolled with ${presaleAmount.toFixed(2)} SOL`);
           let formattedMessages = <FormattedMessages messages={msgs} />;
           sendSuccessNotification(formattedMessages);
         } else {
-          let formattedMessages = (
-            <FormattedMessages messages={errorMsgs.slice(0, 1)} />
-          );
+          let formattedMessages = <FormattedMessages messages={errorMsgs} />;
           sendWarningNotification(formattedMessages);
         }
       })
@@ -50,39 +57,27 @@ export const CheckElegibility = () => {
 
   return (
     <div className="flex flex-col gap-2 w-full justify-center mt-4 p-4 md:p-10">
-      <p className="text-2xl font-bold text-center">Check account enrollment</p>
+      <p className="text-2xl font-bold text-center text-white">
+        Check account enrollment
+      </p>
       <form onSubmit={onCheck}>
         <label
           htmlFor="default-search"
-          className="mb-2 text-sm font-medium text-black sr-only dark:text-white"
+          className="mb-2 text-sm font-medium text-black sr-only"
         >
           Search
         </label>
         <div className="relative">
-          <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg
-              className="w-4 h-4 mt-[20px] text-black dark:text-gray-400"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 20 20"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-              />
-            </svg>
+          <div className="absolute inset-y-0 top-[1.8rem] start-0 flex items-center ps-3 pointer-events-none">
+            <SearchIcon color="action" />
           </div>
-          <p className="text-lg">Solana Wallet</p>
+          <p className="text-lg text-white">Solana Wallet</p>
           <input
             value={wallet}
             onChange={onWalletChange}
             type="text"
             id="solana-check-wallet"
-            className="block w-full p-4 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
+            className="block w-full p-4 ps-10 pe-[6.5rem] lg:pe-0 text-sm text-white border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
             placeholder="G7aCnwX3TEqcsBhwLoeYxhYnzHWPpjPbnodk6cVZkw5A"
             required
           />

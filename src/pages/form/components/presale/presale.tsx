@@ -1,5 +1,5 @@
 import { RPC_ENDPOINT } from "../../../../common/urls";
-import { FC, useMemo } from "react";
+import React, { FC, useMemo } from "react";
 import { PresaleForm } from "./presale-form";
 import {
   ConnectionProvider,

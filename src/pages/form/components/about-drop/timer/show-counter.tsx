@@ -1,8 +1,9 @@
 import DateTimeDisplay from "./date-time-display";
+import React from "react";
 
 const ShowCounter = (props: any) => {
   return (
-    <div className="flex flex-row items-center justify-center px-4 py-3 md:px-8 md:py-6 border-2 rounded-xl border-[#ebebeb]">
+    <>
       <DateTimeDisplay
         value={props.days}
         type={props.days > 1 || props.days === 0 ? "Days" : "Day"}
@@ -20,7 +21,7 @@ const ShowCounter = (props: any) => {
         type={props.minutes > 1 || props.minutes === 0 ? "Mins" : "Min"}
         isDanger={false}
       />
-    </div>
+    </>
   );
 };
 

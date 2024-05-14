@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AboutDrop } from "./components/about-drop/about-drop";
 import { CheckElegibility } from "./components/check-elegibility";
 import { SignUpUpdate } from "./components/airdrop/signup-update";
@@ -15,8 +15,8 @@ export const Form = () => {
     numberOfAirdropUsers: 0,
     numberOfPresaleUsers: 0,
     deadline: 0,
-    toXFollow: "",
-    toTGFollow: "",
+    toXFollow: "letto_dev",
+    toTGFollow: "letto_dev",
     presaleMaxSolAmount: 5.0,
     presaleMinSolAmount: 0.1,
     presaleSolAmount: 0,
@@ -29,12 +29,14 @@ export const Form = () => {
   });
 
   let [days, hours, minutes, seconds] = useCountdown(dropInfo.deadline);
+  let [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios
-      .get(process.env.REACT_APP_SERVER + "/drop/getDropInfo")
+      .get(process.env.REACT_APP_SERVER + "/drop/details")
       .then((response) => {
         setDropInfo(response.data as DropInfo);
+        setTimeout(() => setIsLoading(false), 1000);
       })
       .catch((error) => {
         sendErrorNotification(
@@ -51,7 +53,7 @@ export const Form = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-3 py-12 px-2 md:px-20 relative">
+      <div className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative bg-black">
         <div className="w-full lg:w-[90%] justify-self-center self-center z-50">
           <AboutDrop
             dropInfo={dropInfo}
@@ -59,6 +61,7 @@ export const Form = () => {
             hours={hours}
             minutes={minutes}
             seconds={seconds}
+            isLoading={isLoading}
           />
         </div>
         <div className="w-full lg:w-1/2 justify-self-center self-center z-50">
@@ -74,7 +77,7 @@ export const Form = () => {
             <div
               className={
                 "w-full " +
-                (blured || blurredAirdrop
+                (blured || blurredAirdrop || isLoading
                   ? "blur-sm select-none pointer-events-none"
                   : "")
               }
@@ -93,8 +96,8 @@ export const Form = () => {
             )}
             <div
               className={
-                "w-full " +
-                (blured || blurredPresale
+                "w-full h-full " +
+                (blured || blurredPresale || isLoading
                   ? "blur-sm select-none pointer-events-none"
                   : "")
               }
@@ -105,7 +108,7 @@ export const Form = () => {
         </div>
         <div className="w-full md:w-[40%] p-4 justify-self-center self-center"></div>
         <div className="w-full flex flex-col justify-center items-center">
-          <h1 className="p-4 text-xl md:text-3xl font-bold text-center">
+          <h1 className="p-2 lg:p-4 text-xl md:text-3xl font-bold text-center text-white">
             The Drops are going to be performed shortly after the Raydium
             launch. Please be patient, it takes time to perform transactions.
             Thanks for the enrollment.

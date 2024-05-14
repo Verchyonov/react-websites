@@ -1,5 +1,9 @@
 import { Bounce, toast } from "react-toastify";
 import CircularProgress from "@mui/material/CircularProgress";
+import { PublicKey } from "@solana/web3.js";
+import CloseIcon from "@mui/icons-material/Close";
+import DoneIcon from "@mui/icons-material/Done";
+import React from "react";
 
 export const FormattedMessages = ({ messages }: { messages: string[] }) => (
   <div>
@@ -10,6 +14,40 @@ export const FormattedMessages = ({ messages }: { messages: string[] }) => (
     ))}
   </div>
 );
+
+export const checkWallet = (wallet: string) => {
+  let validWallet = true;
+  try {
+    new PublicKey(wallet);
+  } catch (e) {
+    validWallet = false;
+  }
+  return wallet.length >= 34 && wallet.length <= 44 && validWallet;
+};
+
+export const checkXUsername = (username: string) => {
+  return /^@?[0-9a-zA-Z_]{1,15}$/.test(username);
+};
+
+export const checkXPostLink = (link: string, username: string) => {
+  const regex =
+    /^(https?:\/\/)?(www\.)?(twitter\.com|x\.com)\/([a-zA-Z0-9_]{1,15})\/status\/([0-9]+)(\?.*)?$/;
+  return regex.test(link) && link.includes(username);
+};
+
+export const sanitizeWallet = (wallet: string) => {
+  return wallet.replace(/\s/g, "");
+};
+
+export const sanitizeXUsername = (username: string) => {
+  return username.replace(/\s/g, "").replace(/^@/, "");
+};
+
+export const sanitizeXPostLink = (link: string) => {
+  if (!link) return "";
+  const url = new URL(link.replace(/\s/g, ""));
+  return url.origin + url.pathname;
+};
 
 export interface DropInfo {
   numberOfMaxAirdropUsers: number;
@@ -161,5 +199,37 @@ export function TransactionToast({
         </div>
       )}
     </div>
+  );
+}
+
+export function InputStatus({
+  isLoading,
+  isValid,
+  style,
+}: {
+  isLoading: boolean;
+  isValid: boolean;
+  style: string;
+}) {
+  return (
+    <>
+      {isLoading ? (
+        <div className={"absolute font-medium px-4 py-1 " + style}>
+          <CircularProgress />
+        </div>
+      ) : !isValid ? (
+        <div className={"absolute text-red-500 px-4 py-1 " + style}>
+          <CloseIcon />
+        </div>
+      ) : isValid ? (
+        <div
+          className={
+            "absolute flex items-center text-green-500 px-4 py-1 " + style
+          }
+        >
+          <DoneIcon />
+        </div>
+      ) : null}
+    </>
   );
 }

@@ -5,7 +5,7 @@ const DateTimeDisplay = (props: any) => {
     <div
       className={
         "px-3 flex items-center flex-row gap-1 font-bold " +
-        (props.isDanger ? "text-red-600" : "text-black")
+        (props.isDanger ? "text-red-600" : "text-white")
       }
     >
       <p className="text-xl md:text-2xl">{props.value}</p>
