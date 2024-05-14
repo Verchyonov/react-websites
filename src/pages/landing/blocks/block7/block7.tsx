@@ -99,17 +99,12 @@ export const Block7 = () => {
           <div className="w-full md:w-8/12 flex p-4 flex-col gap-4 text-white items-center justify-around">
             <div className="flex flex-col gap-16">
               <TextReg
-                customClass={"text-[#00BCF8]"}
+                customClass={"text-[#00BCF8] text-2xl"}
                 text={
-                  "Lorem ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun"
+                  "All these metrics can be verified by checking the history of the developer's channel. For the launch of the 10th coin, we have decided to significantly increase the initial developer buy and add numerous scripts to combat bots and large purchases in the early stages."
                 }
               />
-              <TextReg
-                customClass={"text-[#00BCF8]"}
-                text={
-                  "Lorem ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun"
-                }
-              />
+
               <div className="flex w-full justify-center">
                 <div className="flex flex-col justify-center gap-4 md:gap-16 md:flex-row">
                   <img
