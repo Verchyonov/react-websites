@@ -9,7 +9,7 @@ const DateTimeDisplay = (props: any) => {
       }
     >
       <p className="text-xl md:text-2xl">{props.value}</p>
-      <span className="uppercase text-xl md:text-2xl">{props.type}</span>
+      <span className="uppercase md:text-2xl">{props.type}</span>
     </div>
   );
 };

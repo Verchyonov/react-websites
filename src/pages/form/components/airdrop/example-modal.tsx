@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -6,8 +6,6 @@ import Fade from "@mui/material/Fade";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { Tweet } from "react-tweet";
-
-import { useMemo, useState } from "react";
 
 const style = {
   position: "absolute" as "absolute",
@@ -25,14 +23,6 @@ const style = {
 };
 
 export const ExampleModal = (props: any) => {
-  const TweetEmbed = useMemo(() => {
-    return (
-      <div className="w-full light updated-dark">
-        {/* <Tweet id={"1789873207370981385"} /> */}
-      </div>
-    );
-  }, []);
-
   const [open, setOpen] = useState(false);
   const handleOpen = (e: any) => {
     e.preventDefault();
@@ -77,7 +67,9 @@ export const ExampleModal = (props: any) => {
               </IconButton>
             </Box>
             <h2 className="text-2xl font-bold text-center">Example</h2>
-            {TweetEmbed}
+            <div className="w-full light updated-dark">
+              {/* <Tweet id={"1789873207370981385"} /> */}
+            </div>
             <h3 className="lg:text-lg font-bold text-center mb-2">
               Feel free to add any image or text
             </h3>

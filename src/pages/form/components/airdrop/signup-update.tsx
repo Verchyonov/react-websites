@@ -274,8 +274,10 @@ export const SignUpUpdate = (props: any) => {
           </div>
           <p className="mb-4 mt-2 text-slate-400">
             Your post must include tag to our account @
-            {props.dropInfo.toXFollow}, our ticker ${props.dropInfo.tokenTicker}{" "}
-            and some related image.
+            <span className="font-bold">{props.dropInfo.toXFollow}</span>, our
+            ticker{" "}
+            <span className="font-bold">${props.dropInfo.tokenTicker}</span> and
+            some related image.
           </p>
         </div>
 

@@ -18,7 +18,7 @@ export const AboutDrop = (props: any) => {
           <CircularProgress size={32} />
         )}
       </div>
-      <div className="flex flex-col w-full lg:w-[33%] items-center lg:items-end justify-center px-1 py-2 md:px-8 lg:py-4 border-2 rounded-xl border-[#ebebeb] text-white text-lg">
+      <div className="flex flex-col w-full lg:w-[33%] items-center lg:items-end justify-center px-1 py-2 md:px-8 lg:py-4 border-2 rounded-xl border-[#ebebeb] text-white text-sm md:text-lg">
         {!props.isLoading ? (
           <>
             <h1 className="font-bold text-center md:text-right">

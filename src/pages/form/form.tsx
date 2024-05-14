@@ -7,6 +7,7 @@ import axios from "axios";
 import { sendErrorNotification, DropInfo } from "./utils";
 import { FooterSection } from "../../common/footer";
 import { Presale } from "./components/presale/presale";
+import { AppearWrapper } from "../../common/appear-wrapper";
 
 export const Form = () => {
   const [dropInfo, setDropInfo] = useState<DropInfo>({
@@ -52,7 +53,7 @@ export const Form = () => {
     dropInfo.numberOfPresaleUsers >= dropInfo.numberOfMaxPresaleUsers;
 
   return (
-    <>
+    <AppearWrapper>
       <div className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative bg-black">
         <div className="w-full lg:w-[90%] justify-self-center self-center z-50">
           <AboutDrop
@@ -116,7 +117,7 @@ export const Form = () => {
         </div>
       </div>
       <FooterSection />
-    </>
+    </AppearWrapper>
   );
 };
 
