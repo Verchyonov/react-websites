@@ -1,7 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { url } = require("inspector");
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
-const { optimize } = require("webpack");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -12,7 +11,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: "./src/index.html",
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "public", to: "" }],
     }),
   ],
   resolve: {
