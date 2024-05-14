@@ -28,7 +28,7 @@ export const Block2 = () => {
               text={"Tarot Of Meme"}
             />
             <TextReg
-              customClass={"text-[#00BCF8]"}
+              customClass={"text-[#00BCF8] text-2xl"}
               text={
                 "  is a deck of cards with meme pictures used for making crypto predictions."
               }
@@ -36,7 +36,7 @@ export const Block2 = () => {
           </div>
           <div className="flex flex-col gap-8 my-auto">
             <TextReg
-              customClass={"text-[#00BCF8]"}
+              customClass={"text-[#00BCF8] text-2xl"}
               text={
                 " Based on the real-life Tarot deck, it’s designed to be more fun and easy to use. The concept is similar to the Book of Meme or Museum of Meme, but unique. Our goal is to create a tool that uses your wallet address or coin CA to make spiritual predictions about other projects or personal funds."
               }
@@ -45,7 +45,7 @@ export const Block2 = () => {
         </div>
         <div className="w-full md:w-6/12 flex p-4 justify-center items-center text-white">
           <img
-            className="md:h-[50vh]"
+            className="md:h-[50vh] text-2xl"
             src="./block2/gnom.webp"
             alt="gendalph"
           />

@@ -30,35 +30,45 @@ export const Block7 = () => {
           }}
           viewport={{ once: true }}
         >
-          <div className="w-full md:w-8/12 flex p-4 flex-col gap-4 text-white items-center justify-center">
+          <div className="w-full md:w-6/12 flex p-4 flex-col gap-4 text-white items-center justify-center">
             <div className="flex flex-col gap-16">
+              <div className="flex flex-col gap-2">
+                <TextReg
+                  customClass={"text-[#00BCF8] text-4xl"}
+                  text={"Developer:"}
+                />
+                <TextReg
+                  customClass={"text-[#00BCF8] text-2xl"}
+                  text={
+                    "Fully developed by Letto Dev Team. This will be the 10th coin released by our team."
+                  }
+                />
+              </div>
               <TextReg
-                customClass={"text-[#00BCF8]"}
+                customClass={"text-[#00BCF8] text-2xl"}
+                text={"- Average ATH market cap of our 9 projects: $670k"}
+              />
+              <TextReg
+                customClass={"text-[#00BCF8] text-2xl"}
+                text={"- Total trading volume: over $17m"}
+              />
+              <TextReg
+                customClass={"text-[#00BCF8] text-2xl"}
+                text={"- Highest market cap: $1.1m"}
+              />
+              <TextReg
+                customClass={"text-[#00BCF8] text-2xl"}
                 text={
-                  "Lorem ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun"
+                  "- Number of subscribers in the developer’s channel: 1,063 subs"
                 }
               />
               <TextReg
-                customClass={"text-[#00BCF8]"}
-                text={
-                  "Lorem ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun"
-                }
-              />
-              <TextReg
-                customClass={"text-[#00BCF8]"}
-                text={
-                  "Lorem ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun"
-                }
-              />
-              <TextReg
-                customClass={"text-[#00BCF8]"}
-                text={
-                  "Lorem ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun"
-                }
+                customClass={"text-[#00BCF8] text-2xl"}
+                text={"- Developer profit: $0"}
               />
             </div>
           </div>
-          <div className="w-full md:w-4/12 flex p-4 justify-center items-center text-white">
+          <div className="w-full md:w-6/12 flex p-4 justify-center items-center text-white">
             <img className="md:h-[50vh]" src="./block7/naked.webp" alt="card" />
           </div>
         </motion.div>
@@ -88,18 +98,6 @@ export const Block7 = () => {
           </div>
           <div className="w-full md:w-8/12 flex p-4 flex-col gap-4 text-white items-center justify-around">
             <div className="flex flex-col gap-16">
-              <TextReg
-                customClass={"text-[#00BCF8]"}
-                text={
-                  "Lorem ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun"
-                }
-              />
-              <TextReg
-                customClass={"text-[#00BCF8]"}
-                text={
-                  "Lorem ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun ipsun"
-                }
-              />
               <TextReg
                 customClass={"text-[#00BCF8]"}
                 text={

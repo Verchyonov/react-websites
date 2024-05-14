@@ -26,9 +26,9 @@ export const Block3 = () => {
             src="./block3/old.gif"
             alt="card"
           />
-          <TextReg customClass={"text-[#00BCF8]"} text={"Stage 1:"} />
+
           <TextReg
-            customClass={"text-[#00BCF8]"}
+            customClass={"text-[#00BCF8] text-2xl"}
             text={
               "Web and social media release Start of marketing Concept promotion"
             }
@@ -36,16 +36,13 @@ export const Block3 = () => {
         </div>
         <div className="flex w-full md:w-3/12 flex-col gap-4 p-4 justify-center align-center">
           <img
-            className="w-full md:w-10/12 rounded-xl"
+            className="w-full md:w-10/12 rounded-xl "
             src="./block3/treasure.webp"
             alt="card"
           />
+
           <TextReg
-            customClass={"text-[#00BCF8] text-center"}
-            text={"Stage 2:"}
-          />
-          <TextReg
-            customClass={"text-[#00BCF8]"}
+            customClass={"text-[#00BCF8] text-2xl"}
             text={
               "Accumulate attention Open airdrop sign-up Project launch on pump.fun"
             }
@@ -57,9 +54,9 @@ export const Block3 = () => {
             src="./block3/hand.gif"
             alt="card"
           />
-          <TextReg customClass={"text-[#00BCF8]"} text={"Stage 3:"} />
+
           <TextReg
-            customClass={"text-[#00BCF8]"}
+            customClass={"text-[#00BCF8] text-2xl"}
             text={
               "Dev burn before Raydium Screener updates Airdrop delivery within an hour after launch"
             }
@@ -71,9 +68,9 @@ export const Block3 = () => {
             src="./block3/tavern.webp"
             alt="card"
           />
-          <TextReg customClass={"text-[#00BCF8]"} text={"Stage 4:"} />
+
           <TextReg
-            customClass={"text-[#00BCF8] text-left"}
+            customClass={"text-[#00BCF8] text-2xl text-left"}
             text={
               "100 SOL + 10% developer buy and burn at 2 million market cap Launch Tarot predictions by coin CA (tool) Marketing to stabilize the coin"
             }
