@@ -66,7 +66,7 @@ We are launching the coin on pump.fun to ensure transparency for the community. 
             />
 
             <TextReg
-              customClass={"text-[#00BCF8] text-left md:mb-0 mb-8"}
+              customClass={"text-[#00BCF8] text-left md:mb-0"}
               text={"• 5% team allocation"}
             />
             <TextReg
@@ -75,10 +75,10 @@ We are launching the coin on pump.fun to ensure transparency for the community. 
             />
           </div>
           <div className="flex w-full justify-center">
-            <div className="flex justify-center flex-col gap-4 md:gap-16 md:flex-row">
+            <div className="flex flex-col gap-4 md:gap-16 md:flex-row">
               <img
                 onClick={onBuy}
-                className=" md:w-4/12 cursor-pointer"
+                className=" md:w-4/12 cursor-pointer rounded-xl"
                 src="./block4/buy.jpg"
                 alt="buy"
               />

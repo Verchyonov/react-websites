@@ -1,3 +1,4 @@
+import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
 import { BUY_LINK } from "../../../../common/urls";
@@ -115,7 +116,7 @@ export const Block7 = () => {
                 <div className="flex flex-col justify-center gap-4 md:gap-16 md:flex-row">
                   <img
                     onClick={onBuy}
-                    className="justify-center cursor-pointer  md:w-4/12"
+                    className="justify-center cursor-pointer  md:w-4/12 rounded-xl"
                     src="./block4/buy.jpg"
                     alt="buy"
                   />

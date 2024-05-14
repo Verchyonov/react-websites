@@ -40,7 +40,10 @@ export const Block3 = () => {
             src="./block3/2.png"
             alt="card"
           />
-          <TextReg customClass={"text-[#00BCF8]"} text={"Stage 2:"} />
+          <TextReg
+            customClass={"text-[#00BCF8] text-center"}
+            text={"Stage 2:"}
+          />
           <TextReg
             customClass={"text-[#00BCF8]"}
             text={

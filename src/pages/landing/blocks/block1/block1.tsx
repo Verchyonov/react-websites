@@ -8,14 +8,14 @@ import { Cards2 } from "../../../game/cards/cards2";
 export const Block1 = () => {
   return (
     <div className="w-full min-h-[100vh] py-20 block1 justify-center items-center flex flex-col relative overflow-hidden blurred-border-bottom">
-      <img
+      {/* <img
         className="absolute top-0 left-0 h-[100vh] z-20 w-48"
         src="./block1/rain.gif"
       />
       <img
         className="absolute top-0 right-0 h-[100vh] z-20 w-48 img-hor"
         src="./block1/rain.gif"
-      />
+      /> */}
 
       <img
         className="absolute top-[-10%] lg:top-[-30%] w-[100vh] img-hor z-40"
