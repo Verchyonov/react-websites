@@ -33,7 +33,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif|webp)$/,
         exclude: /node_modules/,
-        type: "asset/resource",
+        type: "asset/inline",
       },
     ],
   },
