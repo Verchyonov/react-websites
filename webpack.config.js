@@ -4,8 +4,12 @@ const path = require("path");
 
 module.exports = {
   entry: "./src/index.tsx",
+  devServer: {
+    historyApiFallback: true,
+  },
   mode: "development",
   output: {
+    publicPath: "/",
     filename: "bundle.[fullhash].js",
     path: path.resolve(__dirname, "build"),
   },

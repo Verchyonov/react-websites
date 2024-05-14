@@ -16,7 +16,6 @@ export const Block1 = () => {
         className="absolute top-0 right-0 h-[100vh] z-20 w-48 img-hor"
         src="./block1/rain.gif"
       /> */}
-
       <img
         className="absolute top-[-10%] lg:top-[-30%] w-[100vh] img-hor z-40"
         src="./block1/pepe.webp"
