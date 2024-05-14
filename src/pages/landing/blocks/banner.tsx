@@ -16,7 +16,7 @@ export const Banner = (props: any) => {
   return (
     <div
       id={"banner"}
-      className="w-full min-h-screen bg-black flex justify-center items-center"
+      className="w-full min-h-screen bg-[url(~/public/block1/bg.png)] bg-black flex justify-center items-center"
     >
       <div className="flex flex-col items-center gap-12 w-11/12 min-h-screen p-16 md:w-6/12">
         <img src="./tarot.png" />
