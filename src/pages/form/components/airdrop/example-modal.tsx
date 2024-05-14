@@ -27,22 +27,28 @@ export const ExampleModal = (props: any) => {
   const TweetEmbed = useMemo(() => {
     return (
       <div className="w-full light updated-dark">
-        <Tweet id={"1789800076900024353"} />
+        <Tweet id={"1789873207370981385"} />
       </div>
     );
   }, []);
 
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleOpen = (e: any) => {
+    e.preventDefault();
+    setOpen(true);
+  };
+  const handleClose = (e: any) => {
+    e.preventDefault();
+    setOpen(false);
+  };
 
   return (
-    <div>
+    <>
       <button
-        className="text-white bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-2 transition-transform duration-75 ease-in-out"
+        className="text-white text-center text-xs lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-4 transition-transform duration-75 ease-in-out"
         onClick={handleOpen}
       >
-        Example post
+        Example
       </button>
       <Modal
         keepMounted
@@ -71,19 +77,12 @@ export const ExampleModal = (props: any) => {
             </Box>
             <h2 className="text-2xl font-bold text-center">Example</h2>
             {TweetEmbed}
-            <h3 className="text-lg font-bold text-center mb-2">
+            <h3 className="lg:text-lg font-bold text-center mb-2">
               Feel free to add any image or text
             </h3>
-            <a
-              href="/example-image.jpg"
-              download="x_image"
-              className="text-white bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-3 py-2 transition-transform duration-75 ease-in-out"
-            >
-              Download Example Image
-            </a>
           </Box>
         </Fade>
       </Modal>
-    </div>
+    </>
   );
 };

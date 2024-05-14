@@ -2,7 +2,7 @@ import DateTimeDisplay from "./date-time-display";
 
 const ShowCounter = (props: any) => {
   return (
-    <div className="flex flex-row items-center justify-center px-8 py-6 border-2 rounded-xl border-[#ebebeb]">
+    <div className="flex flex-row items-center justify-center px-4 py-3 md:px-8 md:py-6 border-2 rounded-xl border-[#ebebeb]">
       <DateTimeDisplay
         value={props.days}
         type={props.days > 1 || props.days === 0 ? "Days" : "Day"}

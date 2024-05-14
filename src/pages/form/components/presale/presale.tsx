@@ -25,12 +25,7 @@ export const Presale: FC<PresaleProps> = (props: any) => {
       >
         <WalletProvider wallets={wallets} autoConnect>
           <WalletModalProvider>
-            <PresaleForm
-              maxSolAmount={props.dropInfo.maxSolAmount}
-              minSolAmount={props.dropInfo.minSolAmount}
-              dropPubkey={props.dropInfo.dropPubkey}
-              presaleTokenAmount={props.dropInfo.presaleTokenAmount}
-            />
+            <PresaleForm dropInfo={props.dropInfo} />
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>

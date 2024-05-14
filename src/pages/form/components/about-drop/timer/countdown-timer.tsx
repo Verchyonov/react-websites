@@ -7,13 +7,7 @@ const CountdownTimer = (props: any) => {
   if (days + hours + minutes + seconds <= 0) {
     return <ExpiredNotice />;
   } else {
-    return (
-      <ShowCounter
-        days={days}
-        hours={hours}
-        minutes={minutes}
-      />
-    );
+    return <ShowCounter days={days} hours={hours} minutes={minutes} />;
   }
 };
 

@@ -30,22 +30,16 @@ export const CheckElegibility = () => {
         wallet: walletToSend,
       })
       .then((response) => {
-        const {
-          isValidWallet,
-          isPresaleEnrolled,
-          isAirdropEnrolled,
-          errorMsgs,
-          presaleAmount,
-        } = response.data;
-        if (isValidWallet && (isPresaleEnrolled || isAirdropEnrolled)) {
+        const { isValidWallet, isAirdropEnrolled, errorMsgs } = response.data;
+        if (isValidWallet && isAirdropEnrolled) {
           let msgs: string[] = [];
           if (isAirdropEnrolled) msgs.push(`Airdrop enrolled`);
-          if (isPresaleEnrolled)
-            msgs.push(`Presale enrolled with ${presaleAmount.toFixed(2)} SOL`);
           let formattedMessages = <FormattedMessages messages={msgs} />;
           sendSuccessNotification(formattedMessages);
         } else {
-          let formattedMessages = <FormattedMessages messages={errorMsgs} />;
+          let formattedMessages = (
+            <FormattedMessages messages={errorMsgs.slice(0, 1)} />
+          );
           sendWarningNotification(formattedMessages);
         }
       })
@@ -55,8 +49,8 @@ export const CheckElegibility = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2 w-full justify-center">
-      <p className="text-lg font-bold text-center">Check account enrollment</p>
+    <div className="flex flex-col gap-2 w-full justify-center mt-4 p-4 md:p-10">
+      <p className="text-2xl font-bold text-center">Check account enrollment</p>
       <form onSubmit={onCheck}>
         <label
           htmlFor="default-search"
@@ -82,13 +76,13 @@ export const CheckElegibility = () => {
               />
             </svg>
           </div>
-          <p className="">Solana Wallet</p>
+          <p className="text-lg">Solana Wallet</p>
           <input
             value={wallet}
             onChange={onWalletChange}
             type="text"
             id="solana-check-wallet"
-            className="pe-[100px] block w-full p-4 mb-8 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
+            className="block w-full p-4 ps-10 text-sm text-black border border-black rounded-lg bg-white focus:ring-[#1f2937] focus:border-[#1f2937]"
             placeholder="G7aCnwX3TEqcsBhwLoeYxhYnzHWPpjPbnodk6cVZkw5A"
             required
           />

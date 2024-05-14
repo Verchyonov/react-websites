@@ -5,7 +5,6 @@ import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import {
   TransactionToast,
   sendErrorNotification,
-  sendSuccessNotification,
   sendTxNotification,
   sendWarningNotification,
 } from "../../utils";
@@ -23,6 +22,7 @@ export const PresaleForm = (props: any) => {
   useCompensateScrollbar();
   const [solAmount, setSolAmount] = useState<number>(0.1);
   const [solBalance, setSolBalance] = useState(0.0);
+  const [isSending, setIsSending] = useState(true);
 
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
@@ -37,7 +37,7 @@ export const PresaleForm = (props: any) => {
   }, [publicKey, connection, sendTransaction]);
 
   const clearForm = () => {
-    setSolAmount(Number(props.minSolAmount));
+    setSolAmount(Number(props.dropInfo.presaleMinSolAmount));
   };
 
   const onSolAmountChange = (e: any) => {
@@ -53,16 +53,20 @@ export const PresaleForm = (props: any) => {
       return;
     }
 
-    if (solAmount < props.minSolAmount || solAmount > props.maxSolAmount) {
+    if (
+      solAmount < props.dropInfo.presaleMinSolAmount ||
+      solAmount > props.dropInfo.presaleMaxSolAmount
+    ) {
       sendErrorNotification("Wrong amount of SOL");
       return;
     }
 
     try {
+      setIsSending(true);
       const tx = new Transaction().add(
         SystemProgram.transfer({
           fromPubkey: publicKey,
-          toPubkey: new PublicKey(props.dropPubkey),
+          toPubkey: new PublicKey(props.dropInfo.dropPublicKey),
           lamports: solAmount * LAMPORTS_PER_SOL,
         })
       );
@@ -81,13 +85,6 @@ export const PresaleForm = (props: any) => {
         "processed"
       );
 
-      toast.update(toastId, {
-        render: <TransactionToast status="confirmed" signature={signature} />,
-        autoClose: 7000,
-        closeOnClick: true,
-        draggable: true,
-      });
-
       axios
         .post(process.env.REACT_APP_SERVER + "/drop/addUpdatePresaleUser", {
           user: {
@@ -97,24 +94,45 @@ export const PresaleForm = (props: any) => {
           },
         })
         .then((response) => {
-          if (response.data.errorMsg) {
-            sendWarningNotification(response.data.errorMsg);
-            return;
-          }
           if (response.data.isCreated) {
-            sendSuccessNotification("You signed!");
+            toast.update(toastId, {
+              render: (
+                <TransactionToast
+                  status="confirmed"
+                  signature={signature}
+                  text="You've enrolled"
+                />
+              ),
+              autoClose: 7000,
+              closeOnClick: true,
+              draggable: true,
+            });
           } else if (response.data.isUpdated) {
-            sendSuccessNotification("Record updated!");
-          } else {
-            sendErrorNotification("Unhandled sh*t happened. Let dev know!");
+            toast.update(toastId, {
+              render: (
+                <TransactionToast
+                  status="confirmed"
+                  signature={signature}
+                  text="Record updated"
+                />
+              ),
+              autoClose: 7000,
+              closeOnClick: true,
+              draggable: true,
+            });
           }
           clearForm();
         })
         .catch((error) => {
+          toast.dismiss(toastId);
           if (error.response.data.errorMsg) {
             sendWarningNotification(error.response.data.errorMsg);
+            return;
           }
-          throw error;
+          sendErrorNotification("Unhandled error happened. Let dev know!");
+        })
+        .finally(() => {
+          setIsSending(false);
         });
     } catch (error) {
       if (
@@ -126,6 +144,7 @@ export const PresaleForm = (props: any) => {
         toast.dismiss(toastId);
         sendErrorNotification("Unhandled error happened. Let dev know!.");
       }
+      setIsSending(false);
     }
   };
 
@@ -147,31 +166,35 @@ export const PresaleForm = (props: any) => {
             type="number"
             id="sol-amount"
             className="block w-full p-4 text-sm text-black border border-black rounded-lg bg-white"
-            placeholder={props.minSolAmount}
+            placeholder={props.dropInfo.presaleMinSolAmount}
             required
           />
           <p className="mb-4 text-xs text-slate-400">
-            Min: {props.minSolAmount} SOL, Max: {props.maxSolAmount} SOL
+            Min: {props.dropInfo.presaleMinSolAmount} SOL, Max:{" "}
+            {props.dropInfo.presaleMaxSolAmount} SOL
           </p>
         </div>
         <div className="w-full">
           <button
+            disabled={isSending}
             onClick={onPresale}
             type="submit"
-            className="text-white w-full bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:ring-[#1f293785] hover:scale-[1.02] focus:outline-none font-medium rounded-lg px-6 py-4 transition-transform duration-75 ease-in-out"
+            className={
+              "text-white w-full bg-[#1f2937]  focus:outline-none font-medium rounded-lg px-6 py-4 transition-transform duration-75 ease-in-out" +
+              (isSending
+                ? " opacity-70 cursor-not-allowed"
+                : "hover:bg-[#1f2937dc] focus:ring-2 focus:ring-[#1f293785] hover:scale-[1.02]")
+            }
           >
             Buy Presale
           </button>
         </div>
         <p className="text-center mt-4">
           <span className="font-bold uppercase">
-            {props.presaleTokenAmount / 10 ** 6} million tokens
-          </span>
-          will be distributed among {props.maxPresaleUsers} people depending on
-          the amount of SOL sent. <br />
-          <span className="font-bold uppercase">
-            Use a devnet wallet to test the presale
-          </span>
+            {props.dropInfo.presaleTokenAmount}% of tokens
+          </span>{" "}
+          from the Dev Buy will be will be distributed among people depending on
+          the amount of SOL sent.
         </p>
       </form>
     </div>

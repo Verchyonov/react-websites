@@ -24,8 +24,10 @@ export interface DropInfo {
   presaleSolAmount: number;
   presaleTokenAmount: number;
   airdropTokenAmount: number;
-  tockenTicker: string;
+  tokenTicker: string;
   dropPublicKey: string;
+  xFollowers: number;
+  xAge: number;
 }
 
 export const sendSuccessNotification = (text: string | JSX.Element) => {
@@ -88,17 +90,20 @@ export const sendTxNotification = (
   status: string | undefined,
   signature: string | undefined
 ) => {
-  return toast(<TransactionToast status={status} signature={signature} />, {
-    position: "top-right",
-    hideProgressBar: false,
-    pauseOnHover: true,
-    autoClose: false,
-    closeOnClick: false,
-    draggable: false,
-    progress: undefined,
-    theme: "dark",
-    transition: Bounce,
-  });
+  return toast(
+    <TransactionToast status={status} signature={signature} text={undefined} />,
+    {
+      position: "top-right",
+      hideProgressBar: false,
+      pauseOnHover: true,
+      autoClose: false,
+      closeOnClick: false,
+      draggable: false,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    }
+  );
 };
 
 export function EnrollToast({
@@ -128,9 +133,11 @@ export function EnrollToast({
 export function TransactionToast({
   status,
   signature,
+  text,
 }: {
   status: string | undefined;
   signature: string | undefined;
+  text: string | undefined;
 }) {
   const getTxUrl = () => `https://solscan.io/tx/${signature}`;
 
@@ -143,8 +150,8 @@ export function TransactionToast({
         </div>
       )}
       {status === "confirmed" && (
-        <div className="flex flex-row gap-4 justify-start items-center">
-          <p>Transaction successful!</p>
+        <div className="flex flex-row gap-4 justify-between items-center">
+          <p>{text ? text : "Success"}</p>
           <button
             className="px-2 py-1 rounded-lg border-2 border-white"
             onClick={() => window.open(getTxUrl(), "_blank")}

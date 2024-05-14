@@ -5,12 +5,12 @@ import { SignUpUpdate } from "./components/airdrop/signup-update";
 import { useCountdown } from "../../hooks/useCountdownHook";
 import axios from "axios";
 import { sendErrorNotification, DropInfo } from "./utils";
-import { Presale } from "./components/presale/presale";
 import { FooterSection } from "../../common/footer";
+import { Presale } from "./components/presale/presale";
 
 export const Form = () => {
   const [dropInfo, setDropInfo] = useState<DropInfo>({
-    numberOfMaxAirdropUsers: 1000,
+    numberOfMaxAirdropUsers: 75,
     numberOfMaxPresaleUsers: 500,
     numberOfAirdropUsers: 0,
     numberOfPresaleUsers: 0,
@@ -20,10 +20,12 @@ export const Form = () => {
     presaleMaxSolAmount: 5.0,
     presaleMinSolAmount: 0.1,
     presaleSolAmount: 0,
-    presaleTokenAmount: 75000000,
-    airdropTokenAmount: 75000000,
-    tockenTicker: "SOL",
+    presaleTokenAmount: 10,
+    airdropTokenAmount: 10,
+    tokenTicker: "SOL",
     dropPublicKey: "",
+    xFollowers: 30,
+    xAge: 30,
   });
 
   let [days, hours, minutes, seconds] = useCountdown(dropInfo.deadline);
@@ -49,8 +51,8 @@ export const Form = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-3 py-12 px-2 md:px-20">
-        <div className="w-full justify-self-center self-center">
+      <div className="flex flex-col gap-3 py-12 px-2 md:px-20 relative">
+        <div className="w-full lg:w-[90%] justify-self-center self-center z-50">
           <AboutDrop
             dropInfo={dropInfo}
             days={days}
@@ -59,7 +61,7 @@ export const Form = () => {
             seconds={seconds}
           />
         </div>
-        <div className="w-full md:w-[40%] p-4 justify-self-center self-center">
+        <div className="w-full lg:w-1/2 justify-self-center self-center z-50">
           <CheckElegibility />
         </div>
         <div className="flex flex-col md:flex-row gap-8 p-4 justify-center items-center">
@@ -101,10 +103,11 @@ export const Form = () => {
             </div>
           </div>
         </div>
+        <div className="w-full md:w-[40%] p-4 justify-self-center self-center"></div>
         <div className="w-full flex flex-col justify-center items-center">
           <h1 className="p-4 text-xl md:text-3xl font-bold text-center">
             The Drops are going to be performed shortly after the Raydium
-            launch. Please be patiente, it takes time to perform transactions.
+            launch. Please be patient, it takes time to perform transactions.
             Thanks for the enrollment.
           </h1>
         </div>
@@ -113,3 +116,5 @@ export const Form = () => {
     </>
   );
 };
+
+export default Form;
