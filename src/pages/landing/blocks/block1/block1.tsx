@@ -22,11 +22,11 @@ export const Block1 = () => {
       />
       <img
         src="./block1/oblako.png"
-        className="absolute top-[0] left-[-10vh] md:z-50  z-20 w-[40vh]"
+        className="absolute top-[0] left-[-10vh] md:z-50  z-20 w-[30vh] xl:w-[40vh]"
       />
       <img
         src="./block1/oblakol.png"
-        className="absolute top-[0] right-[-10vh] md:z-50 z-20 w-[40vh]"
+        className="absolute top-[0] right-[-10vh] md:z-50 z-20 w-[30vh] xl:w-[40vh]"
       />
       <div
         className={
@@ -49,7 +49,7 @@ export const Block1 = () => {
           <CopyCa />
           <Links />
           <TextReg
-            customClass={"mt-4 text-3xl text-center font-bold"}
+            customClass={"mt-4 text-3xl text-center font-bold text-black"}
             text={"Tarot Of Meme $TOME"}
           />
 

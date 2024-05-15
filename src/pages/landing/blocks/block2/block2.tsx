@@ -4,7 +4,7 @@ import { AppearWrapper } from "../../../../common/appear-wrapper";
 
 export const Block2 = () => {
   return (
-    <div className="w-full min-h-screen block2 justify-center items-center flex flex-col relative blurred-border-top">
+    <div className="w-full min-h-screen block2 justify-center items-center flex flex-col relative">
       <AppearWrapper
         customClass={
           "w-full xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4"
@@ -15,13 +15,13 @@ export const Block2 = () => {
             <div className="flex flex-col justify-center align-center">
               <TextReg
                 customClass={
-                  "text-[#00BCF8] text-5xl xl:text-left text-center mb-4 flex justify-center"
+                  "text-5xl xl:text-left text-center mb-4 flex justify-center"
                 }
                 text={"Tarot Of Meme"}
               />
             </div>
             <TextReg
-              customClass={"text-[#00BCF8] text-3xl text-center"}
+              customClass={" text-3xl text-center"}
               text={
                 "Is a deck of cards with meme pictures used for making crypto predictions."
               }
@@ -29,7 +29,7 @@ export const Block2 = () => {
           </div>
           <div className="flex flex-col gap-8 ">
             <TextReg
-              customClass={"text-[#00BCF8] text-3xl text-center"}
+              customClass={"text-3xl text-center"}
               text={
                 "Based on the real-life Tarot deck, it’s designed to be more fun and easy to use. The concept is similar to the Book of Meme or Museum of Meme, but unique. Our goal is to create a tool that uses your wallet address or coin CA to make spiritual predictions about other projects or personal funds."
               }

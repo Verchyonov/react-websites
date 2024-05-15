@@ -24,13 +24,11 @@ export const Block5 = () => {
           <div className="flex flex-col justify-center">
             <div className="flex flex-col w-full">
               <TextReg
-                customClass={
-                  "text-[#00BCF8] text-3xl md:text-5xl text-center  xl:mb-4 "
-                }
+                customClass={"text-3xl md:text-5xl text-center  xl:mb-4 "}
                 text={"Developer:"}
               />
               <TextReg
-                customClass={"text-[#00BCF8] text-center text-3xl"}
+                customClass={"text-center text-3xl"}
                 text={
                   "Fully developed by Letto Dev Team. This will be the 10th coin released by our team."
                 }
@@ -41,25 +39,25 @@ export const Block5 = () => {
             <div className="w-full md:w-6/12 p-4 flex flex-col gap-8 text-white items-center justify-center text-xl xl:text-3xl">
               <div className="flex flex-col gap-8">
                 <TextReg
-                  customClass={"text-[#00BCF8] text-center xl:text-left"}
+                  customClass={"text-center xl:text-left"}
                   text={"• Average ATH market cap of our 9 projects: $670k"}
                 />
                 <TextReg
-                  customClass={"text-[#00BCF8] text-center xl:text-left"}
+                  customClass={"text-center xl:text-left"}
                   text={"• Total trading volume: over $17m"}
                 />
                 <TextReg
-                  customClass={"text-[#00BCF8] text-center xl:text-left"}
+                  customClass={"text-center xl:text-left"}
                   text={"• Highest market cap: $1.1m"}
                 />
                 <TextReg
-                  customClass={"text-[#00BCF8] text-center xl:text-left"}
+                  customClass={"text-center xl:text-left"}
                   text={
                     "• Number of subscribers in the developer’s channel: 1,063 subs"
                   }
                 />
                 <TextReg
-                  customClass={"text-[#00BCF8] text-center xl:text-left"}
+                  customClass={"text-center xl:text-left"}
                   text={"• Developer profit: $0"}
                 />
               </div>

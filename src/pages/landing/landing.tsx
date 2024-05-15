@@ -22,8 +22,11 @@ export const Landing = () => {
           <Block2 />
           <img src="./divider.webp" className="w-full" />
           <Block3 />
+          <img src="./divider.webp" className="w-full" />
           <Block4 />
+          <img src="./divider.webp" className="w-full" />
           <Block5 />
+          <img src="./divider.webp" className="w-full" />
           <Block6 />
           <FooterSection />
         </>

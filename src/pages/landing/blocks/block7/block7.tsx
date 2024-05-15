@@ -24,37 +24,34 @@ export const Block7 = () => {
           <div className="w-full md:w-6/12 flex p-4 flex-col gap-4 text-white items-center justify-center">
             <div className="flex flex-col gap-16">
               <div className="flex flex-col gap-2">
+                <TextReg customClass={"text-3xl"} text={"Developer:"} />
                 <TextReg
-                  customClass={"text-[#00BCF8] text-3xl"}
-                  text={"Developer:"}
-                />
-                <TextReg
-                  customClass={"text-[#00BCF8] text-3xl"}
+                  customClass={"text-3xl"}
                   text={
                     "Fully developed by Letto Dev Team. This will be the 10th coin released by our team."
                   }
                 />
               </div>
               <TextReg
-                customClass={"text-[#00BCF8] text-3xl"}
+                customClass={"text-3xl"}
                 text={"- Average ATH market cap of our 9 projects: $670k"}
               />
               <TextReg
-                customClass={"text-[#00BCF8] text-3xl"}
+                customClass={"text-3xl"}
                 text={"- Total trading volume: over $17m"}
               />
               <TextReg
-                customClass={"text-[#00BCF8] text-3xl"}
+                customClass={"text-3xl"}
                 text={"- Highest market cap: $1.1m"}
               />
               <TextReg
-                customClass={"text-[#00BCF8] text-3xl"}
+                customClass={"text-3xl"}
                 text={
                   "- Number of subscribers in the developer’s channel: 1,063 subs"
                 }
               />
               <TextReg
-                customClass={"text-[#00BCF8] text-3xl"}
+                customClass={"text-3xl"}
                 text={"- Developer profit: $0"}
               />
             </div>
@@ -80,7 +77,7 @@ export const Block7 = () => {
           <div className="w-full md:w-8/12 flex p-4 flex-col gap-4 text-white items-center justify-around">
             <div className="flex flex-col gap-16">
               <TextReg
-                customClass={"text-[#00BCF8] text-3xl"}
+                customClass={"text-3xl"}
                 text={
                   "All these metrics can be verified by checking the history of the developer's channel. For the launch of the 10th coin, we have decided to significantly increase the initial developer buy and add numerous scripts to combat bots and large purchases in the early stages."
                 }
