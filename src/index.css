@@ -60,13 +60,13 @@
   }
 
   .block1 {
-    background-image: url("../public/bg1.webp");
+    background-image: url("../public/bg1.png");
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   .block2 {
-    background-image: url("../public/bg2.webp");
+    background-image: url("../public/bg2.png");
     background-repeat: no-repeat;
     background-size: cover;
   }
