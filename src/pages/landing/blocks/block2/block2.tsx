@@ -56,7 +56,7 @@ export const Block2 = () => {
             imgPath={"./block2/gnom.webp"}
             alt={"gendalph"}
             customClassImg={
-              "lg:h-[50vh] text-3xl hover:scale-[1.02] transition-all duration-300"
+              "lg:h-[50vh] text-3xl hover:scale-[1.02] transition-all duration-300 object-contain"
             }
             ty={10}
             tx={2}
