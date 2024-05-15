@@ -9,7 +9,11 @@ export const Block1 = () => {
   return (
     <div className="w-full min-h-[100vh] bg-opacity-10 py-20 block1 justify-center items-center flex flex-col relative overflow-hidden">
       <img
-        className="absolute top-0 left-0 h-[100vh] z-20 w-full"
+        className="absolute top-0 left-0 h-[100vh] z-20 w-1/2"
+        src="./rain.gif"
+      />
+      <img
+        className="absolute top-0 right-0 h-[100vh] z-20 w-1/2"
         src="./rain.gif"
       />
       {/* <img
