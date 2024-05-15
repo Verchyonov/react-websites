@@ -39,10 +39,10 @@ export const Cards = () => {
     if (isDealt) {
       //REMOVE CARDS
       controls.start({
-        x: "-5000px",
+        x: "-2000px",
         y: "0",
         opacity: 1,
-        transition: { duration: 2 },
+        transition: { duration: 1 },
       });
     } else {
       //DEAL CARDS
