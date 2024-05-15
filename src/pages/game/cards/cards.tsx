@@ -81,8 +81,8 @@ export const Cards = () => {
   };
 
   return (
-    <div className="flex w-full -full justify-center align-middle items-center relative">
-      <div className="flex gap-2 md:gap-4 justify-center mx-0 md:mx-4 items-center overflow-hidden">
+    <div className="flex w-full justify-center align-middle items-center relative">
+      <div className="flex md:flex-row flex-col gap-2 md:gap-4 justify-center mx-0 md:mx-4 items-center overflow-hidden">
         <div className="relative overflow-x-hidden overflow-y-hidden z-[100] flex">
           <img
             alt="deck"
@@ -117,7 +117,7 @@ export const Cards = () => {
                       >
                         <img
                           alt="card"
-                          className="w-[18vh] cursor-pointer"
+                          className="w-[26vh] md:w-[18vh]de cursor-pointer"
                           onClick={() => {
                             flipCard(card.id);
                           }}
@@ -134,7 +134,7 @@ export const Cards = () => {
                       transition={{ duration: 0.7 }}
                     >
                       <img
-                        className="w-[18vh] cursor-pointer"
+                        className="w-[26vh] md:w-[18vh] cursor-pointer"
                         alt="back"
                         onClick={() => {
                           flipCard(card.id);

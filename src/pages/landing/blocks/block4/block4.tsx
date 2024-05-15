@@ -29,42 +29,48 @@ export const Block4 = () => {
     <div className="w-full min-h-screen bg-black justify-center align-middle items-center flex flex-col relative">
       <AppearWrapper
         customClass={
-          "w-11/12 xl:w-9/12 max-w-screen-2x flex flex-col md:flex-row p-8 gap-4"
+          "w-full xl:w-9/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4"
         }
       >
         <div className="w-full md:w-8/12 flex p-4 flex-col gap-4 text-white  justify-around">
           <div className="flex flex-col gap-2">
             <TextReg
-              customClass={"text-[#00BCF8] text-5xl mb-4"}
+              customClass={
+                "text-[#00BCF8] text-4xl md:text-5xl mb-4 text-center xl:text-left"
+              }
               text={"Coin Distribution:"}
             />
             <TextReg
-              customClass={"text-[#00BCF8] text-2xl"}
+              customClass={"text-[#00BCF8] text-2xl text-center xl:text-left"}
               text="We are launching the coin on pump.fun to ensure transparency for the community. There will be a significant developer buy and burn, along with technical solutions for better coin spread."
             />
           </div>
           <div className="flex flex-col gap-6 my-auto items-start">
             <TextReg
-              customClass={"text-[#00BCF8] text-left text-2xl"}
+              customClass={"text-[#00BCF8] text-2xl text-center xl:text-left"}
               text={"• 40% initial developer buy and burn"}
             />
 
             <TextReg
-              customClass={"text-[#00BCF8] text-left text-2xl"}
+              customClass={"text-[#00BCF8] text-center xl:text-left text-2xl"}
               text={"• 10% free airdrop"}
             />
 
             <TextReg
-              customClass={"text-[#00BCF8] text-left text-2xl"}
+              customClass={"text-[#00BCF8] text-center xl:text-left text-2xl"}
               text={"• 10% post-Raydium developer buy and burn"}
             />
 
             <TextReg
-              customClass={"text-[#00BCF8] text-left md:mb-0 text-2xl"}
+              customClass={
+                "text-[#00BCF8] text-center xl:text-left md:mb-0 text-2xl"
+              }
               text={"• 5% team allocation"}
             />
             <TextReg
-              customClass={"text-[#00BCF8] text-left md:mb-0 mb-8 text-2xl"}
+              customClass={
+                "text-[#00BCF8] text-center xl:text-left md:mb-0 mb-8 text-2xl"
+              }
               text={"• 35% in circulation"}
             />
           </div>
