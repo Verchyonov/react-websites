@@ -1,6 +1,5 @@
 import React from "react";
 import { motion, useAnimationControls } from "framer-motion";
-import { CSSTransition } from "react-transition-group";
 import { useState } from "react";
 
 import { Card } from "./card";
@@ -25,6 +24,7 @@ export const Cards = () => {
   const controls = useAnimationControls();
   let audio = new Audio("./sound2.wav");
   let audio2 = new Audio("./sound.wav");
+  let audio3 = new Audio("./sound3.mp3");
   const getRandomCards = (): any => {
     let shuffled = Array.from(cardsStack);
 
@@ -41,12 +41,12 @@ export const Cards = () => {
     exit: { rotateY: 170, transition: { duration: 3 } },
   };
 
-  //   const [isVisible, setIsVisible] = useState(false);
   const [isDealt, setIsDealt] = useState(true);
   const [cards, setCards] = useState<Card[]>(getRandomCards());
 
   const onDeckPress = () => {
     if (isDealt) {
+      audio3.play();
       //REMOVE CARDS
       controls.start({
         x: "-2000px",
@@ -55,6 +55,7 @@ export const Cards = () => {
         transition: { duration: 1 },
       });
     } else {
+      audio.play();
       //DEAL CARDS
       controls.start({
         x: "0",
@@ -63,7 +64,7 @@ export const Cards = () => {
         transition: { duration: 1 },
       });
     }
-    audio.play();
+
     setIsDealt(!isDealt);
   };
 
@@ -113,32 +114,6 @@ export const Cards = () => {
               onAnimationComplete={resetCards}
             >
               <Card key={index} card={card} flipCard={flipCard} />
-              {/* <CSSTransition
-                in={card.isFlipped}
-                timeout={500}
-                classNames="card-anim w-[26vh] md:w-[20vh] cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300"
-              >
-                <div
-                  className="card"
-                  onClick={() => {
-                    flipCard(card.id);
-                  }}
-                >
-                  <img className="back" src="./game/back.webp" alt="1" />
-                  <img className="face" src={card.img} alt="2" />
-                </div>
-              </CSSTransition> */}
-              {/* <motion.div
-                onClick={() => {
-                  flipCard(card.id);
-                }}
-                {...animationProps}
-              >
-                <img
-                  className="w-[26vh] md:w-[20vh] cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300"
-                  src={card.isFlipped ? card.img : "./game/back.webp"}
-                />
-              </motion.div> */}
             </motion.div>
           );
         })}
