@@ -37,10 +37,10 @@ export const Block6 = () => {
                 }
               />
 
-              <div className="flex w-full">
+              <div className="flex w-full justify-center">
                 <a
                   onClick={onBuy}
-                  className="px-8 py-4 w-full text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
+                  className="px-8 py-4 w-full md:w-1/2 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
                 >
                   Buy
                 </a>
