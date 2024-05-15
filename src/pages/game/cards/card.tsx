@@ -1,14 +1,21 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import LiveHelpIcon from "@mui/icons-material/LiveHelp";
 import "./card.css";
+import { CardModal } from "./card-modal";
 
 export const Card = (props: any) => {
   const nodeRef = useRef(null);
   const helpIconRef = useRef(null);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
+      <CardModal
+        card={props.card}
+        isOpen={showModal}
+        setIsOpen={setShowModal}
+      />
       <CSSTransition
         nodeRef={helpIconRef}
         in={props.card.isFlipped}
@@ -17,6 +24,9 @@ export const Card = (props: any) => {
         unmountOnExit
       >
         <button
+          onClick={() => {
+            setShowModal(true);
+          }}
           ref={helpIconRef}
           className="absolute -top-[3.5rem] right-1/2 p-2 transform translate-x-1/2 hover:scale-110 transition-transform duration-300 ease-in-out"
         >
