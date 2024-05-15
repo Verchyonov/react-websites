@@ -28,19 +28,19 @@ export const Block5 = () => {
               <div className="flex flex-col gap-8">
                 <TextReg
                   customClass={"text-center xl:text-left"}
-                  text={"• Average ATH market cap of our 9 projects: $670k"}
+                  text={"• AVERAGE ATH MC: $670K"}
                 />
                 <TextReg
                   customClass={"text-center xl:text-left"}
-                  text={"• Total trading volume: over $17m"}
+                  text={"• TOTAL TRADING VOLUME: OVER $17M"}
                 />
                 <TextReg
                   customClass={"text-center xl:text-left"}
-                  text={"• Highest market cap: $1.1m"}
+                  text={"• HIGHEST MC: $1.1M"}
                 />
                 <TextReg
                   customClass={"text-center xl:text-left"}
-                  text={"• Number of subs in the developer’s channel: 1,063"}
+                  text={"• 1,063 SUBS IN DEV CHANNEL"}
                 />
               </div>
             </div>
