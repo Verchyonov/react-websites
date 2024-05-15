@@ -30,7 +30,7 @@ export const Block1 = () => {
       />
       <motion.div
         className={
-          "w-11/12 max-w-screen-2xl bg-white flex flex-col p-4 py-12 gap-12 rounded-lg justify-center items-center z-50"
+          "w-11/12 max-w-screen-2xl bg-slate-300 flex flex-col p-4 py-12 gap-12 rounded-xl justify-center items-center z-50"
         }
         initial={{
           opacity: 0,
