@@ -21,6 +21,8 @@ const cardsStack = Array.from({ length: 78 }, (_, i) => {
 
 export const Cards = () => {
   const controls = useAnimationControls();
+  let audio = new Audio("./sound2.wav");
+  let audio2 = new Audio("./sound.wav");
   const getRandomCards = (): any => {
     let shuffled = Array.from(cardsStack);
 
@@ -53,6 +55,7 @@ export const Cards = () => {
         transition: { duration: 1 },
       });
     }
+    audio.play();
     setIsDealt(!isDealt);
   };
 
@@ -70,6 +73,7 @@ export const Cards = () => {
   };
 
   const flipCard = (index: number) => {
+    audio2.play();
     setCards(
       cards.map((card) => {
         if (card.id === index) {
@@ -117,7 +121,7 @@ export const Cards = () => {
                       >
                         <img
                           alt="card"
-                          className="w-[26vh] md:w-[20vh] cursor-pointer rounded-md"
+                          className="w-[26vh] md:w-[20vh] cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300"
                           onClick={() => {
                             flipCard(card.id);
                           }}
@@ -134,7 +138,7 @@ export const Cards = () => {
                       transition={{ duration: 0.7 }}
                     >
                       <img
-                        className="w-[26vh] md:w-[20vh] cursor-pointer rounded-md"
+                        className="w-[26vh] md:w-[20vh] cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300"
                         alt="back"
                         onClick={() => {
                           flipCard(card.id);
