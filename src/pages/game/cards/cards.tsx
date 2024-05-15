@@ -9,6 +9,7 @@ type Card = {
   img: string;
   isFlipped: boolean;
   description: string;
+  name: string;
 };
 
 const cardsStack = Array.from({ length: 78 }, (_, i) => {
@@ -17,6 +18,7 @@ const cardsStack = Array.from({ length: 78 }, (_, i) => {
     img: `./cards/cardio_${i}.webp`,
     isFlipped: false,
     description: "test",
+    name: "test",
   } as Card;
 }) as Card[];
 
