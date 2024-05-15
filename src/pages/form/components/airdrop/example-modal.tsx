@@ -5,7 +5,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import { Tweet } from "react-tweet";
+import { Tweet } from "react-twitter-widgets";
 
 const style = {
   position: "absolute" as "absolute",
@@ -42,6 +42,7 @@ export const ExampleModal = (props: any) => {
         Example
       </button>
       <Modal
+        className={!open ? "pointer-events-none" : ""}
         keepMounted
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -68,7 +69,7 @@ export const ExampleModal = (props: any) => {
             </Box>
             <h2 className="text-2xl font-bold text-center">Example</h2>
             <div className="w-full light updated-dark">
-              {/* <Tweet id={"1789873207370981385"} /> */}
+              <Tweet tweetId={"1789873207370981385"} />
             </div>
             <h3 className="lg:text-lg font-bold text-center mb-2">
               Feel free to add any image or text

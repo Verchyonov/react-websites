@@ -35,7 +35,7 @@ export const Block4 = () => {
         <div className="w-full md:w-8/12 flex p-4 flex-col gap-4 text-white  justify-around">
           <div className="flex flex-col gap-2">
             <TextReg
-              customClass={"text-[#00BCF8] text-4xl"}
+              customClass={"text-[#00BCF8] text-5xl mb-4"}
               text={"Coin Distribution:"}
             />
             <TextReg
@@ -43,7 +43,7 @@ export const Block4 = () => {
               text="We are launching the coin on pump.fun to ensure transparency for the community. There will be a significant developer buy and burn, along with technical solutions for better coin spread."
             />
           </div>
-          <div className="flex flex-col gap-8 my-auto items-start">
+          <div className="flex flex-col gap-6 my-auto items-start">
             <TextReg
               customClass={"text-[#00BCF8] text-left text-2xl"}
               text={"• 40% initial developer buy and burn"}

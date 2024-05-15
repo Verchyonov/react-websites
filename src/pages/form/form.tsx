@@ -54,7 +54,7 @@ export const Form = () => {
 
   return (
     <AppearWrapper>
-      <div className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative bg-black">
+      <div className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative bg-black justify-center items-center">
         <div className="w-full lg:w-[90%] justify-self-center self-center z-50">
           <AboutDrop
             dropInfo={dropInfo}
@@ -65,11 +65,11 @@ export const Form = () => {
             isLoading={isLoading}
           />
         </div>
-        <div className="w-full lg:w-1/2 justify-self-center self-center z-50">
+        <div className="w-full md:w-3/4 xl:w-1/2 justify-self-center self-center z-50">
           <CheckElegibility />
         </div>
-        <div className="flex flex-col md:flex-row gap-8 p-4 justify-center items-center">
-          <div className="w-full md:w-[46%] relative">
+        <div className="w-full md:w-3/4 xl:w-full flex flex-col xl:flex-row gap-8 p-4 justify-center items-center">
+          <div className="w-full xl:w-[46%] relative">
             {blurredAirdrop && (
               <h3 className="text-4xl font-bold text-center z-50 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2">
                 Airdrop enrollment is done
@@ -86,10 +86,12 @@ export const Form = () => {
               <SignUpUpdate dropInfo={dropInfo} />
             </div>
           </div>
-          <div className="w-full md:w-[8%] flex justify-self-center self-center justify-center items-center">
-            <h1 className="text-3xl text-center font-bold uppercase">OR</h1>
+          <div className="w-full xl:w-[8%] flex justify-self-center self-center justify-center items-center">
+            <h1 className="text-3xl text-center font-bold uppercase text-white">
+              OR
+            </h1>
           </div>
-          <div className="w-full md:w-[46%] relative">
+          <div className="w-full xl:w-[46%] relative">
             {blurredPresale && (
               <h3 className="text-4xl font-bold text-center z-50 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 ">
                 Presale enrollment is done
@@ -107,7 +109,7 @@ export const Form = () => {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-[40%] p-4 justify-self-center self-center"></div>
+        <div className="w-full xl:w-[40%] p-4 justify-self-center self-center"></div>
         <div className="w-full flex flex-col justify-center items-center">
           <h1 className="p-2 lg:p-4 text-xl md:text-3xl font-bold text-center text-white">
             The Drops are going to be performed shortly after the Raydium
