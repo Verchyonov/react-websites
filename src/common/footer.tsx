@@ -16,7 +16,7 @@ export const FooterSection = (props: any) => {
       >
         <p className="flex flex-row items-center justify-center gap-1">
           <span className="text-sm font-bold sm:text-xl ">
-            $TOMMY &copy; 2024
+            $TOME &copy; 2024
           </span>
           <span className="inline-flex">
             <a
@@ -38,9 +38,9 @@ export const FooterSection = (props: any) => {
           </span>
         </p>
         <p className="px-2 pb-2 md:text-sm text-xs">
-          $TOMMY is a memecoin with no intrinsic value, and is not a investment
-          and simply a community/culture token similar to $TOMMY. No Promises,
-          No Utility, Purely For Entertainment Purposes
+          $TOME is a memecoin with no intrinsic value, and is not a investment
+          and simply a community/culture token similar to $TOME. No Promises, No
+          Utility, Purely For Entertainment Purposes
         </p>
       </footer>
     </>
