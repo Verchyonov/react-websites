@@ -54,7 +54,7 @@ export const Form = () => {
 
   return (
     <AppearWrapper>
-      <div className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative bg-black justify-center items-center">
+      <div className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative justify-center items-center">
         <div className="w-full lg:w-[90%] justify-self-center self-center z-50">
           <AboutDrop
             dropInfo={dropInfo}
@@ -118,7 +118,7 @@ export const Form = () => {
           </h1>
         </div>
       </div>
-      <FooterSection />
+      <FooterSection customClass={"bg-black"} />
     </AppearWrapper>
   );
 };

@@ -5,10 +5,15 @@ import { TELEGRAM_DEV, TWITTER_DEV } from "./urls";
 
 const iconClass = "w-6 h-6 fill-white";
 
-export const FooterSection = () => {
+export const FooterSection = (props: any) => {
   return (
     <>
-      <footer className="px-8 pt-1 text-center bg-[#39442f] text-white backdrop-blur transition-colors duration-500">
+      <footer
+        className={
+          "px-8 pt-1 text-center text-white backdrop-blur transition-colors duration-500 " +
+          props.customClass
+        }
+      >
         <p className="flex flex-row items-center justify-center gap-1">
           <span className="text-sm font-bold sm:text-xl ">
             $TOMMY &copy; 2024

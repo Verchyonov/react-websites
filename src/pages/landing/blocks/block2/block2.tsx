@@ -1,8 +1,12 @@
 import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
 import { AppearWrapper } from "../../../../common/appear-wrapper";
+import { useMoveOnScrollHook } from "../../../../hooks/useMoveOnScrollHook";
+import { MovingImg } from "../../../../common/moving-img";
 
 export const Block2 = () => {
+  const { y, ref } = useMoveOnScrollHook(100);
+
   return (
     <div className="w-full min-h-screen block2 justify-center items-center flex flex-col relative">
       <AppearWrapper
@@ -10,8 +14,13 @@ export const Block2 = () => {
           "w-full xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4 py-16 md:px-0"
         }
       >
-        <div className="w-full md:w-8/12 flex p-4 flex-col gap-8 text-white items-center justify-center">
-          <div className="flex flex-col gap-2">
+        <div className="w-full lg:w-8/12 flex px-12 py-6 flex-col gap-8 text-black items-center justify-center relative">
+          <img
+            src="./zadnik.webp"
+            alt="card"
+            className="w-full absolute top-0 left-0 z-25"
+          />
+          <div ref={ref} className="flex flex-col gap-2 z-50">
             <div className="flex flex-col justify-center align-center">
               <TextReg
                 customClass={
@@ -27,7 +36,7 @@ export const Block2 = () => {
               }
             />
           </div>
-          <div className="flex flex-col gap-8 ">
+          <div className="flex flex-col gap-8 z-50">
             <TextReg
               customClass={"text-3xl text-center"}
               text={
@@ -36,11 +45,22 @@ export const Block2 = () => {
             />
           </div>
         </div>
-        <div className="w-full md:w-4/12 flex p-4 justify-center items-center text-white">
-          <img
-            className="md:h-[50vh] text-3xl"
+        <div className="w-full lg:w-4/12 flex p-4 justify-center items-center text-white">
+          {/* <img
+            className="lg:h-[50vh] text-3xl hover:scale-[1.02] transition-all duration-300"
             src="./block2/gnom.webp"
             alt="gendalph"
+          /> */}
+          <MovingImg
+            y={y}
+            imgPath={"./block2/gnom.webp"}
+            alt={"gendalph"}
+            customClassImg={
+              "lg:h-[50vh] text-3xl hover:scale-[1.02] transition-all duration-300"
+            }
+            ty={10}
+            tx={2}
+            tz={0}
           />
         </div>
       </AppearWrapper>
