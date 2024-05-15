@@ -46,12 +46,14 @@ export const Block1 = () => {
           }}
           viewport={{ once: true }}
         >
-          <CopyCa />
-          <Links />
           <TextReg
-            customClass={"mt-4 text-3xl text-center font-bold text-black"}
+            customClass={
+              "mt-4 text-4xl text-center font-bold text-black uppercase"
+            }
             text={"Tarot Of Meme $TOME"}
           />
+          <CopyCa />
+          <Links />
 
           <div className="flex w-full flex-col gap-4 justify-center items-center">
             <Cards />

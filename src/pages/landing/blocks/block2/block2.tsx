@@ -14,13 +14,18 @@ export const Block2 = () => {
           "w-full xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4 py-16 md:px-0"
         }
       >
-        <div className="w-full lg:w-8/12 flex px-12 py-6 flex-col gap-8 text-black items-center justify-center relative">
+        <div className="w-full lg:w-8/12 flex px-12 py-6 flex-col gap-8 text-black items-center justify-center relative font-bold uppercase">
           <img
-            src="./zadnik.webp"
+            src="./zadnik-desk.webp"
             alt="card"
-            className="w-full absolute top-0 left-0 z-25"
+            className="w-[95%] h-full absolute top-0 left-[2.5%] z-25 md:block hidden"
           />
-          <div ref={ref} className="flex flex-col gap-2 z-50">
+          <img
+            src="./zadnik-mob.webp"
+            alt="card"
+            className="w-[95%] h-full absolute top-0 left-[2.5%] z-25 md:hidden block"
+          />
+          <div ref={ref} className="flex flex-col gap-2 z-50 mb-5 md:mb-0">
             <div className="flex flex-col justify-center align-center">
               <TextReg
                 customClass={
@@ -32,7 +37,7 @@ export const Block2 = () => {
             <TextReg
               customClass={" text-3xl text-center"}
               text={
-                "Is a deck of cards with meme pictures used for making crypto predictions."
+                "A deck of cards with meme pictures used for fortune telling."
               }
             />
           </div>
@@ -40,12 +45,12 @@ export const Block2 = () => {
             <TextReg
               customClass={"text-3xl text-center"}
               text={
-                "Based on the real-life Tarot deck, it’s designed to be more fun and easy to use. The concept is similar to the Book of Meme or Museum of Meme, but unique. Our goal is to create a tool that uses your wallet address or coin CA to make spiritual predictions about other projects or personal funds."
+                "Based on the real-life Tarot deck, our goal is to create a tool for spiritual predictions in the crypto world."
               }
             />
           </div>
         </div>
-        <div className="w-full lg:w-4/12 flex p-4 justify-center items-center text-white">
+        <div className="w-full lg:w-4/12 flex p-4 justify-center items-center text-white mt-5 md:mt-0">
           {/* <img
             className="lg:h-[50vh] text-3xl hover:scale-[1.02] transition-all duration-300"
             src="./block2/gnom.webp"

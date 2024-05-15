@@ -33,7 +33,7 @@ export const Block4 = () => {
   const imageStyle = { transition: "opacity 0.5s ease-in-out" };
 
   return (
-    <div className="w-full min-h-screen bg-black justify-around align-middle items-center flex flex-col relative ">
+    <div className="w-full min-h-screen bg-black justify-around align-middle items-center flex flex-col relative uppercase">
       <AppearWrapper
         customClass={
           "w-full xl:w-10/12 max-w-screen-2x flex flex-col p-4 xl:p-8 gap-8 py-16 md:px-0"
@@ -42,52 +42,36 @@ export const Block4 = () => {
         <div className="flex flex-col gap-8">
           <TextReg
             customClass={"text-5xl md:text-5xl mb-4 text-center"}
-            text={"Coin Distribution:"}
+            text={"Coin Distribution"}
           />
           <TextReg
             customClass={"text-2xl md:text-3xl text-center"}
-            text="We are launching the coin on pump.fun to ensure transparency for the community. There will be a significant developer buy and burn, along with technical solutions for better coin spread."
+            text="LAUNCHING AT PUMP.FUN. THERE WILL BE A SIGNIFICANT DEVELOPER BUY AND BURN, ALONG WITH TECHNICAL SOLUTIONS FOR BETTER COIN SPREAD."
           />
         </div>
         <div className="flex md:flex-row flex-col gap-4">
-          <div className="w-full md:w-6/12 p-8 flex flex-col gap-8 text-white justify-center text-xl xl:text-3xl">
+          <div className="w-full md:w-7/12 p-8 flex flex-col gap-8 text-white justify-center text-2xl md:text-3xl text-center xl:text-left">
             <div className="flex flex-col gap-8 justify-center align-middle">
               <TextReg
-                customClass={"text-2xl md:text-3xl text-center xl:text-left"}
-                text={"• 40% initial developer buy and burn"}
+                customClass={""}
+                text={"• 40% INITIAL DEVELOPER BUY AND BURN"}
               />
-
+              <TextReg customClass={""} text={"• 10% FREE AIRDROP"} />
               <TextReg
-                customClass={"text-center xl:text-left text-2xl md:text-3xl"}
-                text={"• 10% free airdrop"}
+                customClass={""}
+                text={"• 10% POST-RAYDIUM DEVELOPER BUY AND BURN"}
               />
-
-              <TextReg
-                customClass={"text-center xl:text-left text-2xl md:text-3xl"}
-                text={"• 10% post-Raydium developer buy and burn"}
-              />
-
-              <TextReg
-                customClass={
-                  "text-center xl:text-left md:mb-0 text-2xl md:text-3xl"
-                }
-                text={"• 5% team allocation"}
-              />
-              <TextReg
-                customClass={
-                  "text-center xl:text-left md:mb-0 mb-8 text-2xl md:text-3xl"
-                }
-                text={"• 35% in circulation"}
-              />
+              <TextReg customClass={""} text={"• 5% TEAM ALLOCATION"} />
+              <TextReg customClass={""} text={"• 35% IN CIRCULATION"} />
             </div>
             <a
               onClick={onBuy}
-              className="px-8 py-4 self-center w-full md:w-1/2 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
+              className="px-8 py-4 md:mt-0 mt-8 self-center w-full md:w-1/2 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
             >
               BUY
             </a>
           </div>
-          <div className="w-full md:w-6/12 flex p-4 justify-center items-center text-white">
+          <div className="w-full md:w-5/12 flex p-4 justify-center items-center text-white">
             <img
               className="md:h-[50vh] object-contain hover:scale-[1.02] transition-all duration-300"
               src={image}

@@ -12,100 +12,88 @@ export const Block3 = () => {
         }
       >
         <div className="flex flex-wrap justify-center align-center">
-          <div className="flex flex-col md:flex-row w-full justify-around py-16 md:px-0">
+          <div className="flex flex-col md:flex-row w-full justify-around py-16 md:px-0 gap-6 md:gap-0">
             <img
               className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
               src="./block3/old.gif"
               alt="card"
             />
-            <div className="md:hidden flex-col items-center w-full md:w-[23%] gap-4 p-2 flex">
-              <TextReg customClass={"text-xl"} text={"Stage 1:"} />
-              <TextReg
-                customClass={"text-center"}
-                text={
-                  "Web and social media release Start of marketing Concept promotion"
-                }
-              />
+            <div className="md:hidden flex-col items-center w-full md:w-[23%] gap-2 p-2 flex text-center text-2xl">
+              <TextReg customClass={"text-3xl mb-2"} text={"Stage 1:"} />
+              <TextReg customClass={""} text={"• WEB RELEASE"} />
+              <TextReg customClass={""} text={"• CONCEPT PROMOTION"} />
+              <TextReg customClass={""} text={"• MARKETING"} />
             </div>
             <img
               className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
               src="./block3/treasure.gif"
               alt="card"
             />
-            <div className="md:hidden flex-col items-center w-full md:w-[23%] gap-4 p-2 flex">
-              <TextReg customClass={"text-xl text-center"} text={"Stage 2:"} />
-              <TextReg
-                customClass={"text-center"}
-                text={
-                  "Accumulate attention Open airdrop sign-up Project launch on pump.fun"
-                }
-              />
+            <div className="md:hidden flex-col items-center w-full md:w-[23%] gap-2 p-2 flex text-center text-2xl">
+              <TextReg customClass={"text-3xl mb-2"} text={"Stage 2:"} />
+              <TextReg customClass={""} text={"• ACCUMULATE ATTENTION "} />
+              <TextReg customClass={""} text={"• AIRDROP SIGN-UP"} />
+              <TextReg customClass={""} text={"• PUMP.FUN LAUNCH"} />
             </div>
             <img
               className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
               src="./block3/hand.gif"
               alt="card"
             />
-            <div className="flex flex-col items-center w-full md:w-[23%] gap-4 p-2 md:hidden">
-              <TextReg customClass={"text-xl"} text={"Stage 3:"} />
-              <TextReg
-                customClass={"text-center"}
-                text={
-                  "Dev burn before Raydium Screener updates Airdrop delivery within an hour after launch"
-                }
-              />
+            <div className="flex flex-col items-center w-full md:w-[23%] gap-2 p-2 md:hidden text-center text-2xl">
+              <TextReg customClass={"text-3xl mb-2"} text={"Stage 3:"} />
+              <TextReg customClass={""} text={"• DEV BURN"} />
+              <TextReg customClass={""} text={"• SCREENERS UPDATE"} />
+              <TextReg customClass={""} text={"• AIRDROP DELIVERY"} />
             </div>
             <img
               className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
               src="./block3/tavern.webp"
               alt="card"
             />
-            <div className="flex flex-col items-center w-full md:w-[23%] gap-4 p-2 md:hidden">
-              <TextReg customClass={"text-xl"} text={"Stage 4:"} />
-              <TextReg
-                customClass={"text-center"}
-                text={
-                  "100 SOL + 10% developer buy and burn at 2 million market cap Launch Tarot predictions by coin CA (tool) Marketing to stabilize the coin"
-                }
-              />
+            <div className="flex flex-col items-center w-full md:w-[23%] gap-2 p-2 md:hidden text-center text-2xl">
+              <TextReg customClass={"text-3xl mb-2"} text={"Stage 4:"} />
+              <TextReg customClass={""} text={"• DEV BUY BURN"} />
+              <TextReg customClass={""} text={"• LAUNCH TAROT  (TOOL)"} />
+              <TextReg customClass={""} text={"• MARKETING"} />
             </div>
           </div>
-          <div className="hidden flex-row w-full justify-around md:flex">
-            <div className="flex flex-col items-center w-full md:w-[23%] gap-4 p-2">
-              <TextReg customClass={"text-center text-3xl"} text={"Stage 1:"} />
+          <div className="hidden flex-row w-full justify-around md:flex uppercase text-center text-xl md:text-2xl">
+            <div className="flex flex-col items-center w-full md:w-[23%] gap-2 p-2">
               <TextReg
-                customClass={"text-center text-xl xl:text-2xl"}
-                text={
-                  "Web and social media release Start of marketing Concept promotion"
-                }
+                customClass={"md:text-3xl text-4xl mb-2"}
+                text={"Stage 1:"}
               />
+              <TextReg customClass={""} text={"• WEB RELEASE"} />
+              <TextReg customClass={""} text={"• CONCEPT PROMOTION"} />
+              <TextReg customClass={""} text={"• MARKETING"} />
             </div>
-            <div className="flex flex-col items-center w-full md:w-[23%] gap-4 p-2">
-              <TextReg customClass={"text-center text-3xl"} text={"Stage 2:"} />
+            <div className="flex flex-col items-center w-full md:w-[23%] gap-2 p-2">
               <TextReg
-                customClass={"text-center text-xl xl:text-2xl"}
-                text={
-                  "Accumulate attention Open airdrop sign-up Project launch on pump.fun"
-                }
+                customClass={"text-center text-3xl mb-2"}
+                text={"Stage 2:"}
               />
+              <TextReg customClass={""} text={"• ACCUMULATE ATTENTION "} />
+              <TextReg customClass={""} text={"• AIRDROP SIGN-UP"} />
+              <TextReg customClass={""} text={"• PUMP.FUN LAUNCH"} />
             </div>
-            <div className="flex flex-col items-center w-full md:w-[23%] gap-4 p-2">
-              <TextReg customClass={"text-center text-3xl"} text={"Stage 3:"} />
+            <div className="flex flex-col items-center w-full md:w-[23%] gap-2 p-2">
               <TextReg
-                customClass={"text-center text-xl xl:text-2xl"}
-                text={
-                  "Dev burn before Raydium Screener updates Airdrop delivery within an hour after launch"
-                }
+                customClass={"text-center text-3xl mb-2"}
+                text={"Stage 3:"}
               />
+              <TextReg customClass={""} text={"• DEV BURN"} />
+              <TextReg customClass={""} text={"• SCREENERS UPDATE"} />
+              <TextReg customClass={""} text={"• AIRDROP DELIVERY"} />
             </div>
-            <div className="flex flex-col items-center w-full md:w-[23%] gap-4 p-2">
-              <TextReg customClass={"text-center text-3xl"} text={"Stage 4:"} />
+            <div className="flex flex-col items-center w-full md:w-[23%] gap-2 p-2">
               <TextReg
-                customClass={"text-center text-xl xl:text-2xl"}
-                text={
-                  "100 SOL + 10% developer buy and burn at 2 million market cap Launch Tarot predictions by coin CA (tool) Marketing to stabilize the coin"
-                }
+                customClass={"text-center text-3xl mb-2"}
+                text={"Stage 4:"}
               />
+              <TextReg customClass={""} text={"• DEV BUY BURN"} />
+              <TextReg customClass={""} text={"• LAUNCH TAROT  (TOOL)"} />
+              <TextReg customClass={""} text={"• MARKETING"} />
             </div>
           </div>
         </div>
