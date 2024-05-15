@@ -184,7 +184,7 @@ export const SignUpUpdate = (props: any) => {
 
   return (
     <div className="flex flex-col gap-2 w-full text-white">
-      <p className="text-2xl font-bold text-center">Sign up for airdrop</p>
+      <p className="text-3xl font-bold text-center">Sign up for airdrop</p>
       <form className="">
         <div className="relative">
           <p className="text-lg">Solana Wallet</p>

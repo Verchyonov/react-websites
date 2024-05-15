@@ -178,7 +178,7 @@ export const PresaleForm = (props: any) => {
 
   return (
     <div className="flex flex-col gap-2 w-full h-full justify-between text-white">
-      <p className="text-2xl font-bold text-center">Sign up for presale</p>
+      <p className="text-3xl font-bold text-center">Sign up for presale</p>
       <form className="">
         <div className="relative flex mb-4 justify-between w-full flex-col gap-2 items-center">
           <WalletMultiButton />

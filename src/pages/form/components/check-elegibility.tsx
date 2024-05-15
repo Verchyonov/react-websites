@@ -57,7 +57,7 @@ export const CheckElegibility = () => {
 
   return (
     <div className="flex flex-col gap-2 w-full justify-center mt-4 p-4 md:p-10">
-      <p className="text-2xl font-bold text-center text-white">
+      <p className="text-3xl font-bold text-center text-white">
         Check account enrollment
       </p>
       <form onSubmit={onCheck}>

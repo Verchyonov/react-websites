@@ -89,7 +89,7 @@ export const Block3 = () => {
                 text={"Stage 1:"}
               />
               <TextReg
-                customClass={"text-[#00BCF8] text-center text-2xl"}
+                customClass={"text-[#00BCF8] text-center text-3xl"}
                 text={
                   "Web and social media release Start of marketing Concept promotion"
                 }
@@ -101,7 +101,7 @@ export const Block3 = () => {
                 text={"Stage 2:"}
               />
               <TextReg
-                customClass={"text-[#00BCF8] text-center text-2xl"}
+                customClass={"text-[#00BCF8] text-center text-3xl"}
                 text={
                   "Accumulate attention Open airdrop sign-up Project launch on pump.fun"
                 }
@@ -113,7 +113,7 @@ export const Block3 = () => {
                 text={"Stage 3:"}
               />
               <TextReg
-                customClass={"text-[#00BCF8] text-center text-2xl"}
+                customClass={"text-[#00BCF8] text-center text-3xl"}
                 text={
                   "Dev burn before Raydium Screener updates Airdrop delivery within an hour after launch"
                 }
@@ -125,7 +125,7 @@ export const Block3 = () => {
                 text={"Stage 4:"}
               />
               <TextReg
-                customClass={"text-[#00BCF8] text-center text-2xl"}
+                customClass={"text-[#00BCF8] text-center text-3xl"}
                 text={
                   "100 SOL + 10% developer buy and burn at 2 million market cap Launch Tarot predictions by coin CA (tool) Marketing to stabilize the coin"
                 }

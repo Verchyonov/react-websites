@@ -50,7 +50,7 @@ export const CopyCa = (props: any) => {
         props.customClass
       }
     >
-      <p className="text-2xl font-bold text-black">CA: {clampedText()}</p>
+      <p className="text-3xl font-bold text-black">CA: {clampedText()}</p>
       <CopyIcon />
     </button>
   );

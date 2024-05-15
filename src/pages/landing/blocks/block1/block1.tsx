@@ -53,7 +53,7 @@ export const Block1 = () => {
           <CopyCa />
           <Links />
           <TextReg
-            customClass={"mt-4 text-4xl text-center font-bold"}
+            customClass={"mt-4 text-3xl text-center font-bold"}
             text={"Tarot Of Meme $TOME"}
           />
 
