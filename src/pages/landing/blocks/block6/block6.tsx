@@ -1,10 +1,12 @@
 import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
-import { motion } from "framer-motion";
 import { BUY_LINK, TELEGRAM_DEV } from "../../../../common/urls";
 import { AppearWrapper } from "../../../../common/appear-wrapper";
+import { MovingImg } from "../../../../common/moving-img";
+import { useMoveOnScrollHook } from "../../../../hooks/useMoveOnScrollHook";
 
 export const Block6 = () => {
+  const { y, ref } = useMoveOnScrollHook(100);
   const onPlay = () => {
     window.open("/game", "_blank");
   };
@@ -25,11 +27,17 @@ export const Block6 = () => {
             "w-full md:w-10/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4"
           }
         >
-          <div className="w-full md:w-4/12 flex p-4 justify-center items-center text-white">
-            <img
-              className="md:h-[50vh] rounded-xl hover:scale-[1.02] transition-all duration-300 object-contain"
-              src="./game/back.webp"
-              alt="card"
+          <div className="w-full md:w-4/12 flex px-4 pb-4 justify-center items-center text-white">
+            <MovingImg
+              y={y}
+              imgPath={"./block6/decks.webp"}
+              alt={"gendalph"}
+              customClassImg={
+                "md:h-[50vh] rounded-xl hover:scale-[1.02] transition-all duration-300 object-contain"
+              }
+              ty={8}
+              tx={4}
+              tz={1}
             />
           </div>
           <div className="w-full md:w-8/12 flex p-4 flex-col gap-4 text-white items-center justify-around">
@@ -41,7 +49,7 @@ export const Block6 = () => {
                 }
               />
 
-              <div className="flex w-full justify-center gap-8">
+              <div ref={ref} className="flex w-full justify-center gap-8">
                 <a
                   onClick={onBuy}
                   className="px-8 py-4 w-full md:w-4/12 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"

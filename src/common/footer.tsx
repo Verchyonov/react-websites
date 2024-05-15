@@ -37,7 +37,10 @@ export const FooterSection = (props: any) => {
             </a>
           </span>
         </p>
-        <p className="px-2 pb-2 md:text-sm text-xs">
+        <p
+          style={{ wordSpacing: "1px" }}
+          className="px-2 pb-2 md:text-sm text-xs"
+        >
           $TOME is a memecoin with no intrinsic value, and is not a investment
           and simply a community/culture token similar to $TOME. No Promises, No
           Utility, Purely For Entertainment Purposes

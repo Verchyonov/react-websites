@@ -11,19 +11,19 @@ export const Block2 = () => {
     <div className="w-full min-h-screen block2 justify-center items-center flex flex-col relative">
       <AppearWrapper
         customClass={
-          "w-full xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4 py-16 md:px-0"
+          "w-full xl:w-9/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4 py-16 md:px-0"
         }
       >
         <div className="w-full lg:w-8/12 flex px-12 py-6 flex-col gap-8 text-black items-center justify-center relative font-bold uppercase">
           <img
             src="./zadnik-desk.webp"
             alt="card"
-            className="w-[95%] h-full absolute top-0 left-[2.5%] z-25 md:block hidden"
+            className="w-full h-full absolute top-0 left-0 z-25 md:block hidden"
           />
           <img
             src="./zadnik-mob.webp"
             alt="card"
-            className="w-[95%] h-full absolute top-0 left-[2.5%] z-25 md:hidden block"
+            className="w-full h-full absolute top-0 left-0 z-25 md:hidden block"
           />
           <div ref={ref} className="flex flex-col gap-2 z-50 mb-5 md:mb-0">
             <div className="flex flex-col justify-center align-center">
@@ -51,11 +51,6 @@ export const Block2 = () => {
           </div>
         </div>
         <div className="w-full lg:w-4/12 flex p-4 justify-center items-center text-white mt-5 md:mt-0">
-          {/* <img
-            className="lg:h-[50vh] text-3xl hover:scale-[1.02] transition-all duration-300"
-            src="./block2/gnom.webp"
-            alt="gendalph"
-          /> */}
           <MovingImg
             y={y}
             imgPath={"./block2/gnom.webp"}
