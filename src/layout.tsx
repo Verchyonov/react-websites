@@ -9,7 +9,7 @@ export const Layout = (props: any) => {
       <ToastContainer />
       <Outlet />
       <img
-        className="w-[45vh] md:w-[70vh] fixed bottom-24 md:bottom-10 left-0 md:left-10 z-50"
+        className="w-[45vh] md:w-[70vh] fixed bottom-0 md:bottom-10 left-1/2 md:left-10 z-50 md:translate-x-0 -translate-x-1/2"
         src={"./notl.png"}
       />
     </>
