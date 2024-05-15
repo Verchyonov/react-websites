@@ -10,7 +10,7 @@ type Card = {
   description: string;
 };
 
-const cardsStack = Array.from({ length: 77 }, (_, i) => {
+const cardsStack = Array.from({ length: 78 }, (_, i) => {
   return {
     id: i,
     img: `./cards/cardio_${i}.webp`,
@@ -42,7 +42,7 @@ export const Cards = () => {
         x: "-5000px",
         y: "0",
         opacity: 1,
-        transition: { duration: 1 },
+        transition: { duration: 2 },
       });
     } else {
       //DEAL CARDS
@@ -91,10 +91,10 @@ export const Cards = () => {
             src="./game/deck.webp"
           />
         </div>
-        {cards.map((card) => {
+        {cards.map((card, index) => {
           return (
             <motion.div
-              key={card.id}
+              key={index}
               className="relative overflow-visible"
               animate={controls}
               onAnimationStart={turnCardsBack}
@@ -117,7 +117,7 @@ export const Cards = () => {
                       >
                         <img
                           alt="card"
-                          className="w-[26vh] md:w-[18vh] cursor-pointer rounded-md"
+                          className="w-[26vh] md:w-[20vh] cursor-pointer rounded-md"
                           onClick={() => {
                             flipCard(card.id);
                           }}
@@ -134,7 +134,7 @@ export const Cards = () => {
                       transition={{ duration: 0.7 }}
                     >
                       <img
-                        className="w-[26vh] md:w-[18vh] cursor-pointer rounded-md"
+                        className="w-[26vh] md:w-[20vh] cursor-pointer rounded-md"
                         alt="back"
                         onClick={() => {
                           flipCard(card.id);
