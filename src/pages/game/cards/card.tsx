@@ -14,7 +14,7 @@ export const Card = (props: any) => {
         classNames="card-anim"
       >
         <div
-          className="card cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300"
+          className="card cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300 aspect-[4/7] w-[35vw] md:w-[25vw] lg:w-[10vw]"
           ref={nodeRef}
           onClick={() => {
             props.flipCard(props.card.id);

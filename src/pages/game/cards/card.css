@@ -5,8 +5,6 @@
 
 .card {
   position: relative;
-  width: 200px;
-  height: 351px;
 }
 
 .card img {
@@ -93,7 +91,5 @@
 @media only screen and (max-width: 1000px) {
   .card {
     position: relative;
-    width: 150px;
-    height: 270px;
   }
 }
