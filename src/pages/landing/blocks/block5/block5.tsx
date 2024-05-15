@@ -18,10 +18,10 @@ export const Block5 = () => {
       <div className="w-full min-h-screen bg-black justify-center items-center flex flex-col relative">
         <AppearWrapper
           customClass={
-            "w-full xl:w-9/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4"
+            "w-full xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4"
           }
         >
-          <div className="w-full md:w-6/12 p-4 flex flex-col gap-4 text-white items-center justify-center text-xl xl:text-3xl">
+          <div className="w-full md:w-7/12 p-4 flex flex-col gap-4 text-white items-center justify-center text-xl xl:text-3xl">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 <TextReg
@@ -61,7 +61,7 @@ export const Block5 = () => {
               />
             </div>
           </div>
-          <div className="w-full md:w-6/12 flex p-4 justify-center items-center text-white">
+          <div className="w-full md:w-5/12 flex p-4 justify-center items-center text-white">
             <img className="md:h-[50vh]" src="./block7/naked.webp" alt="card" />
           </div>
         </AppearWrapper>
