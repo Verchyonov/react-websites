@@ -1,7 +1,7 @@
 import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
-import { BUY_LINK } from "../../../../common/urls";
+import { BUY_LINK, TELEGRAM_DEV } from "../../../../common/urls";
 import { AppearWrapper } from "../../../../common/appear-wrapper";
 
 export const Block6 = () => {
@@ -11,6 +11,10 @@ export const Block6 = () => {
 
   const onBuy = () => {
     window.open(BUY_LINK, "_blank");
+  };
+
+  const onTG = () => {
+    window.open(TELEGRAM_DEV, "_blank");
   };
 
   return (
@@ -33,16 +37,22 @@ export const Block6 = () => {
               <TextReg
                 customClass={"text-3xl md:text-4xl text-center"}
                 text={
-                  "All these metrics can be verified by checking the history of the developer's channel. For the launch of the 10th coin, we have decided to significantly increase the initial developer buy and add numerous scripts to combat bots and large purchases in the early stages."
+                  "THESE METRICS ARE VERIFIABLE IN THE DEVELOPER'S CHANNEL HISTORY. FOR THE 10TH COIN LAUNCH, WE'LL BOOST THE INITIAL DEVELOPER BUY AND ADD SCRIPTS TO COUNTER BOTS AND LARGE EARLY PURCHASES."
                 }
               />
 
-              <div className="flex w-full justify-center">
+              <div className="flex w-full justify-center gap-8">
                 <a
                   onClick={onBuy}
-                  className="px-8 py-4 w-full md:w-1/2 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
+                  className="px-8 py-4 w-full md:w-4/12 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
                 >
-                  Buy
+                  BUY
+                </a>
+                <a
+                  onClick={onTG}
+                  className="px-8 py-4 w-full md:w-4/12 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
+                >
+                  DEV CHANNEL
                 </a>
               </div>
             </div>

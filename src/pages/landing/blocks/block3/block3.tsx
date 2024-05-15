@@ -29,7 +29,7 @@ export const Block3 = () => {
             </div>
             <img
               className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
-              src="./block3/treasure.webp"
+              src="./block3/treasure.gif"
               alt="card"
             />
             <div className="md:hidden flex-col items-center w-full md:w-[23%] gap-4 p-2 flex">

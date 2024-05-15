@@ -84,7 +84,7 @@ export const Block4 = () => {
               onClick={onBuy}
               className="px-8 py-4 self-center w-full md:w-1/2 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
             >
-              Buy
+              BUY
             </a>
           </div>
           <div className="w-full md:w-6/12 flex p-4 justify-center items-center text-white">
