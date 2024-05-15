@@ -39,20 +39,20 @@ export const Block5 = () => {
               </div>
               <TextReg
                 customClass={"text-[#00BCF8] text-center xl:text-left"}
-                text={"- Average ATH market cap of our 9 projects: $670k"}
+                text={"• Average ATH market cap of our 9 projects: $670k"}
               />
               <TextReg
                 customClass={"text-[#00BCF8] text-center xl:text-left"}
-                text={"- Total trading volume: over $17m"}
+                text={"• Total trading volume: over $17m"}
               />
               <TextReg
                 customClass={"text-[#00BCF8] text-center xl:text-left"}
-                text={"- Highest market cap: $1.1m"}
+                text={"• Highest market cap: $1.1m"}
               />
               <TextReg
                 customClass={"text-[#00BCF8] text-center xl:text-left"}
                 text={
-                  "- Number of subscribers in the developer’s channel: 1,063 subs"
+                  "• Number of subscribers in the developer’s channel: 1,063 subs"
                 }
               />
               <TextReg

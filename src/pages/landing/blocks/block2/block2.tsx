@@ -32,7 +32,7 @@ export const Block2 = () => {
             <TextReg
               customClass={"text-[#00BCF8] text-2xl xl:text-left text-center"}
               text={
-                "is a deck of cards with meme pictures used for making crypto predictions."
+                "Is a deck of cards with meme pictures used for making crypto predictions."
               }
             />
           </div>
