@@ -1,4 +1,99 @@
-.front,
+/* .front,
 .back {
   backface-visibility: hidden;
+} */
+
+.card {
+  position: relative;
+  width: 200px;
+  height: 351px;
+}
+
+.card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.card img.back {
+  opacity: 1;
+}
+
+.card img.face {
+  opacity: 0;
+}
+
+.card-anim-enter-active img.face {
+  animation: 0.5s linear card-enter;
+}
+
+.card-anim-enter-done img.face {
+  opacity: 1;
+}
+
+.card-anim-enter-active img.back {
+  animation: 0.5s linear card-exit;
+}
+
+.card-anim-enter-done img.back {
+  opacity: 0;
+}
+
+.card-anim-exit-active img.face {
+  animation: 0.5s linear card-exit;
+}
+
+.card-anim-exit-done img.face {
+  opacity: 0;
+}
+
+.card-anim-exit-active img.back {
+  animation: 0.5s linear card-enter;
+}
+
+.card-anim-exit-done img.back {
+  opacity: 1;
+}
+
+@keyframes card-enter {
+  0% {
+    opacity: 0;
+    transform: rotateY(180deg);
+  }
+  49% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes card-exit {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  51% {
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .card {
+    position: relative;
+    width: 150px;
+    height: 270px;
+  }
 }

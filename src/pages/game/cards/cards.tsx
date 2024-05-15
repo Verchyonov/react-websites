@@ -1,7 +1,9 @@
 import React from "react";
 import { motion, useAnimationControls } from "framer-motion";
+import { CSSTransition } from "react-transition-group";
 import { useState } from "react";
-import "./card.css";
+
+import { Card } from "./card";
 
 type Card = {
   id: number;
@@ -31,6 +33,12 @@ export const Cards = () => {
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled.slice(0, 4);
+  };
+
+  let animationProps = {
+    initial: { rotateY: 180 },
+    animate: { rotateY: 170, transition: { duration: 3 } },
+    exit: { rotateY: 170, transition: { duration: 3 } },
   };
 
   //   const [isVisible, setIsVisible] = useState(false);
@@ -86,7 +94,7 @@ export const Cards = () => {
 
   return (
     <div className="flex w-full min-h-[50vh] justify-center align-middle items-center relative">
-      <div className="grid grid-cols-2 gap-2 md:flex md:flex-row md:gap-4 justify-center mx-0 md:mx-4 items-center overflow-hidden">
+      <div className="grid grid-cols-2 gap-2 lg:flex lg:flex-row lg:gap-4 justify-center mx-0 lg:mx-4 items-center overflow-hidden">
         <div className="relative col-span-2 overflow-x-hidden overflow-y-hidden z-[100] flex justify-center">
           <img
             alt="deck"
@@ -104,51 +112,33 @@ export const Cards = () => {
               onAnimationStart={turnCardsBack}
               onAnimationComplete={resetCards}
             >
-              <motion.div
-                transition={{ duration: 0.7 }}
-                animate={{ rotateY: card.isFlipped ? 0 : 180 }}
+              <Card key={index} card={card} flipCard={flipCard} />
+              {/* <CSSTransition
+                in={card.isFlipped}
+                timeout={500}
+                classNames="card-anim w-[26vh] md:w-[20vh] cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300"
               >
-                <motion.div
-                  transition={{ duration: 0.7 }}
-                  animate={{ rotateY: card.isFlipped ? 0 : 180 }}
+                <div
+                  className="card"
+                  onClick={() => {
+                    flipCard(card.id);
+                  }}
                 >
-                  {card.isFlipped ? (
-                    <>
-                      <motion.div
-                        className="front"
-                        transition={{ duration: 0.7 }}
-                        animate={{ rotateY: card.isFlipped ? 0 : 180 }}
-                      >
-                        <img
-                          alt="card"
-                          className="w-[26vh] md:w-[20vh] cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300"
-                          onClick={() => {
-                            flipCard(card.id);
-                          }}
-                          src={card.img}
-                        />
-                      </motion.div>
-                    </>
-                  ) : (
-                    <motion.div
-                      className="back"
-                      //animate={controls}
-                      initial={{ rotateY: 180 }}
-                      animate={{ rotateY: card.isFlipped ? 180 : 0 }}
-                      transition={{ duration: 0.7 }}
-                    >
-                      <img
-                        className="w-[26vh] md:w-[20vh] cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300"
-                        alt="back"
-                        onClick={() => {
-                          flipCard(card.id);
-                        }}
-                        src={"./game/back.webp"}
-                      />
-                    </motion.div>
-                  )}
-                </motion.div>
-              </motion.div>
+                  <img className="back" src="./game/back.webp" alt="1" />
+                  <img className="face" src={card.img} alt="2" />
+                </div>
+              </CSSTransition> */}
+              {/* <motion.div
+                onClick={() => {
+                  flipCard(card.id);
+                }}
+                {...animationProps}
+              >
+                <img
+                  className="w-[26vh] md:w-[20vh] cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300"
+                  src={card.isFlipped ? card.img : "./game/back.webp"}
+                />
+              </motion.div> */}
             </motion.div>
           );
         })}
