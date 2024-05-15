@@ -5,7 +5,7 @@ import { AppearWrapper } from "../../../../common/appear-wrapper";
 
 export const Block3 = () => {
   return (
-    <div className="w-full min-h-screen bg-black justify-center items-center flex flex-col relative blurred-border-top">
+    <div className="w-full min-h-screen justify-center items-center flex flex-col relative">
       <AppearWrapper
         customClass={
           "w-11/12 xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row gap-4 justify-center items-center"
@@ -14,7 +14,7 @@ export const Block3 = () => {
         <div className="flex flex-wrap justify-center align-center">
           <div className="flex flex-col xl:flex-row w-full justify-around">
             <img
-              className="w-full md:w-[23%] rounded-2xl p-2"
+              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
               src="./block3/old.gif"
               alt="card"
             />
@@ -31,7 +31,7 @@ export const Block3 = () => {
               />
             </div>
             <img
-              className="w-full md:w-[23%] rounded-2xl p-2"
+              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
               src="./block3/treasure.webp"
               alt="card"
             />
@@ -48,7 +48,7 @@ export const Block3 = () => {
               />
             </div>
             <img
-              className="w-full md:w-[23%] rounded-2xl p-2"
+              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
               src="./block3/hand.gif"
               alt="card"
             />
@@ -65,7 +65,7 @@ export const Block3 = () => {
               />
             </div>
             <img
-              className="w-full md:w-[23%] rounded-2xl p-2"
+              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
               src="./block3/tavern.webp"
               alt="card"
             />

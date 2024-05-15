@@ -15,7 +15,7 @@ export const Block6 = () => {
 
   return (
     <>
-      <div className="w-full min-h-screen bg-black justify-center items-center flex flex-col relative">
+      <div className="w-full min-h-screen justify-center items-center flex flex-col relative">
         <AppearWrapper
           customClass={
             "w-full md:w-10/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4"

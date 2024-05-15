@@ -8,18 +8,14 @@ import { Cards } from "../../../game/cards/cards";
 export const Block1 = () => {
   return (
     <div className="w-full min-h-[100vh] py-20 block1 justify-center items-center flex flex-col relative overflow-hidden">
-      {/* <img
-        className="absolute top-0 left-0 h-[100vh] z-0 w-1/2 opacity-40"
-        src="./rain.gif"
+      <img
+        className="absolute top-0 left-0 h-[100vh] z-0 w-1/2 opacity-20"
+        src="./block1/rain.gif"
       />
       <img
-        className="absolute top-0 right-0 h-[100vh] z-0 w-1/2 opacity-40"
-        src="./rain.gif"
-      /> */}
-      {/* <img
-        className="absolute top-0 right-0 h-[100vh] z-20 w-48 img-hor"
+        className="absolute top-0 right-0 h-[100vh] z-0 w-1/2 opacity-20"
         src="./block1/rain.gif"
-      /> */}
+      />
       <img
         className="absolute top-[-10%] lg:top-[-30%] w-[100vh] img-hor z-50 md:z-10"
         src="./block1/pepe.webp"
@@ -34,7 +30,7 @@ export const Block1 = () => {
       />
       <div
         className={
-          "w-11/12 max-w-screen-2xl block1inside flex flex-col p-4 py-12 gap-12 rounded-xl justify-center items-center z-50 md:z-20"
+          "w-11/12 max-w-screen-2xl block1inside flex flex-col p-4 py-12 gap-12 rounded-xl justify-center items-center z-50 md:z-20 opacity-[96%]"
         }
       >
         <motion.div

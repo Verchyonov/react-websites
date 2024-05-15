@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Bugaga";
-  src: local("Lato"), url(../public/font.ttf) format("truetype");
-}
+@import url("https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&display=swap");
 
 @layer base {
   * {
@@ -14,9 +11,10 @@
     box-sizing: border-box;
   }
   body {
-    /* font-family: Bugaga, serif; */
-    background-color: black;
-    /* font-family: "Permanent Marker", cursive; */
+    background-color: #39442f;
+    font-family: "Fondamento", cursive;
+    font-weight: 400;
+    font-style: normal;
     font-weight: 400;
     font-style: normal;
   }
@@ -98,16 +96,28 @@
   }
 
   .block1 {
-    background-image: url("../public/bg1.png");
+    background-image: url("../public/block1/bg1.png");
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   .block2 {
-    background-image: url("../public/bg2.png");
+    background-image: url("../public/block2/bg2.png");
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  /* .block3 {
+    background-image: url("../public/block3/bg3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .block4 {
+    background-image: url("../public/block4/bg4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  } */
 
   .rfm-marquee-container {
     overflow: unset !important;

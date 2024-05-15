@@ -1,25 +1,14 @@
 import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
-
-import { motion } from "framer-motion";
+import { AppearWrapper } from "../../../../common/appear-wrapper";
 
 export const Block2 = () => {
   return (
-    <div className="w-full min-h-screen block2 bg-black justify-center items-center flex flex-col relative blurred-border-top">
-      <motion.div
-        className={
+    <div className="w-full min-h-screen block2 justify-center items-center flex flex-col relative blurred-border-top">
+      <AppearWrapper
+        customClass={
           "w-full xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4"
         }
-        initial={{
-          opacity: 0,
-        }}
-        whileInView={{
-          opacity: 1,
-        }}
-        transition={{
-          duration: 3,
-        }}
-        viewport={{ once: true }}
       >
         <div className="w-full md:w-8/12 flex p-4 flex-col gap-8 text-white items-center justify-center">
           <div className="flex flex-col gap-2">
@@ -54,7 +43,7 @@ export const Block2 = () => {
             alt="gendalph"
           />
         </div>
-      </motion.div>
+      </AppearWrapper>
     </div>
   );
 };

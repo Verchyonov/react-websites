@@ -20,6 +20,7 @@ export const Landing = () => {
         <>
           <Block1 />
           <Block2 />
+          <img src="./divider.webp" className="w-full" />
           <Block3 />
           <Block4 />
           <Block5 />
