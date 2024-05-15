@@ -53,8 +53,8 @@ export const Block1 = () => {
           <CopyCa />
           <Links />
           <TextReg
-            customClass={"mt-4 text-2xl text-center"}
-            text={"Lorem ipsun lorem ipsun lorem ipsun"}
+            customClass={"mt-4 text-4xl text-center font-bold"}
+            text={"Tarot Of Meme $TOME"}
           />
 
           <div className="flex w-full flex-col gap-4 justify-center items-center">

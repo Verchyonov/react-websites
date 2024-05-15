@@ -57,7 +57,7 @@ export const Block5 = () => {
               />
               <TextReg
                 customClass={"text-[#00BCF8] text-center xl:text-left"}
-                text={"- Developer profit: $0"}
+                text={"• Developer profit: $0"}
               />
             </div>
           </div>

@@ -81,7 +81,7 @@ export const Cards = () => {
   };
 
   return (
-    <div className="flex w-full justify-center align-middle items-center relative">
+    <div className="flex w-full min-h-[50vh] justify-center align-middle items-center relative">
       <div className="flex md:flex-row flex-col gap-2 md:gap-4 justify-center mx-0 md:mx-4 items-center overflow-hidden">
         <div className="relative overflow-x-hidden overflow-y-hidden z-[100] flex">
           <img
