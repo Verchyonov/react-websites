@@ -5,14 +5,6 @@ import { BUY_LINK } from "../../../../common/urls";
 import { AppearWrapper } from "../../../../common/appear-wrapper";
 
 export const Block5 = () => {
-  const onPlay = () => {
-    window.open("/game", "_blank");
-  };
-
-  const onBuy = () => {
-    window.open(BUY_LINK, "_blank");
-  };
-
   return (
     <>
       <div className="w-full min-h-screen  justify-center items-center flex flex-col relative uppercase">

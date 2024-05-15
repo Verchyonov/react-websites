@@ -1,18 +1,14 @@
 import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
-import { BUY_LINK, TELEGRAM_DEV } from "../../../../common/urls";
+import { TWITTER_DEV, TELEGRAM_DEV } from "../../../../common/urls";
 import { AppearWrapper } from "../../../../common/appear-wrapper";
 import { MovingImg } from "../../../../common/moving-img";
 import { useMoveOnScrollHook } from "../../../../hooks/useMoveOnScrollHook";
 
 export const Block6 = () => {
   const { y, ref } = useMoveOnScrollHook(100);
-  const onPlay = () => {
-    window.open("/game", "_blank");
-  };
-
-  const onBuy = () => {
-    window.open(BUY_LINK, "_blank");
+  const onX = () => {
+    window.open(TWITTER_DEV, "_blank");
   };
 
   const onTG = () => {
@@ -51,16 +47,16 @@ export const Block6 = () => {
 
               <div ref={ref} className="flex w-full justify-center gap-8">
                 <a
-                  onClick={onBuy}
+                  onClick={onX}
                   className="px-8 py-4 w-full md:w-4/12 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
                 >
-                  BUY
+                  DEV X
                 </a>
                 <a
                   onClick={onTG}
                   className="px-8 py-4 w-full md:w-4/12 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
                 >
-                  DEV CHANNEL
+                  DEV TELEGRAM
                 </a>
               </div>
             </div>

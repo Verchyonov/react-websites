@@ -64,12 +64,13 @@ export const Block4 = () => {
               <TextReg customClass={""} text={"• 5% TEAM ALLOCATION"} />
               <TextReg customClass={""} text={"• 35% IN CIRCULATION"} />
             </div>
-            <a
+            <button
+              disabled
               onClick={onBuy}
               className="px-8 py-4 md:mt-0 mt-8 self-center w-full md:w-1/2 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
             >
               BUY
-            </a>
+            </button>
           </div>
           <div className="w-full md:w-5/12 flex p-4 justify-center items-center text-white">
             <img

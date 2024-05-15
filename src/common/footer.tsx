@@ -1,7 +1,7 @@
 import React from "react";
 import { TgIcon } from "./icons/tg-icon";
 import { XIcon } from "./icons/x-icon";
-import { TELEGRAM_DEV, TWITTER_DEV } from "./urls";
+import { TELEGRAM, TWITTER } from "./urls";
 
 const iconClass = "w-6 h-6 fill-white";
 
@@ -20,7 +20,7 @@ export const FooterSection = (props: any) => {
           </span>
           <span className="inline-flex">
             <a
-              href={TWITTER_DEV}
+              href={TWITTER}
               target="_blank"
               rel="noopener noreferrer"
               className="mx-[2px] rounded p-2 font-bold"
@@ -28,7 +28,7 @@ export const FooterSection = (props: any) => {
               <XIcon iconClass={iconClass} />
             </a>
             <a
-              href={TELEGRAM_DEV}
+              href={TELEGRAM}
               rel="noopener noreferrer"
               target="_blank"
               className="mx-[2px] rounded p-2 font-bold"
