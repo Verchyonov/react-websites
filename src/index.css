@@ -75,7 +75,13 @@
   }
 
   .block1 {
-    background-image: url("../public/block1/bg.webp");
+    background-image: url("../public/bg1.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .block2 {
+    background-image: url("../public/bg2.webp");
     background-repeat: no-repeat;
     background-size: cover;
   }
