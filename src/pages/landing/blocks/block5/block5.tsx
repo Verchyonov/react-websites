@@ -66,7 +66,7 @@ export const Block5 = () => {
             </div>
             <div className="w-full md:w-6/12 flex p-4 justify-center items-center text-white">
               <img
-                className="md:h-[50vh] object-contain"
+                className="md:h-[50vh] object-contain hover:scale-[1.02] transition-all duration-300"
                 src="./block7/naked.webp"
                 alt="card"
               />

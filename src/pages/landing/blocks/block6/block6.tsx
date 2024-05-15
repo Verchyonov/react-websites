@@ -23,7 +23,7 @@ export const Block6 = () => {
         >
           <div className="w-full md:w-4/12 flex p-4 justify-center items-center text-white">
             <img
-              className="md:h-[50vh] rounded-xl"
+              className="md:h-[50vh] rounded-xl hover:scale-[1.02] transition-all duration-300"
               src="./game/back.webp"
               alt="card"
             />
@@ -41,7 +41,7 @@ export const Block6 = () => {
                 <div className="flex flex-col justify-center gap-4 md:gap-16 md:flex-row">
                   <img
                     onClick={onBuy}
-                    className="justify-center cursor-pointer  md:w-4/12 rounded-xl"
+                    className="justify-center cursor-pointer  md:w-4/12 rounded-xl "
                     src="./block4/buy.jpg"
                     alt="buy"
                   />

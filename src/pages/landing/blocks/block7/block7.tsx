@@ -90,7 +90,7 @@ export const Block7 = () => {
                 <div className="flex flex-col justify-center gap-4 md:gap-16 md:flex-row">
                   <img
                     onClick={onBuy}
-                    className="justify-center cursor-pointer  md:w-4/12 rounded-xl"
+                    className="justify-center cursor-pointer  md:w-4/12 rounded-xl hover:scale-[1.02] transition-all duration-300"
                     src="./block4/buy.jpg"
                     alt="buy"
                   />
