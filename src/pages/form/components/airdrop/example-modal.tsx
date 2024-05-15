@@ -6,6 +6,7 @@ import Fade from "@mui/material/Fade";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { Tweet } from "react-twitter-widgets";
+import { color } from "framer-motion";
 
 const style = {
   position: "absolute" as "absolute",
@@ -14,6 +15,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
+  color: "text.primary",
   borderRadius: 3,
   boxShadow: 24,
   p: 2,
