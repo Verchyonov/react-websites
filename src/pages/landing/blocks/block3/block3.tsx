@@ -8,7 +8,7 @@ export const Block3 = () => {
     <div className="w-full min-h-[60vh] bg-black justify-center items-center flex flex-col relative">
       <AppearWrapper
         customClass={
-          "w-11/12 md:w-10/12 max-w-screen-2x flex flex-col md:flex-row gap-4 justify-center items-center"
+          "w-11/12 xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row gap-4 justify-center items-center"
         }
       >
         <div className="flex flex-wrap justify-center align-center">

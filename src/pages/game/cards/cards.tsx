@@ -22,7 +22,12 @@ const cardsStack = Array.from({ length: 77 }, (_, i) => {
 export const Cards = () => {
   const controls = useAnimationControls();
   const getRandomCards = (): any => {
-    const shuffled = Array.from(cardsStack).sort(() => 0.5 - Math.random());
+    let shuffled = Array.from(cardsStack);
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
     return shuffled.slice(0, 4);
   };
 
@@ -86,9 +91,10 @@ export const Cards = () => {
             src="./game/deck.webp"
           />
         </div>
-        {cards.map((card, index) => {
+        {cards.map((card) => {
           return (
             <motion.div
+              key={card.id}
               className="relative overflow-visible"
               animate={controls}
               onAnimationStart={turnCardsBack}
