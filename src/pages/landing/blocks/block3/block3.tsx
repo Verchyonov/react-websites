@@ -14,7 +14,7 @@ export const Block3 = () => {
         <div className="flex flex-wrap justify-center align-center">
           <div className="flex flex-col md:flex-row w-full justify-around py-16 md:px-0 gap-6 md:gap-0">
             <img
-              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
+              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300 drop-shadow-xl"
               src="./block3/old.gif"
               alt="card"
             />
@@ -25,7 +25,7 @@ export const Block3 = () => {
               <TextReg customClass={""} text={"• MARKETING"} />
             </div>
             <img
-              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
+              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300 drop-shadow-xl"
               src="./block3/treasure.gif"
               alt="card"
             />
@@ -36,7 +36,7 @@ export const Block3 = () => {
               <TextReg customClass={""} text={"• PUMP.FUN LAUNCH"} />
             </div>
             <img
-              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
+              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300 drop-shadow-xl"
               src="./block3/hand.gif"
               alt="card"
             />
@@ -47,7 +47,7 @@ export const Block3 = () => {
               <TextReg customClass={""} text={"• AIRDROP DELIVERY"} />
             </div>
             <img
-              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
+              className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300 drop-shadow-xl"
               src="./block3/tavern.png"
               alt="card"
             />
