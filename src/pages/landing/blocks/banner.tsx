@@ -32,7 +32,6 @@ export const Banner = (props: any) => {
           }}
           src="./enter.webp"
         />
-        <img className="w-full md:w-10/12 xl:w-8/12" src={"./notl.png"} />
       </div>
     </div>
   );
