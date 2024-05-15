@@ -17,7 +17,7 @@ import { XIcon } from "./icons/x-icon";
 const buttonClass =
   " select-none font-bold cursor-pointer rounded-full flex flex-row content-center items-center transform transition duration-500 hover:scale-105 z-50";
 
-const iconClass = "w-10 h-10 md:w-12 md:h-12 fill-[#0b1d21]";
+const iconClass = "w-10 h-10 md:w-12 md:h-12 fill-black";
 
 const Checker = (props: any) => {
   return <>{props.val.length !== 0 && props.children}</>;
