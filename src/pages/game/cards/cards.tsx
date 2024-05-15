@@ -117,7 +117,7 @@ export const Cards = () => {
                       >
                         <img
                           alt="card"
-                          className="w-[26vh] md:w-[18vh] cursor-pointer"
+                          className="w-[26vh] md:w-[18vh] cursor-pointer rounded-md"
                           onClick={() => {
                             flipCard(card.id);
                           }}
@@ -134,7 +134,7 @@ export const Cards = () => {
                       transition={{ duration: 0.7 }}
                     >
                       <img
-                        className="w-[26vh] md:w-[18vh] cursor-pointer"
+                        className="w-[26vh] md:w-[18vh] cursor-pointer rounded-md"
                         alt="back"
                         onClick={() => {
                           flipCard(card.id);
