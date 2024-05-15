@@ -18,7 +18,7 @@ export const Block5 = () => {
       <div className="w-full min-h-screen  justify-center items-center flex flex-col relative">
         <AppearWrapper
           customClass={
-            "w-full xl:w-9/12 max-w-screen-2x  justify-around flex flex-col p-4 gap-8"
+            "w-full xl:w-9/12 max-w-screen-2x  justify-around flex flex-col p-4 gap-8 py-16 md:px-0"
           }
         >
           <div className="flex flex-col justify-center">

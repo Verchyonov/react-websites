@@ -7,7 +7,7 @@ export const Block2 = () => {
     <div className="w-full min-h-screen block2 justify-center items-center flex flex-col relative">
       <AppearWrapper
         customClass={
-          "w-full xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4"
+          "w-full xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4 py-16 md:px-0"
         }
       >
         <div className="w-full md:w-8/12 flex p-4 flex-col gap-8 text-white items-center justify-center">

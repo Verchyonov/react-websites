@@ -18,7 +18,7 @@ export const Block7 = () => {
       <div className="w-full min-h-screen bg-black justify-center items-center flex flex-col relative">
         <AppearWrapper
           customClass={
-            "w-11/12 md:w-9/12 max-w-screen-2x flex flex-col md:flex-row p-8 gap-4"
+            "w-11/12 md:w-9/12 max-w-screen-2x flex flex-col md:flex-row p-8 gap-4 py-16 md:px-0"
           }
         >
           <div className="w-full md:w-6/12 flex p-4 flex-col gap-4 text-white items-center justify-center">
@@ -85,18 +85,12 @@ export const Block7 = () => {
 
               <div className="flex w-full justify-center">
                 <div className="flex flex-col justify-center gap-4 md:gap-16 md:flex-row">
-                  <img
+                  <a
                     onClick={onBuy}
-                    className="justify-center cursor-pointer  md:w-4/12 rounded-xl hover:scale-[1.02] transition-all duration-300"
-                    src="./block4/buy.jpg"
-                    alt="buy"
-                  />
-                  {/* <img
-                    onClick={onPlay}
-                    className="cursor-pointer md:h-20 md:w-6/12"
-                    src="./block4/play.jpg"
-                    alt="play"
-                  /> */}
+                    className="px-8 py-4 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
+                  >
+                    Buy
+                  </a>
                 </div>
               </div>
             </div>

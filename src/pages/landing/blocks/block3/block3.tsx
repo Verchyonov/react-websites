@@ -12,7 +12,7 @@ export const Block3 = () => {
         }
       >
         <div className="flex flex-wrap justify-center align-center">
-          <div className="flex flex-col md:flex-row w-full justify-around">
+          <div className="flex flex-col md:flex-row w-full justify-around py-16 md:px-0">
             <img
               className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300"
               src="./block3/old.gif"
