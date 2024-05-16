@@ -29,6 +29,9 @@ module.exports = {
     }),
     new DefinePlugin({
       "process.env": JSON.stringify(process.env),
+      "process.env.REACT_APP_SERVER": JSON.stringify(
+        process.env.REACT_APP_SERVER
+      ),
     }),
   ],
   resolve: {

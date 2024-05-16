@@ -15,6 +15,7 @@
   *:before,
   *:after {
     @apply cursor-default;
+    @apply cursor-pointer;
   }
 
   body {

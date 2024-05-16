@@ -83,7 +83,7 @@ export const CheckElegibility = () => {
           />
           <button
             onClick={onCheck}
-            className="text-white absolute end-2.5 bottom-2.5 bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-4 focus:outline-none focus:ring-[#1f2937] font-medium rounded-lg text-sm px-4 py-2"
+            className="text-white absolute end-2.5 bottom-2.5 bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-4 focus:outline-none focus:ring-[#1f2937] font-medium rounded-lg text-sm px-4 py-2 cursor-pointer transition-transform duration-75 ease-in-out hover:scale-[1.02]"
           >
             Validate
           </button>
