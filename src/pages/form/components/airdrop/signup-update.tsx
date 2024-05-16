@@ -266,7 +266,7 @@ export const SignUpUpdate = (props: any) => {
               <ExampleModal />
               <button
                 onClick={downloadImage}
-                className="text-white text-center w-1/2 lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-4 py-3 transition-transform duration-75 ease-in-out"
+                className="text-white text-center w-1/2 lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-4 py-3 transition-transform duration-75 ease-in-out cursor-pointer"
               >
                 Images
               </button>
@@ -287,10 +287,10 @@ export const SignUpUpdate = (props: any) => {
             onClick={onSignUpUpdate}
             type="submit"
             className={
-              "text-white w-full bg-[#1f2937]  focus:outline-none font-medium rounded-lg px-6 py-4 transition-transform duration-75 ease-in-out " +
+              "text-white w-full bg-[#1f2937]  focus:outline-none font-medium rounded-lg px-6 py-4 transition-transform duration-75 ease-in-out uppercase cursor-pointer " +
               (isSending || !isValid
                 ? " opacity-50 cursor-not-allowed"
-                : "hover:bg-[#2f4560dc] focus:ring-2 focus:ring-[#1f293785] hover:scale-[1.02]")
+                : "hover:bg-[#2f4560dc] focus:ring-2 focus:ring-[#1f293785] hover:scale-[1.02] cursor-pointer")
             }
           >
             Sign up for Airdrop

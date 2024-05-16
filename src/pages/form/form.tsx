@@ -55,7 +55,7 @@ export const Form = () => {
   return (
     <AppearWrapper>
       <div
-        className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative justify-center items-center"
+        className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative justify-center items-center uppercase cursor-default"
         style={{ wordSpacing: "5px" }}
       >
         <div className="w-full lg:w-[90%] justify-self-center self-center z-50">
