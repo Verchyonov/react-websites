@@ -44,7 +44,7 @@ export const PresaleForm = (props: any) => {
       return;
     }
     axios
-      .get(process.env.REACT_APP_SERVER + "/drop/presale/user", {
+      .get(process.env.SERVER + "/drop/presale/user", {
         params: {
           wallet: publicKey,
         },
@@ -115,7 +115,7 @@ export const PresaleForm = (props: any) => {
       );
 
       axios
-        .post(process.env.REACT_APP_SERVER + "/drop/presale/add", {
+        .post(process.env.SERVER + "/drop/presale/add", {
           user: {
             wallet: publicKey,
             solAmount: solAmount,
