@@ -21,11 +21,11 @@ export const Block1 = () => {
         src="./block1/pepe.webp"
       />
       <img
-        src="./block1/oblako.png"
+        src="./block1/oblako.webp"
         className="absolute top-[0] left-[-10vh] md:z-50  z-20 w-[30vh] xl:w-[40vh]"
       />
       <img
-        src="./block1/oblakol.png"
+        src="./block1/oblakol.webp"
         className="absolute top-[0] right-[-10vh] md:z-50 z-20 w-[30vh] xl:w-[40vh]"
       />
       <div
