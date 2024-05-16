@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -6,7 +6,6 @@ import Fade from "@mui/material/Fade";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import CloseIcon from "@mui/icons-material/Close";
 import { Tweet } from "react-twitter-widgets";
-import { color } from "framer-motion";
 
 const style = {
   position: "absolute" as "absolute",
@@ -45,7 +44,7 @@ export const ExampleModal = (props: any) => {
         Example
       </button>
       <Modal
-        className={!open ? "pointer-events-none" : ""}
+        className={"form uppercase " + (!open ? "pointer-events-none" : "")}
         keepMounted
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -72,7 +71,7 @@ export const ExampleModal = (props: any) => {
             </Box>
             <h2 className="text-3xl font-bold text-center">Example</h2>
             <div className="w-full light updated-dark">
-              <Tweet tweetId={"1791181942152401327"} />
+              <Tweet tweetId={"1791234180195418453"} />
             </div>
             <h3 className="lg:text-lg font-bold text-center mb-2">
               Feel free to add any image or text

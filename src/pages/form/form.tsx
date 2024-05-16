@@ -69,7 +69,7 @@ export const Form = () => {
           y={y}
           imgPath={"./form/formgnome.webp"}
           alt={"gendalph"}
-          customClassWrapper={"absolute top-1/2 right-24 z-0"}
+          customClassWrapper={"absolute top-1/2 right-24 z-0 xl:block hidden"}
           customClassImg={" h-[35vh]  object-contain img-hor"}
           ty={10}
           tx={2}
@@ -79,7 +79,7 @@ export const Form = () => {
           y={y}
           imgPath={"./form/formgnome.webp"}
           alt={"gendalph"}
-          customClassWrapper={"absolute top-1/2 left-24 z-0"}
+          customClassWrapper={"absolute top-1/2 left-24 z-0 xl:block hidden"}
           customClassImg={" h-[35vh]  object-contain "}
           ty={2}
           tx={10}

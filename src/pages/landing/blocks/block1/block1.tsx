@@ -4,8 +4,11 @@ import { Links } from "../../../../common/links";
 import { TextReg } from "../../../../common/text/text-reg";
 import { motion } from "framer-motion";
 import { Cards } from "../../../game/cards/cards";
+import { useCompensateScrollbar } from "../../../../hooks/useCompensateScrollbar";
 
 export const Block1 = () => {
+  useCompensateScrollbar();
+
   return (
     <div
       className="w-full min-h-[100vh] py-20 block1 justify-center items-center flex flex-col relative overflow-hidden"

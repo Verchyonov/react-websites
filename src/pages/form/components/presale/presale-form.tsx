@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { useCompensateScrollbar } from "../../../../hooks/useCompensateScrollbar";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import {
   TransactionToast,
@@ -19,7 +18,6 @@ import { Id, toast } from "react-toastify";
 import axios from "axios";
 
 export const PresaleForm = (props: any) => {
-  useCompensateScrollbar();
   const [solAmount, setSolAmount] = useState<number>(0.1);
   const [solBalance, setSolBalance] = useState(0.0);
   const [isLoading, setIsLoading] = useState(true);

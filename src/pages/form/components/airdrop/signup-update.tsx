@@ -1,7 +1,6 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import { saveAs } from "file-saver";
 import {
   EnrollToast,
   InputStatus,
@@ -16,16 +15,14 @@ import {
   sendWarningNotification,
 } from "../../utils";
 import { ExampleModal } from "./example-modal";
-import { useCompensateScrollbar } from "../../../../hooks/useCompensateScrollbar";
 import DownloadIcon from "@mui/icons-material/Download";
-
 import { toast } from "react-toastify";
 
 export const SignUpUpdate = (props: any) => {
-  useCompensateScrollbar();
-
   const [isSending, setIsSending] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading1, setIsLoading1] = useState(false);
+  const [isLoading2, setIsLoading2] = useState(false);
+  const [isLoading3, setIsLoading3] = useState(false);
   const [isValidWallet, setIsValidWallet] = useState(false);
   const [isValidXUsername, setIsValidXUsername] = useState(false);
   const [isValidXPostLink, setIsValidXPostLink] = useState(false);
@@ -53,7 +50,12 @@ export const SignUpUpdate = (props: any) => {
     if (!checkWallet(value)) return;
 
     const timeOutId = setTimeout(() => {
-      checkFieldExists({ wallet: value }, setIsValidWallet, "Wallet");
+      checkFieldExists(
+        { wallet: value },
+        setIsValidWallet,
+        setIsLoading1,
+        "Wallet"
+      );
     }, 800);
     return () => clearTimeout(timeOutId);
   }, [wallet]);
@@ -64,7 +66,12 @@ export const SignUpUpdate = (props: any) => {
     if (!checkXUsername(value)) return;
 
     const timeOutId = setTimeout(() => {
-      checkFieldExists({ xUsername: value }, setIsValidXUsername, "X Username");
+      checkFieldExists(
+        { xUsername: value },
+        setIsValidXUsername,
+        setIsLoading2,
+        "X Username"
+      );
     }, 800);
     return () => clearTimeout(timeOutId);
   }, [xUser]);
@@ -78,6 +85,7 @@ export const SignUpUpdate = (props: any) => {
       checkFieldExists(
         { xPostLink: value },
         setIsValidXPostLink,
+        setIsLoading3,
         "X Post Link"
       );
     }, 800);
@@ -87,6 +95,7 @@ export const SignUpUpdate = (props: any) => {
   const checkFieldExists = (
     field: { [key: string]: string },
     setState: (state: boolean) => void,
+    setIsLoading: (state: boolean) => void,
     fieldName: string
   ) => {
     setIsLoading(true);
@@ -112,13 +121,6 @@ export const SignUpUpdate = (props: any) => {
       .finally(() => {
         setIsLoading(false);
       });
-  };
-
-  const downloadImage = (e: any) => {
-    e.preventDefault();
-    saveAs("./image.jpeg", "image.jpeg");
-    saveAs("./image2.png", "image2.png");
-    saveAs("./image3.png", "image3.png");
   };
 
   const onSignUpUpdate = (e: any) => {
@@ -152,7 +154,7 @@ export const SignUpUpdate = (props: any) => {
     const toastId = sendEnrollNotification("pending");
     setIsSending(true);
     axios
-      .post(process.env.REACT_APP_SERVER + "/drop/aidrop/add", {
+      .post(process.env.REACT_APP_SERVER + "/drop/airdrop/add", {
         user: {
           wallet: walletToSend,
           xUsername: xUserToSend,
@@ -201,7 +203,7 @@ export const SignUpUpdate = (props: any) => {
           <InputStatus
             style="end-0.5 lg:end-2.2 top-[2.35rem]"
             isValid={isValidWallet}
-            isLoading={isLoading}
+            isLoading={isLoading1}
           />
         </div>
         <div className="relative">
@@ -226,7 +228,7 @@ export const SignUpUpdate = (props: any) => {
                 (!isValidWallet ? "cursor-not-allowed blur-[1px]" : "")
               }
               isValid={isValidXUsername}
-              isLoading={isLoading}
+              isLoading={isLoading2}
             />
           </span>
           <p className="mb-4 mt-2 text-slate-400">
@@ -269,17 +271,18 @@ export const SignUpUpdate = (props: any) => {
                   : "")
               }
               isValid={isValidXPostLink}
-              isLoading={isLoading}
+              isLoading={isLoading3}
             />
             <div className="flex flex-row gap-1 self-center w-full lg:w-auto">
               <ExampleModal />
-              <button
-                onClick={downloadImage}
+              <a
+                href="https://drive.google.com/drive/folders/1xEm3YtEEAxyekbGO1rhHUd3xyvVJC-gO?usp=sharing"
+                target="_blank"
                 className="text-white text-center w-1/2 lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-4 py-3 transition-transform duration-75 ease-in-out cursor-pointer"
               >
                 <DownloadIcon className="mr-1" />
                 Images
-              </button>
+              </a>
             </div>
           </div>
           <p className="mb-4 mt-2 text-slate-400">
