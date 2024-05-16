@@ -151,7 +151,7 @@ export const SignUpUpdate = (props: any) => {
     const toastId = sendEnrollNotification("pending");
     setIsSending(true);
     axios
-      .post(process.env.REACT_APP_SERVER + "/drop/aidrop/add", {
+      .post(process.env.SERVER + "/drop/aidrop/add", {
         user: {
           wallet: walletToSend,
           xUsername: xUserToSend,
