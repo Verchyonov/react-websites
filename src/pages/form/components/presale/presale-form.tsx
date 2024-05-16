@@ -43,6 +43,7 @@ export const PresaleForm = (props: any) => {
     if (!publicKey) {
       return;
     }
+
     axios
       .get(process.env.REACT_APP_SERVER + "/drop/presale/user", {
         params: {
