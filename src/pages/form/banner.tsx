@@ -12,36 +12,47 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   height: "auto",
-  width: "60vw",
+  width: "70vw",
   bgcolor: "#1B1D28",
   border: "6px solid white",
   color: "text.primary",
   borderRadius: 5,
   boxShadow: 24,
-  maxHeight: "90vh",
   outline: "none",
   p: 2,
 };
 
 export const Banner = (props: any) => {
+  const [timeLeft, setTimeLeft] = useState<any>(15);
   const [open, setOpen] = useState(true);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+
+  useEffect(() => {
+    if (timeLeft === 0) {
+      setIsButtonEnabled(true);
+      setTimeLeft(null);
+    }
+
+    // exit early when we reach 0
+    if (!timeLeft) return;
+
+    // save intervalId to clear the interval when the
+    // component re-renders
+    const intervalId = setInterval(() => {
+      setTimeLeft(timeLeft - 1);
+    }, 1000);
+
+    // clear interval on re-render to avoid memory leaks
+    return () => clearInterval(intervalId);
+    // add timeLeft as a dependency to re-rerun the effect
+    // when we update it
+  }, [timeLeft]);
 
   const handleClose: DialogProps["onClose"] = (event, reason) => {
     if (reason && reason === "backdropClick") return;
     if (!isButtonEnabled) return;
     setOpen(false);
   };
-
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      setIsButtonEnabled(true);
-    }, 8 * 1000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
 
   return (
     <>
@@ -61,37 +72,46 @@ export const Banner = (props: any) => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <div className="flex flex-col items-center gap-2 min-h-screen p-16 w-full text-white text-center text-3xl form uppercase">
-              <TextReg
-                customClass={"text-5xl mb-12"}
-                text={"$TOME Airdrop Instructions"}
-              />
-              <TextReg customClass={""} text={"1) ENTER YOUR SOL ADRESS "} />
-              <TextReg customClass={""} text={"2) ENTER YOUR TWITTER @"} />
-              <TextReg customClass={""} text={"3) FOLLOW @tarotofmeme"} />
-              <TextReg
-                customClass={"mb-6"}
-                text={"4) MAKE A POST USING  $TOME, @tarotofmeme AND PICTURE "}
-              />
-              <TextReg
-                customClass={""}
-                text={"Example: I am wif $TOME @tarotofmem"}
-              />
-              <TextReg
-                customClass={""}
-                text={
-                  "Twitter account should be 60+ days old and 40+ followers"
-                }
-              />
-              <img
-                className={
-                  "w-full md:w-8/12 xl:w-4/12 my-auto cursor-pointer transition duration-500 ease-in-out transform " +
-                  (isButtonEnabled ? "hover:scale-[1.1]" : " opacity-50")
-                }
-                // @ts-ignore
-                onClick={handleClose}
-                src="./form/enter.webp"
-              />
+            <div className="flex flex-col items-center h-fit p-4 w-full md:gap-8 text-white text-center form uppercase justify-between">
+              <div className="flex w-full justify-center">
+                <TextReg
+                  customClass={"text-xl md:text-5xl mb-12"}
+                  text={"$TOME Airdrop Instructions"}
+                />
+              </div>
+              <div className="flex flex-col gap-2 md:gap-8 justify-center text-lg md:text-3xl">
+                <TextReg customClass={""} text={"1) ENTER YOUR SOL ADRESS "} />
+                <TextReg customClass={""} text={"2) ENTER YOUR TWITTER @"} />
+                <TextReg customClass={""} text={"3) FOLLOW @tarotofmeme"} />
+                <TextReg
+                  customClass={"mb-6"}
+                  text={
+                    "4) MAKE A POST USING  $TOME, @tarotofmeme AND PICTURE "
+                  }
+                />
+                <TextReg
+                  customClass={""}
+                  text={"Example: I am wif $TOME @tarotofmem"}
+                />
+                <TextReg
+                  customClass={""}
+                  text={
+                    "Twitter account should be 60+ days old and 40+ followers"
+                  }
+                />
+              </div>
+              <div className="flex flex-col gap-2 md:gap-2 justify-center align-middle w-full items-center">
+                <img
+                  className={
+                    "w-full md:w-8/12 xl:w-4/12 my-auto cursor-pointer transition duration-500 ease-in-out transform " +
+                    (isButtonEnabled ? "hover:scale-[1.1]" : " opacity-50")
+                  }
+                  // @ts-ignore
+                  onClick={handleClose}
+                  src="./form/enter.webp"
+                />
+                <p className="text-lg md:text-4xl font-bold">{timeLeft}</p>
+              </div>
             </div>
           </Box>
         </Fade>
