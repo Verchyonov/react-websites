@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { Backdrop, Box, Fade, IconButton, Modal } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
 import jsonData from "../../../../public/cards/cards.json";
+import { CloseIcon } from "../../../common/icons/close-icon";
 
 type CardModalProps = {
   isOpen: boolean;
@@ -21,6 +21,7 @@ const style = {
   color: "text.primary",
   borderRadius: 1,
   boxShadow: 24,
+  maxHeight: "90vh",
   p: 2,
   display: "flex",
   flexDirection: "column",
@@ -44,7 +45,7 @@ function Description({ text }: { text: string }) {
   ));
 
   return (
-    <p className="flex justify-center text-md h-[40vh] overflow-y-auto lg:overflow-y-hidden lg:h-auto md:text-2xl md:leading-[2.6rem] text-pretty  items-center">
+    <p className="flex justify-center text-sm md:text-2xl leading-normal lg:leading-[2.5rem] text-pretty items-center">
       {content}
     </p>
   );
@@ -71,7 +72,7 @@ export const CardModal = (props: CardModalProps) => {
 
   return (
     <Modal
-      className={(!props.isOpen ? "pointer-events-none" : "") + " max-h-[90vh]"}
+      className={(!props.isOpen ? "pointer-events-none" : "") + ""}
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"
       open={props.isOpen}
@@ -84,33 +85,27 @@ export const CardModal = (props: CardModalProps) => {
         },
       }}
     >
-      <Fade in={props.isOpen} className="max-h-[90vh]">
+      <Fade in={props.isOpen}>
         <Box sx={style}>
-          <Box
-            position={"absolute"}
-            top={5}
-            right={5}
-            sx={{ cursor: "default" }}
-          >
+          <div className="absolute top-2.5 right-2.5 z-50">
             <button
-              aria-label="close"
-              className="p-2 transform hover:scale-110 transition-transform duration-300 ease-in-out cursor-default"
+              className="p-2 transform hover:scale-110 transition-transform duration-300 ease-in-out cursor-pointer"
               onClick={handleClose}
             >
-              <CloseIcon style={{ color: "black", fontSize: "2rem" }} />
+              <CloseIcon iconClass={"w-6 h-6 md:w-10 md:h-10"} />
             </button>
-          </Box>
-          <div className="flex lg:flex-row flex-col gap-4 justify-center min-w-[50vw] md:min-w-[30vw] h-full cursor-pointer uppercase font-bold text-pretty">
-            <div className="flex flex-col w-full lg:w-4/12 gap-2 me-auto justify-center content-center items-center">
-              <p className="text-black text-center text-xl font-extrabold ">
+          </div>
+          <div className="py-2 md:py-8 flex lg:flex-row flex-col gap-4 justify-center min-w-[70vw] md:min-w-[45] xl:min-w-[35vw] h-full cursor-pointer uppercase font-bold text-pretty">
+            <div className="flex flex-col w-full lg:w-4/12 gap-2 justify-center items-center overflow-y-auto">
+              {/* <p className="text-black text-center text-lg lg:text-xl font-extrabold ">
                 {currentObject().name}
-              </p>
+              </p> */}
               <img
-                className="w-[30vw] lg:w-fit object-contain"
+                className="w-[30vw] xl:w-fit object-contain"
                 src={props.card.img}
               />
             </div>
-            <div className="relative w-full lg:w-8/12 align-middle gap-4 text-center content-center justify-center">
+            <div className="relative w-full lg:w-8/12 align-top gap-4 text-center content-center justify-center">
               <Description text={currentObject().description} />
             </div>
           </div>

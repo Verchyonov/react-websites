@@ -1,6 +1,6 @@
 import React from "react";
-import { TgIcon } from "./icons/tg-icon";
-import { XIcon } from "./icons/x-icon";
+import { TgIconDev } from "./icons/tg-icon-dev";
+import { XIconDev } from "./icons/x-icon-dev";
 import { TELEGRAM, TWITTER } from "./urls";
 
 const iconClass = "w-6 h-6 fill-white";
@@ -25,7 +25,7 @@ export const FooterSection = (props: any) => {
               rel="noopener noreferrer"
               className="mx-[2px] rounded p-2 font-bold"
             >
-              <XIcon iconClass={iconClass} />
+              <XIconDev iconClass={iconClass} />
             </a>
             <a
               href={TELEGRAM}
@@ -33,7 +33,7 @@ export const FooterSection = (props: any) => {
               target="_blank"
               className="mx-[2px] rounded p-2 font-bold"
             >
-              <TgIcon iconClass={iconClass} />
+              <TgIconDev iconClass={iconClass} />
             </a>
           </span>
         </p>

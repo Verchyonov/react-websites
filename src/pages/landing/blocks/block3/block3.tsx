@@ -5,7 +5,10 @@ import { AppearWrapper } from "../../../../common/appear-wrapper";
 
 export const Block3 = () => {
   return (
-    <div className="w-full min-h-screen justify-center items-center flex flex-col relative">
+    <div
+      className="w-full min-h-screen justify-center items-center flex flex-col relative"
+      style={{ wordSpacing: "5px" }}
+    >
       <AppearWrapper
         customClass={
           "w-11/12 xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row gap-4 justify-center items-center"

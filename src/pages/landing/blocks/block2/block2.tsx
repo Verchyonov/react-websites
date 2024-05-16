@@ -8,7 +8,10 @@ export const Block2 = () => {
   const { y, ref } = useMoveOnScrollHook(100);
 
   return (
-    <div className="w-full min-h-screen block2 justify-center items-center flex flex-col relative">
+    <div
+      className="w-full min-h-screen block2 justify-center items-center flex flex-col relative"
+      style={{ wordSpacing: "5px" }}
+    >
       <AppearWrapper
         customClass={
           "w-full xl:w-9/12 max-w-screen-2x flex flex-col md:flex-row p-4 xl:p-8 gap-4 py-16 md:px-0"
