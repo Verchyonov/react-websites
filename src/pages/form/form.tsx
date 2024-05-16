@@ -8,8 +8,13 @@ import { sendErrorNotification, DropInfo } from "./utils";
 import { FooterSection } from "../../common/footer";
 import { Presale } from "./components/presale/presale";
 import { AppearWrapper } from "../../common/appear-wrapper";
+import { MovingImg } from "../../common/moving-img";
+import { useMoveOnScrollHook } from "../../hooks/useMoveOnScrollHook";
+import { Banner } from "./banner";
 
 export const Form = () => {
+  const [showBanner, setShowBanner] = useState(true);
+  const { y, ref } = useMoveOnScrollHook(100);
   const [dropInfo, setDropInfo] = useState<DropInfo>({
     numberOfMaxAirdropUsers: 75,
     numberOfMaxPresaleUsers: 500,
@@ -37,7 +42,7 @@ export const Form = () => {
       .get(process.env.REACT_APP_SERVER + "/drop/details")
       .then((response) => {
         setDropInfo(response.data as DropInfo);
-        setTimeout(() => setIsLoading(false), 1000);
+        setIsLoading(false);
       })
       .catch((error) => {
         sendErrorNotification(
@@ -54,10 +59,32 @@ export const Form = () => {
 
   return (
     <AppearWrapper>
+      <Banner close={setShowBanner} dropInfo={dropInfo} />
       <div
-        className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative justify-center items-center uppercase cursor-default"
+        ref={ref}
+        className="flex flex-col gap-1 pb-12 pt-2 px-2 md:px-20 relative justify-center items-center uppercase cursor-default form bg-black"
         style={{ wordSpacing: "5px" }}
       >
+        <MovingImg
+          y={y}
+          imgPath={"./form/formgnome.webp"}
+          alt={"gendalph"}
+          customClassWrapper={"absolute top-1/2 right-24 z-0"}
+          customClassImg={" h-[35vh]  object-contain img-hor"}
+          ty={10}
+          tx={2}
+          tz={5}
+        />
+        <MovingImg
+          y={y}
+          imgPath={"./form/formgnome.webp"}
+          alt={"gendalph"}
+          customClassWrapper={"absolute top-1/2 left-24 z-0"}
+          customClassImg={" h-[35vh]  object-contain "}
+          ty={2}
+          tx={10}
+          tz={2}
+        />
         <div className="w-full lg:w-[90%] justify-self-center self-center z-50">
           <AboutDrop
             dropInfo={dropInfo}
@@ -68,7 +95,7 @@ export const Form = () => {
             isLoading={isLoading}
           />
         </div>
-        <div className="w-full md:w-3/4 xl:w-1/2 justify-self-center self-center z-50">
+        <div className="w-full md:w-3/4 xl:w-1/2 justify-self-center self-center z-50 mb-20">
           <CheckElegibility />
         </div>
         <div className="w-full md:w-3/4 xl:w-full flex flex-col xl:flex-row gap-8 p-4 justify-center items-center">
@@ -89,12 +116,12 @@ export const Form = () => {
               <SignUpUpdate dropInfo={dropInfo} />
             </div>
           </div>
-          <div className="w-full xl:w-[8%] flex justify-self-center self-center justify-center items-center">
+          {/* <div className="w-full xl:w-[8%] flex justify-self-center self-center justify-center items-center">
             <h1 className="text-3xl text-center font-bold uppercase text-white">
               OR
             </h1>
-          </div>
-          <div className="w-full xl:w-[46%] relative">
+          </div> */}
+          {/* <div className="w-full xl:w-[46%] relative">
             {blurredPresale && (
               <h3 className="text-3xl font-bold text-center z-50 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 ">
                 Presale enrollment is done
@@ -110,16 +137,15 @@ export const Form = () => {
             >
               <Presale dropInfo={dropInfo} />
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className="w-full xl:w-[40%] p-4 justify-self-center self-center"></div>
-        <div className="w-full flex flex-col justify-center items-center">
+        {/* <div className="w-full flex flex-col justify-center items-center">
           <h1 className="p-2 lg:p-4 text-xl md:text-3xl font-bold text-center text-white">
             The Drops are going to be performed shortly after the Raydium
             launch. Please be patient, it takes time to perform transactions.
             Thanks for the enrollment.
           </h1>
-        </div>
+        </div> */}
       </div>
       <FooterSection customClass={"bg-black"} />
     </AppearWrapper>

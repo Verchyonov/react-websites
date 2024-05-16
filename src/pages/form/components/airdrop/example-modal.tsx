@@ -3,7 +3,7 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
-import IconButton from "@mui/material/IconButton";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import CloseIcon from "@mui/icons-material/Close";
 import { Tweet } from "react-twitter-widgets";
 import { color } from "framer-motion";
@@ -41,6 +41,7 @@ export const ExampleModal = (props: any) => {
         className="text-white w-1/2 text-center lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-4 py-3 transition-transform duration-75 ease-in-out cursor-pointer"
         onClick={handleOpen}
       >
+        <RemoveRedEyeIcon className="mr-1" />
         Example
       </button>
       <Modal
@@ -71,7 +72,7 @@ export const ExampleModal = (props: any) => {
             </Box>
             <h2 className="text-3xl font-bold text-center">Example</h2>
             <div className="w-full light updated-dark">
-              <Tweet tweetId={"1789873207370981385"} />
+              <Tweet tweetId={"1791181942152401327"} />
             </div>
             <h3 className="lg:text-lg font-bold text-center mb-2">
               Feel free to add any image or text

@@ -17,4 +17,4 @@ export const TELEGRAM_DEV = "https://t.me/lettodev";
 export const TWITTER_DEV = "https://twitter.com/letto_dev";
 
 export const RPC_ENDPOINT =
-    "https://withered-crimson-sun.solana-devnet.quiknode.pro/5df09d3d4a53046d05db415a893610388d405d59/";
+    "https://dawn-light-owl.solana-devnet.quiknode.pro/47ae785c0669a86070baf1c6fe8ccf273619a4da/";

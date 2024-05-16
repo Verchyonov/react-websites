@@ -28,10 +28,11 @@ module.exports = {
       patterns: [{ from: "public", to: "" }],
     }),
     new DefinePlugin({
-      "process.env": JSON.stringify(process.env),
-      "process.env.REACT_APP_SERVER": JSON.stringify(
-        process.env.REACT_APP_SERVER
-      ),
+      "process.env": {
+        REACT_APP_SERVER: JSON.stringify(process.env.REACT_APP_SERVER),
+        SITE_SECRET: JSON.stringify(process.env.SITE_SECRET),
+        REACT_APP_SITE_KEY: JSON.stringify(process.env.REACT_APP_SITE_KEY),
+      },
     }),
   ],
   resolve: {

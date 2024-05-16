@@ -1,4 +1,3 @@
-import { PublicKey } from "@solana/web3.js";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
@@ -18,6 +17,8 @@ import {
 } from "../../utils";
 import { ExampleModal } from "./example-modal";
 import { useCompensateScrollbar } from "../../../../hooks/useCompensateScrollbar";
+import DownloadIcon from "@mui/icons-material/Download";
+
 import { toast } from "react-toastify";
 
 export const SignUpUpdate = (props: any) => {
@@ -184,7 +185,7 @@ export const SignUpUpdate = (props: any) => {
 
   return (
     <div className="flex flex-col gap-2 w-full text-white">
-      <p className="text-3xl font-bold text-center">Sign up for airdrop</p>
+      <p className="text-3xl font-extrabold text-center">Sign up for airdrop</p>
       <form className="">
         <div className="relative">
           <p className="text-lg">Solana Wallet</p>
@@ -198,7 +199,7 @@ export const SignUpUpdate = (props: any) => {
             required
           />
           <InputStatus
-            style="end-0.5 lg:end-2.5 top-[2.35rem]"
+            style="end-0.5 lg:end-2.2 top-[2.35rem]"
             isValid={isValidWallet}
             isLoading={isLoading}
           />
@@ -221,7 +222,7 @@ export const SignUpUpdate = (props: any) => {
             />
             <InputStatus
               style={
-                "end-0.5 lg:end-2.5 top-[2.35rem] " +
+                "end-0.5 lg:end-2.2 top-[2.35rem] " +
                 (!isValidWallet ? "cursor-not-allowed blur-[1px]" : "")
               }
               isValid={isValidXUsername}
@@ -229,8 +230,8 @@ export const SignUpUpdate = (props: any) => {
             />
           </span>
           <p className="mb-4 mt-2 text-slate-400">
-            Acount should be Blue verified | 60 days old with 50 followers. You
-            also must follow{" "}
+            Acount should be Blue verified |OR| {props.dropInfo.xAge} days old
+            with {props.dropInfo.xFollowers} followers. You also must follow{" "}
             <a
               href={`https://twitter.com/${props.dropInfo.toXFollow}`}
               target="_blank"
@@ -262,7 +263,7 @@ export const SignUpUpdate = (props: any) => {
             />
             <InputStatus
               style={
-                "end-0.5 lg:end-[13.2rem] top-[2.35rem] " +
+                "end-0.5 lg:end-[16rem] top-[2.35rem] " +
                 (!isValidXUsername || !isValidWallet
                   ? "cursor-not-allowed blur-[1px]"
                   : "")
@@ -276,16 +277,17 @@ export const SignUpUpdate = (props: any) => {
                 onClick={downloadImage}
                 className="text-white text-center w-1/2 lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-4 py-3 transition-transform duration-75 ease-in-out cursor-pointer"
               >
+                <DownloadIcon className="mr-1" />
                 Images
               </button>
             </div>
           </div>
           <p className="mb-4 mt-2 text-slate-400">
-            Your post must include tag to our account @
-            <span className="font-bold">{props.dropInfo.toXFollow}</span>, our
-            ticker{" "}
+            Your post must include our ticker{" "}
             <span className="font-bold">${props.dropInfo.tokenTicker}</span> and
-            some related image.
+            a tag to our account @
+            <span className="font-bold">{props.dropInfo.toXFollow}</span>, some
+            related image and text are welcome.
           </p>
         </div>
 
@@ -304,18 +306,18 @@ export const SignUpUpdate = (props: any) => {
             Sign up for Airdrop
           </button>
           <ReCAPTCHA
-            className="min-h-[78px] lg:self-start self-center"
+            className="min-h-[78px] self-center"
             ref={recaptcha as any}
             sitekey={process.env.REACT_APP_SITE_KEY as string}
           />
         </div>
 
-        <p className="text-center mt-4">
+        <p className="text-center mt-24 text-2xl">
           <span className="font-bold uppercase">
             {props.dropInfo.airdropTokenAmount}% of tokens
           </span>{" "}
-          from the Dev Buy will be distributed among{" "}
-          {props.dropInfo.maxAirDropUsers} people equaly.
+          will be distributed among {props.dropInfo.maxAirDropUsers} people
+          equaly.
         </p>
       </form>
     </div>
