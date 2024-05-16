@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import LiveHelpIcon from "@mui/icons-material/LiveHelp";
 import "./card.css";
 import { CardModal } from "./card-modal";
+import { InfoIcon } from "../../../common/icons/info-icon";
 
 export const Card = (props: any) => {
   const nodeRef = useRef(null);
@@ -16,23 +16,25 @@ export const Card = (props: any) => {
         isOpen={showModal}
         setIsOpen={setShowModal}
       />
-      <CSSTransition
-        nodeRef={helpIconRef}
-        in={props.card.isFlipped}
-        timeout={300}
-        classNames="help-icon-anim"
-        unmountOnExit
-      >
-        <button
-          onClick={() => {
-            setShowModal(true);
-          }}
-          ref={helpIconRef}
-          className="absolute -top-[3.5rem] right-1/2 p-2 transform translate-x-1/2 hover:scale-110 transition-transform duration-300 ease-in-out"
+      <div className="min-h-[3.5rem] md:min-h-0 w-full">
+        <CSSTransition
+          nodeRef={helpIconRef}
+          in={props.card.isFlipped}
+          timeout={300}
+          classNames="help-icon-anim"
+          unmountOnExit
         >
-          <LiveHelpIcon style={{ color: "black", fontSize: "2.5rem" }} />
-        </button>
-      </CSSTransition>
+          <button
+            onClick={() => {
+              setShowModal(true);
+            }}
+            ref={helpIconRef}
+            className="flex md:absolute -top-[3.5rem] min right-1/2 p-2 transform translate-x-1/2 hover:scale-110 transition-transform duration-300 ease-in-out cursor-default"
+          >
+            <InfoIcon iconClass="w-8 h-8 md:w-10 md:h-10" />
+          </button>
+        </CSSTransition>
+      </div>
       <CSSTransition
         nodeRef={nodeRef}
         in={props.card.isFlipped}

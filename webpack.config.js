@@ -10,7 +10,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
-  mode: "production",
+  mode: "development",
   devServer: {
     historyApiFallback: true,
   },

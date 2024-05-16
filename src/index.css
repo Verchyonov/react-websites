@@ -10,6 +10,13 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  *,
+  *:before,
+  *:after {
+    @apply cursor-default;
+  }
+
   body {
     background-color: #39442f;
     font-family: "Fondamento", cursive;
@@ -95,9 +102,9 @@
   }
 
   .zadnik {
-    background-image: url("../public/zadnik.webp");
+    background-image: url("../public/zadnik-desk.webp");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
   }
 
   .block1 {

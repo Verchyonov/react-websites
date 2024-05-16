@@ -14,8 +14,9 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  height: "50vh",
-  bgcolor: "background.paper",
+  height: "auto",
+  bgcolor: "#A6B29B",
+  border: "6px solid black",
   color: "text.primary",
   borderRadius: 3,
   boxShadow: 24,
@@ -47,22 +48,28 @@ export const CardModal = (props: CardModalProps) => {
     >
       <Fade in={props.isOpen}>
         <Box sx={style}>
-          <Box position={"absolute"} top={5} right={5}>
-            <IconButton aria-label="delete" onClick={handleClose} size="large">
-              <CloseIcon />
-            </IconButton>
+          <Box
+            position={"absolute"}
+            top={5}
+            right={5}
+            sx={{ cursor: "default" }}
+          >
+            <button
+              aria-label="close"
+              className="p-2 transform hover:scale-110 transition-transform duration-300 ease-in-out cursor-default"
+              onClick={handleClose}
+            >
+              <CloseIcon style={{ color: "black", fontSize: "2rem" }} />
+            </button>
           </Box>
-          <div className="flex lg:flex-row flex-col gap-4 justify-center min-w-[50vw] md:min-w-[60vw] h-full">
+          <div className="flex lg:flex-row flex-col gap-4 justify-center min-w-[50vw] md:min-w-[30vw] h-full cursor-pointer">
             <div className="flex flex-col w-full lg:w-4/12 gap-8 me-auto justify-center">
-              <img
-                className="h-[35vh] object-contain hover:scale-110 transition-transform duration-300 ease-in-out"
-                src={props.card.img}
-              />
+              <img className="h-[35vh] object-contain" src={props.card.img} />
               <p className="text-black text-center text-2xl font-bold">
                 {props.card.name}
               </p>
             </div>
-            <div className="flex flex-col w-full lg:w-8/12 align-middle gap-8">
+            <div className="flex flex-col w-full lg:w-8/12 align-middle gap-8 text-center">
               <p className="text-2xl">{props.card.description}</p>
             </div>
           </div>
