@@ -33,6 +33,7 @@ export const PresaleForm = (props: any) => {
     if (!publicKey) {
       return;
     }
+
     connection.getBalance(publicKey).then((balance) => {
       setSolBalance(balance / LAMPORTS_PER_SOL);
     });
