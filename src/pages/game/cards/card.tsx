@@ -16,7 +16,7 @@ export const Card = (props: any) => {
         isOpen={showModal}
         setIsOpen={setShowModal}
       />
-      <div className="min-h-[3.5rem] md:min-h-0 w-full">
+      <div className="min-h-[3.5rem] lg:min-h-0 w-full">
         <CSSTransition
           nodeRef={helpIconRef}
           in={props.card.isFlipped}
@@ -29,7 +29,7 @@ export const Card = (props: any) => {
               setShowModal(true);
             }}
             ref={helpIconRef}
-            className="flex md:absolute -top-[3.5rem] min right-1/2 p-2 transform translate-x-1/2 hover:scale-110 transition-transform duration-300 ease-in-out cursor-default"
+            className="absolute lg:-top-[4rem] top-0 right-1/2 p-2 transform translate-x-1/2 hover:scale-110 transition-transform duration-300 ease-in-out cursor-default"
           >
             <InfoIcon iconClass="w-8 h-8 md:w-10 md:h-10" />
           </button>
@@ -42,7 +42,7 @@ export const Card = (props: any) => {
         classNames="card-anim"
       >
         <div
-          className="card cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300 aspect-[4/7] w-[35vw] md:w-[25vw] lg:w-[10vw]"
+          className="card cursor-pointer rounded-md hover:scale-[1.02] transition-all duration-300 aspect-[4/7] w-[35vw] md:w-[20vw] lg:w-[10vw]"
           ref={nodeRef}
           onClick={() => {
             props.flipCard(props.card.id);

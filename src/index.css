@@ -101,12 +101,6 @@
     background-size: cover;
   }
 
-  .zadnik {
-    background-image: url("../public/zadnik-desk.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
   .block1 {
     background-image: url("../public/block1/bg1.png");
     background-repeat: no-repeat;
@@ -118,18 +112,6 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-
-  /* .block3 {
-    background-image: url("../public/block3/bg3.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .block4 {
-    background-image: url("../public/block4/bg4.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-  } */
 
   .rfm-marquee-container {
     overflow: unset !important;

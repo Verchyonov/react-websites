@@ -18,12 +18,12 @@ export const Block2 = () => {
           <img
             src="./zadnik-desk.webp"
             alt="card"
-            className="w-full h-full absolute top-0 left-0 z-25 md:block hidden"
+            className="w-full h-full absolute top-0 left-0 z-25 lg:block hidden"
           />
           <img
             src="./zadnik-mob.webp"
             alt="card"
-            className="w-full h-full absolute top-0 left-0 z-25 md:hidden block"
+            className="w-full h-full absolute top-0 left-0 z-25 lg:hidden block"
           />
           <div ref={ref} className="flex flex-col gap-2 z-50 mb-5 md:mb-0">
             <div className="flex flex-col justify-center align-center">

@@ -102,7 +102,7 @@ export const Cards = () => {
           <img
             alt="deck"
             onClick={onDeckPress}
-            className="w-[60vw] md:w-[20vw] lg:w-[18vw] bg-transparent cursor-pointer select-none z-50 inline hover:scale-[1.01] transition-transform duration-500 ease-in-out"
+            className="w-[60vw] md:w-[30vw] lg:w-[18vw] bg-transparent cursor-pointer select-none z-50 inline hover:scale-[1.01] transition-transform duration-500 ease-in-out"
             src="./game/deck.webp"
           />
         </div>
