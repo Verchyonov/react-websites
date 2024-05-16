@@ -1,6 +1,5 @@
 import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
-import { motion } from "framer-motion";
 import { BUY_LINK } from "../../../../common/urls";
 import { AppearWrapper } from "../../../../common/appear-wrapper";
 

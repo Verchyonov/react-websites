@@ -27,6 +27,25 @@ const style = {
   alignItems: "center",
 };
 
+function Description({ text }: { text: string }) {
+  const sentences = text.split(/(?<=\.)/g).filter(Boolean);
+
+  const content = sentences.map((sentence, index) => (
+    <React.Fragment key={index}>
+      {sentence}
+      {index < sentences.length - 1 && (
+        <>
+          {" "}
+          <br />
+          <br />
+        </>
+      )}
+    </React.Fragment>
+  ));
+
+  return <p className="text-2xl leading-[2.6rem] text-pretty">{content}</p>;
+}
+
 export const CardModal = (props: CardModalProps) => {
   const handleClose = () => {
     props.setIsOpen(false);
@@ -45,8 +64,6 @@ export const CardModal = (props: CardModalProps) => {
   const findById = (id: number) => {
     return jsonData.find((item) => Number(item.id) === id);
   };
-
-  console.log(currentObject);
 
   return (
     <Modal
@@ -79,15 +96,15 @@ export const CardModal = (props: CardModalProps) => {
               <CloseIcon style={{ color: "black", fontSize: "2rem" }} />
             </button>
           </Box>
-          <div className="flex lg:flex-row flex-col gap-4 justify-center min-w-[50vw] md:min-w-[30vw] h-full cursor-pointer">
+          <div className="flex lg:flex-row flex-col gap-4 justify-center min-w-[50vw] md:min-w-[30vw] h-full cursor-pointer uppercase font-bold text-pretty">
             <div className="flex flex-col w-full lg:w-4/12 gap-2 me-auto justify-center content-center">
-              <img className="h-fit object-contain" src={props.card.img} />
-              <p className="text-black text-center text-2xl font-bold">
+              <p className="text-black text-center text-xl font-extrabold ">
                 {currentObject().name}
               </p>
+              <img className="h-fit object-contain" src={props.card.img} />
             </div>
-            <div className="flex flex-col w-full lg:w-8/12 align-middle gap-4 text-center content-center justify-center">
-              <p className="text-2xl">{currentObject().description}</p>
+            <div className="flex flex-col w-full lg:w-8/12 align-middle gap-4 text-center content-center justify-center ">
+              <Description text={currentObject().description} />
             </div>
           </div>
         </Box>

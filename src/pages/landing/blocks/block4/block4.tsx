@@ -21,7 +21,7 @@ export const Block4 = () => {
     const timerId = setInterval(() => {
       setImageOpacity(0);
       setTimeout(() => {
-        setCount((c) => (c + 1) % imageArray.length);
+        setCount((c) => Math.floor(Math.random() * imageArray.length));
         setImageOpacity(1);
       }, 500);
     }, 3000);
