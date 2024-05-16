@@ -278,7 +278,7 @@ export const SignUpUpdate = (props: any) => {
               <a
                 href="https://drive.google.com/drive/folders/1xEm3YtEEAxyekbGO1rhHUd3xyvVJC-gO?usp=sharing"
                 target="_blank"
-                className="text-white text-center w-1/2 lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-4 py-3 transition-transform duration-75 ease-in-out cursor-pointer"
+                className="text-white text-center w-1/2 lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-4 py-3 transition-transform duration-75 ease-in-out cursor-pointer capitalize"
               >
                 <DownloadIcon className="mr-1" />
                 Images
