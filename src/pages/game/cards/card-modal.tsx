@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Backdrop, Box, Fade, IconButton, Modal } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import jsonData from "../../../../public/cards/cards.json";
 
 type CardModalProps = {
   isOpen: boolean;
@@ -30,6 +31,22 @@ export const CardModal = (props: CardModalProps) => {
   const handleClose = () => {
     props.setIsOpen(false);
   };
+
+  const currentObject = useCallback(() => {
+    return (
+      findById(props.card.id) || {
+        id: -1,
+        name: "Not found",
+        description: "Not found",
+      }
+    );
+  }, [props.card.id]);
+
+  const findById = (id: number) => {
+    return jsonData.find((item) => Number(item.id) === id);
+  };
+
+  console.log(currentObject);
 
   return (
     <Modal
@@ -63,14 +80,14 @@ export const CardModal = (props: CardModalProps) => {
             </button>
           </Box>
           <div className="flex lg:flex-row flex-col gap-4 justify-center min-w-[50vw] md:min-w-[30vw] h-full cursor-pointer">
-            <div className="flex flex-col w-full lg:w-4/12 gap-8 me-auto justify-center">
-              <img className="h-[35vh] object-contain" src={props.card.img} />
+            <div className="flex flex-col w-full lg:w-4/12 gap-2 me-auto justify-center content-center">
+              <img className="h-fit object-contain" src={props.card.img} />
               <p className="text-black text-center text-2xl font-bold">
-                {props.card.name}
+                {currentObject().name}
               </p>
             </div>
-            <div className="flex flex-col w-full lg:w-8/12 align-middle gap-8 text-center">
-              <p className="text-2xl">{props.card.description}</p>
+            <div className="flex flex-col w-full lg:w-8/12 align-middle gap-4 text-center content-center justify-center">
+              <p className="text-2xl">{currentObject().description}</p>
             </div>
           </div>
         </Box>
