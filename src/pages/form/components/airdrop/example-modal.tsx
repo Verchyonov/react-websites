@@ -38,7 +38,7 @@ export const ExampleModal = (props: any) => {
   return (
     <>
       <button
-        className="text-white w-1/2 text-center lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-4 py-3 transition-transform duration-75 ease-in-out"
+        className="text-white w-1/2 text-center lg:text-lg flex justify-center items-center bg-[#1f2937] hover:bg-[#1f2937dc] focus:ring-2 focus:outline-none focus:ring-[#1f293785] hover:scale-[1.02] font-medium rounded-lg px-4 py-3 transition-transform duration-75 ease-in-out cursor-pointer"
         onClick={handleOpen}
       >
         Example
@@ -63,7 +63,7 @@ export const ExampleModal = (props: any) => {
             <Box position={"absolute"} top={5} right={5}>
               <button
                 aria-label="close"
-                className="p-2 transform hover:scale-110 transition-transform duration-300 ease-in-out cursor-default"
+                className="p-2 transform hover:scale-110 transition-transform duration-300 ease-in-out cursor-pointer"
                 onClick={handleClose}
               >
                 <CloseIcon style={{ color: "black", fontSize: "2rem" }} />

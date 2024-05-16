@@ -212,10 +212,10 @@ export const PresaleForm = (props: any) => {
             onClick={onPresale}
             type="submit"
             className={
-              "text-white w-full bg-[#1f2937]  focus:outline-none font-medium rounded-lg px-6 py-4 transition-transform duration-75 ease-in-out " +
+              "text-white w-full bg-[#1f2937]  focus:outline-none font-medium rounded-lg px-6 py-4 transition-transform duration-75 ease-in-out uppercase " +
               (isSending || isLoading
                 ? "opacity-50 cursor-not-allowed"
-                : "hover:bg-[#2f4560dc] focus:ring-2 focus:ring-[#1f293785] hover:scale-[1.02]")
+                : "hover:bg-[#2f4560dc] focus:ring-2 focus:ring-[#1f293785] hover:scale-[1.02] cursor-pointer")
             }
           >
             Buy Presale

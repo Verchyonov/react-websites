@@ -12,9 +12,7 @@ export const MyRouter = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Landing />} />
-
           <Route path="/drop" element={<Form />} />
-
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

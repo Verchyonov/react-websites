@@ -8,8 +8,8 @@ const DateTimeDisplay = (props: any) => {
         (props.isDanger ? "" : "text-white")
       }
     >
-      <p className="text-xl md:text-3xl">{props.value}</p>
-      <span className="uppercase md:text-3xl">{props.type}</span>
+      <p className="text-xl md:text-2xl">{props.value}</p>
+      <span className="uppercase md:text-2xl">{props.type}</span>
     </div>
   );
 };
