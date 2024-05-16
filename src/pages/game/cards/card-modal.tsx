@@ -19,9 +19,9 @@ const style = {
   bgcolor: "#A6B29B",
   border: "6px solid black",
   color: "text.primary",
-  borderRadius: 3,
+  borderRadius: 1,
   boxShadow: 24,
-  p: 8,
+  p: 2,
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -43,7 +43,11 @@ function Description({ text }: { text: string }) {
     </React.Fragment>
   ));
 
-  return <p className="text-2xl leading-[2.6rem] text-pretty">{content}</p>;
+  return (
+    <p className="flex justify-center text-md h-[40vh] overflow-y-auto lg:overflow-y-hidden lg:h-auto md:text-2xl md:leading-[2.6rem] text-pretty  items-center">
+      {content}
+    </p>
+  );
 }
 
 export const CardModal = (props: CardModalProps) => {
@@ -67,7 +71,7 @@ export const CardModal = (props: CardModalProps) => {
 
   return (
     <Modal
-      className={!props.isOpen ? "pointer-events-none" : ""}
+      className={(!props.isOpen ? "pointer-events-none" : "") + " max-h-[90vh]"}
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"
       open={props.isOpen}
@@ -80,7 +84,7 @@ export const CardModal = (props: CardModalProps) => {
         },
       }}
     >
-      <Fade in={props.isOpen}>
+      <Fade in={props.isOpen} className="max-h-[90vh]">
         <Box sx={style}>
           <Box
             position={"absolute"}
@@ -97,13 +101,16 @@ export const CardModal = (props: CardModalProps) => {
             </button>
           </Box>
           <div className="flex lg:flex-row flex-col gap-4 justify-center min-w-[50vw] md:min-w-[30vw] h-full cursor-pointer uppercase font-bold text-pretty">
-            <div className="flex flex-col w-full lg:w-4/12 gap-2 me-auto justify-center content-center">
+            <div className="flex flex-col w-full lg:w-4/12 gap-2 me-auto justify-center content-center items-center">
               <p className="text-black text-center text-xl font-extrabold ">
                 {currentObject().name}
               </p>
-              <img className="h-fit object-contain" src={props.card.img} />
+              <img
+                className="w-[30vw] lg:w-fit object-contain"
+                src={props.card.img}
+              />
             </div>
-            <div className="flex flex-col w-full lg:w-8/12 align-middle gap-4 text-center content-center justify-center ">
+            <div className="relative w-full lg:w-8/12 align-middle gap-4 text-center content-center justify-center">
               <Description text={currentObject().description} />
             </div>
           </div>
