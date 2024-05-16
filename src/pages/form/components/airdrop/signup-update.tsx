@@ -79,7 +79,7 @@ export const SignUpUpdate = (props: any) => {
   useEffect(() => {
     setIsValidXPostLink(false);
     const value = sanitizeXPostLink(xPost);
-    if (!checkXPostLink(value, xUser)) return;
+    if (!checkXPostLink(value, sanitizeXUsername(xUser))) return;
 
     const timeOutId = setTimeout(() => {
       checkFieldExists(

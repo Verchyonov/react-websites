@@ -46,7 +46,9 @@ export const CheckElegibility = () => {
           let formattedMessages = <FormattedMessages messages={msgs} />;
           sendSuccessNotification(formattedMessages);
         } else {
-          let formattedMessages = <FormattedMessages messages={errorMsgs} />;
+          let formattedMessages = (
+            <FormattedMessages messages={errorMsgs.slice(0, 1)} />
+          );
           sendWarningNotification(formattedMessages);
         }
       })

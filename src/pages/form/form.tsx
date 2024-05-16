@@ -13,7 +13,7 @@ import { useMoveOnScrollHook } from "../../hooks/useMoveOnScrollHook";
 import { Banner } from "./banner";
 
 export const Form = () => {
-  const [showBanner, setShowBanner] = useState(true);
+  const [showBanner, setShowBanner] = useState(false);
   const { y, ref } = useMoveOnScrollHook(100);
   const [dropInfo, setDropInfo] = useState<DropInfo>({
     numberOfMaxAirdropUsers: 75,
@@ -42,7 +42,9 @@ export const Form = () => {
       .get(process.env.REACT_APP_SERVER + "/drop/details")
       .then((response) => {
         setDropInfo(response.data as DropInfo);
-        setIsLoading(false);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1500);
       })
       .catch((error) => {
         sendErrorNotification(

@@ -6,7 +6,7 @@ export const AboutDrop = (props: any) => {
   const { days, hours, seconds, minutes } = props;
   return (
     <div className="flex flex-col xl:flex-row gap-3 xl:gap-12 w-full justify-between items-center p-4 md:p-10 z-50">
-      <div className="select-none flex flex-row md:w-[60%] xl:w-[30%] w-full items-center justify-center gap-1 text-center px-2 py-3 lg:px-8 lg:py-7 border-2 rounded-xl text-white border-[#ebebeb]">
+      <div className="select-none flex w-full flex-row md:w-[70%] xl:w-[42%] items-center justify-center gap-1 text-center px-2 py-3 lg:px-8 lg:py-7 border-2 rounded-xl text-white border-[#ebebeb]">
         {!props.isLoading ? (
           <CountdownTimer
             days={days}
@@ -18,7 +18,7 @@ export const AboutDrop = (props: any) => {
           <CircularProgress size={36} />
         )}
       </div>
-      <div className="flex flex-col w-full md:w-[60%] xl:w-[33%] items-center  justify-center px-1 py-2 md:px-8 lg:py-7 border-2 rounded-xl border-[#ebebeb] text-white text-xl md:text-3xl">
+      <div className="flex flex-col w-full md:w-[70%] xl:w-[42%] items-center  justify-center px-1 py-2 lg:px-8 lg:py-7 border-2 rounded-xl border-[#ebebeb] text-white text-xl md:text-3xl">
         {!props.isLoading ? (
           <>
             <h1 className="font-bold text-center">

@@ -7,7 +7,7 @@ import Fade from "@mui/material/Fade";
 import type { DialogProps } from "@mui/material";
 
 export const Banner = (props: any) => {
-  const isMobile = window.innerWidth < 700 ? true : false;
+  const isMobile = window.innerWidth < 1024 ? true : false;
 
   const style = {
     position: "absolute" as "absolute",
@@ -20,7 +20,7 @@ export const Banner = (props: any) => {
     border: "6px solid white",
     color: "text.primary",
     borderRadius: 5,
-    boxShadow: 24,
+    boxShadow: 32,
     outline: "none",
     p: 2,
   };
@@ -68,7 +68,7 @@ export const Banner = (props: any) => {
         slots={{ backdrop: Backdrop }}
         slotProps={{
           backdrop: {
-            timeout: 500,
+            timeout: 3,
           },
         }}
       >
@@ -105,7 +105,7 @@ export const Banner = (props: any) => {
               <div className="flex flex-col gap-2 md:gap-2 justify-center align-middle w-full items-center">
                 <img
                   className={
-                    "w-full md:w-8/12 xl:w-4/12 my-auto cursor-pointer transition duration-500 ease-in-out transform " +
+                    "w-7/12 md:w-8/12 xl:w-4/12 my-auto cursor-pointer transition duration-500 ease-in-out transform " +
                     (isButtonEnabled ? "hover:scale-[1.1]" : " opacity-50")
                   }
                   // @ts-ignore
