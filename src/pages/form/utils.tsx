@@ -32,7 +32,9 @@ export const checkXUsername = (username: string) => {
 export const checkXPostLink = (link: string, username: string) => {
   const regex =
     /^(https?:\/\/)?(www\.)?(twitter\.com|x\.com)\/([a-zA-Z0-9_]{1,15})\/status\/([0-9]+)(\?.*)?$/;
-  return regex.test(link) && link.includes(username);
+  return (
+    regex.test(link) && link.toLowerCase().includes(username.toLowerCase())
+  );
 };
 
 export const sanitizeWallet = (wallet: string) => {
