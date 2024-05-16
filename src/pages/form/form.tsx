@@ -34,7 +34,7 @@ export const Form = () => {
 
   useEffect(() => {
     axios
-      .get(process.env.SERVER + "/drop/details")
+      .get(process.env.REACT_APP_SERVER + "/drop/details")
       .then((response) => {
         setDropInfo(response.data as DropInfo);
         setTimeout(() => setIsLoading(false), 1000);

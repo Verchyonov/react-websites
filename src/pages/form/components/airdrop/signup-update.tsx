@@ -90,7 +90,7 @@ export const SignUpUpdate = (props: any) => {
   ) => {
     setIsLoading(true);
     axios
-      .get(`${process.env.SERVER}/drop/airdrop/user`, {
+      .get(`${process.env.REACT_APP_SERVER}/drop/airdrop/user`, {
         params: {
           [Object.keys(field)[0]]: Object.values(field)[0],
         },
@@ -151,7 +151,7 @@ export const SignUpUpdate = (props: any) => {
     const toastId = sendEnrollNotification("pending");
     setIsSending(true);
     axios
-      .post(process.env.SERVER + "/drop/aidrop/add", {
+      .post(process.env.REACT_APP_SERVER + "/drop/aidrop/add", {
         user: {
           wallet: walletToSend,
           xUsername: xUserToSend,
