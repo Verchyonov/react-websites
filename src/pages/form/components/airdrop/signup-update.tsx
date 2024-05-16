@@ -220,7 +220,10 @@ export const SignUpUpdate = (props: any) => {
               required
             />
             <InputStatus
-              style="end-0.5 lg:end-2.5 top-[2.35rem]"
+              style={
+                "end-0.5 lg:end-2.5 top-[2.35rem] " +
+                (!isValidWallet ? "cursor-not-allowed blur-[1px]" : "")
+              }
               isValid={isValidXUsername}
               isLoading={isLoading}
             />
@@ -258,7 +261,12 @@ export const SignUpUpdate = (props: any) => {
               required
             />
             <InputStatus
-              style="end-0.5 lg:end-[13.2rem] top-[2.35rem]"
+              style={
+                "end-0.5 lg:end-[13.2rem] top-[2.35rem] " +
+                (!isValidXUsername || !isValidWallet
+                  ? "cursor-not-allowed blur-[1px]"
+                  : "")
+              }
               isValid={isValidXPostLink}
               isLoading={isLoading}
             />
