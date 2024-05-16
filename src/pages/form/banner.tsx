@@ -6,23 +6,25 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import type { DialogProps } from "@mui/material";
 
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  height: "auto",
-  width: "80vw",
-  bgcolor: "#1B1D28",
-  border: "6px solid white",
-  color: "text.primary",
-  borderRadius: 5,
-  boxShadow: 24,
-  outline: "none",
-  p: 2,
-};
-
 export const Banner = (props: any) => {
+  const isMobile = window.innerWidth < 700 ? true : false;
+
+  const style = {
+    position: "absolute" as "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    height: "auto",
+    width: isMobile ? "90vw" : "auto",
+    bgcolor: "#1B1D28",
+    border: "6px solid white",
+    color: "text.primary",
+    borderRadius: 5,
+    boxShadow: 24,
+    outline: "none",
+    p: 2,
+  };
+
   const [timeLeft, setTimeLeft] = useState<any>(15);
   const [open, setOpen] = useState(true);
   const [isButtonEnabled, setIsButtonEnabled] = useState(false);
@@ -30,7 +32,7 @@ export const Banner = (props: any) => {
   useEffect(() => {
     if (timeLeft === 0) {
       setIsButtonEnabled(true);
-      setTimeLeft(null);
+      setTimeLeft(0);
     }
 
     // exit early when we reach 0
@@ -110,7 +112,14 @@ export const Banner = (props: any) => {
                   onClick={handleClose}
                   src="./form/enter.webp"
                 />
-                <p className="text-lg md:text-4xl font-bold">{timeLeft}</p>
+                <p
+                  className={
+                    "text-lg md:text-4xl font-bold " +
+                    (timeLeft === 0 ? "text-transparent" : "")
+                  }
+                >
+                  {timeLeft}
+                </p>
               </div>
             </div>
           </Box>
