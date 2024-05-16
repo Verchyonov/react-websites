@@ -295,11 +295,11 @@ export const SignUpUpdate = (props: any) => {
           >
             Sign up for Airdrop
           </button>
-          <ReCAPTCHA
+          {/* <ReCAPTCHA
             className="min-h-[78px] lg:self-start self-center"
             ref={recaptcha as any}
             sitekey={process.env.REACT_APP_SITE_KEY as string}
-          />
+          /> */}
         </div>
 
         <p className="text-center mt-4">
