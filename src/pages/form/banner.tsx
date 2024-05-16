@@ -12,7 +12,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   height: "auto",
-  width: "70vw",
+  width: "80vw",
   bgcolor: "#1B1D28",
   border: "6px solid white",
   color: "text.primary",
