@@ -15,25 +15,25 @@ export const AboutDrop = (props: any) => {
             minutes={minutes}
           />
         ) : (
-          <CircularProgress size={32} />
+          <CircularProgress size={36} />
         )}
       </div>
-      <div className="flex flex-col w-full md:w-[60%] xl:w-[33%] items-center xl:items-end justify-center px-1 py-2 md:px-8 lg:py-4 border-2 rounded-xl border-[#ebebeb] text-white text-sm md:text-lg">
+      <div className="flex flex-col w-full md:w-[60%] xl:w-[33%] items-center  justify-center px-1 py-2 md:px-8 lg:py-7 border-2 rounded-xl border-[#ebebeb] text-white text-xl md:text-3xl">
         {!props.isLoading ? (
           <>
-            <h1 className="font-bold text-center md:text-right">
+            <h1 className="font-bold text-center">
               Airdrop enrolls: {props.dropInfo.numberOfAirdropUsers}/
               {props.dropInfo.numberOfMaxAirdropUsers}
             </h1>
-            <h1 className="font-bold text-center md:text-right">
+            {/* <h1 className="font-bold text-center md:text-right">
               Presale enrolls: {props.dropInfo.numberOfPresaleUsers}/
               {props.dropInfo.numberOfMaxPresaleUsers} | Total:{" "}
               {props.dropInfo.presaleSolAmount.toFixed(2)} SOL
-            </h1>
+            </h1> */}
           </>
         ) : (
-          <div className="flex justify-start items-center self-center justify-self-center py-3">
-            <CircularProgress size={32} />
+          <div className="flex justify-start items-center self-center justify-self-center">
+            <CircularProgress size={36} />
           </div>
         )}
       </div>

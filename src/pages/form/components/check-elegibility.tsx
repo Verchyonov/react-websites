@@ -38,11 +38,11 @@ export const CheckElegibility = () => {
           errorMsgs,
           presaleAmount,
         } = response.data;
-        if (isValidWallet && (isPresaleEnrolled || isAirdropEnrolled)) {
+        if (isValidWallet && isAirdropEnrolled) {
           let msgs: string[] = [];
           if (isAirdropEnrolled) msgs.push(`Airdrop enrolled`);
-          if (isPresaleEnrolled)
-            msgs.push(`Presale enrolled with ${presaleAmount.toFixed(2)} SOL`);
+          //   if (isPresaleEnrolled)
+          //     msgs.push(`Presale enrolled with ${presaleAmount.toFixed(2)} SOL`);
           let formattedMessages = <FormattedMessages messages={msgs} />;
           sendSuccessNotification(formattedMessages);
         } else {

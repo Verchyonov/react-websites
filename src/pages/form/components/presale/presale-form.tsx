@@ -115,6 +115,8 @@ export const PresaleForm = (props: any) => {
         "processed"
       );
 
+      console.log(process.env.REACT_APP_SERVER + "/drop/presale/add");
+
       axios
         .post(process.env.REACT_APP_SERVER + "/drop/presale/add", {
           user: {
@@ -172,6 +174,7 @@ export const PresaleForm = (props: any) => {
         sendWarningNotification("Transaction was rejected by the user.");
       } else {
         toast.dismiss(toastId);
+        console.error(error);
         sendErrorNotification("Unhandled error happened. Let dev know!.");
       }
       setIsSending(false);
