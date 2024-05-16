@@ -8,7 +8,7 @@ import {
 } from "../utils";
 import SearchIcon from "@mui/icons-material/Search";
 
-export const SERVER = process.env.SERVER;
+export const SERVER = process.env.REACT_APP_SERVER;
 
 export const CheckElegibility = () => {
   const [wallet, setWallet] = useState("");
@@ -27,7 +27,7 @@ export const CheckElegibility = () => {
     }
 
     axios
-      .post(process.env.SERVER + "/drop/check", {
+      .post(process.env.REACT_APP_SERVER + "/drop/check", {
         wallet: walletToSend,
       })
       .then((response) => {
