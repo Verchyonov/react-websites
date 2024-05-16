@@ -9,6 +9,7 @@ type Card = {
   img: string;
   isFlipped: boolean;
   description: string;
+  name: string;
 };
 
 const cardsStack = Array.from({ length: 78 }, (_, i) => {
@@ -17,6 +18,7 @@ const cardsStack = Array.from({ length: 78 }, (_, i) => {
     img: `./cards/cardio_${i}.webp`,
     isFlipped: false,
     description: "test",
+    name: "test",
   } as Card;
 }) as Card[];
 
@@ -95,12 +97,12 @@ export const Cards = () => {
 
   return (
     <div className="flex w-full min-h-[50vh] justify-center align-middle items-center relative">
-      <div className="grid grid-cols-2 gap-2 p-4 lg:flex lg:flex-row lg:gap-4 justify-center mx-0 lg:mx-4 items-center overflow-hidden">
+      <div className="grid grid-cols-2 gap-2 p-4 pt-10 xl:flex xl:flex-row xl:gap-4 justify-center mx-0 xl:mx-4 items-center overflow-hidden">
         <div className="relative col-span-2 overflow-x-hidden overflow-y-hidden z-[100] flex justify-center">
           <img
             alt="deck"
             onClick={onDeckPress}
-            className="w-[65vw] md:w-[25vw] lg:w-[20vw] bg-transparent cursor-pointer select-none z-50 inline hover:scale-[1.01] transition-transform duration-500 ease-in-out"
+            className="w-[60vw] md:w-[30vw] xl:w-[18vw] bg-transparent cursor-pointer select-none z-50 inline hover:scale-[1.01] transition-transform duration-500 ease-in-out"
             src="./game/deck.webp"
           />
         </div>

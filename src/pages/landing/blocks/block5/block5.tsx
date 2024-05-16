@@ -1,13 +1,15 @@
 import React from "react";
 import { TextReg } from "../../../../common/text/text-reg";
-import { motion } from "framer-motion";
 import { BUY_LINK } from "../../../../common/urls";
 import { AppearWrapper } from "../../../../common/appear-wrapper";
 
 export const Block5 = () => {
   return (
     <>
-      <div className="w-full min-h-screen  justify-center items-center flex flex-col relative uppercase">
+      <div
+        className="w-full min-h-screen  justify-center items-center flex flex-col relative uppercase"
+        style={{ wordSpacing: "5px" }}
+      >
         <AppearWrapper
           customClass={
             "w-full xl:w-10/12 max-w-screen-2x  justify-around flex flex-col p-4 gap-8 py-16 md:px-0"

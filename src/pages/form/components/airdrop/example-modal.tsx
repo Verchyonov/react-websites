@@ -61,13 +61,13 @@ export const ExampleModal = (props: any) => {
         <Fade in={open}>
           <Box sx={style}>
             <Box position={"absolute"} top={5} right={5}>
-              <IconButton
-                aria-label="delete"
+              <button
+                aria-label="close"
+                className="p-2 transform hover:scale-110 transition-transform duration-300 ease-in-out cursor-default"
                 onClick={handleClose}
-                size="large"
               >
-                <CloseIcon />
-              </IconButton>
+                <CloseIcon style={{ color: "black", fontSize: "2rem" }} />
+              </button>
             </Box>
             <h2 className="text-3xl font-bold text-center">Example</h2>
             <div className="w-full light updated-dark">

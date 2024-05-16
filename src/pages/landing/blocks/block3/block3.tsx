@@ -5,7 +5,10 @@ import { AppearWrapper } from "../../../../common/appear-wrapper";
 
 export const Block3 = () => {
   return (
-    <div className="w-full min-h-screen justify-center items-center flex flex-col relative">
+    <div
+      className="w-full min-h-screen justify-center items-center flex flex-col relative"
+      style={{ wordSpacing: "5px" }}
+    >
       <AppearWrapper
         customClass={
           "w-11/12 xl:w-10/12 max-w-screen-2x flex flex-col md:flex-row gap-4 justify-center items-center"
@@ -48,7 +51,7 @@ export const Block3 = () => {
             </div>
             <img
               className="w-full md:w-[23%] rounded-2xl p-2 hover:scale-[1.02] transition-all duration-300 drop-shadow-xl"
-              src="./block3/tavern.png"
+              src="./block3/tavern.webp"
               alt="card"
             />
             <div className="flex flex-col items-center w-full md:w-[23%] gap-2 p-2 md:hidden text-center text-2xl">

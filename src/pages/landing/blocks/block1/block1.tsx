@@ -7,7 +7,10 @@ import { Cards } from "../../../game/cards/cards";
 
 export const Block1 = () => {
   return (
-    <div className="w-full min-h-[100vh] py-20 block1 justify-center items-center flex flex-col relative overflow-hidden">
+    <div
+      className="w-full min-h-[100vh] py-20 block1 justify-center items-center flex flex-col relative overflow-hidden"
+      style={{ wordSpacing: "5px" }}
+    >
       <img
         className="absolute top-0 left-0 h-[100vh] z-0 w-1/2 opacity-20"
         src="./block1/rain.gif"
@@ -21,11 +24,11 @@ export const Block1 = () => {
         src="./block1/pepe.webp"
       />
       <img
-        src="./block1/oblako.png"
+        src="./block1/oblako.webp"
         className="absolute top-[0] left-[-10vh] md:z-50  z-20 w-[30vh] xl:w-[40vh]"
       />
       <img
-        src="./block1/oblakol.png"
+        src="./block1/oblakol.webp"
         className="absolute top-[0] right-[-10vh] md:z-50 z-20 w-[30vh] xl:w-[40vh]"
       />
       <div

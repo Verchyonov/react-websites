@@ -21,7 +21,7 @@ export const Block4 = () => {
     const timerId = setInterval(() => {
       setImageOpacity(0);
       setTimeout(() => {
-        setCount((c) => (c + 1) % imageArray.length);
+        setCount((c) => Math.floor(Math.random() * imageArray.length));
         setImageOpacity(1);
       }, 500);
     }, 3000);
@@ -33,7 +33,7 @@ export const Block4 = () => {
   const imageStyle = { transition: "opacity 0.5s ease-in-out" };
 
   return (
-    <div className="w-full min-h-screen bg-black justify-around align-middle items-center flex flex-col relative uppercase">
+    <div className="w-full min-h-screen bg-black justify-around align-middle items-center flex flex-col relative uppercase" style={{wordSpacing: "5px"}}>
       <AppearWrapper
         customClass={
           "w-full xl:w-10/12 max-w-screen-2x flex flex-col p-4 xl:p-8 gap-8 py-16 md:px-0"
