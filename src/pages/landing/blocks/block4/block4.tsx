@@ -33,7 +33,10 @@ export const Block4 = () => {
   const imageStyle = { transition: "opacity 0.5s ease-in-out" };
 
   return (
-    <div className="w-full min-h-screen bg-black justify-around align-middle items-center flex flex-col relative uppercase" style={{wordSpacing: "5px"}}>
+    <div
+      className="w-full min-h-screen bg-black justify-around align-middle items-center flex flex-col relative uppercase"
+      style={{ wordSpacing: "5px" }}
+    >
       <AppearWrapper
         customClass={
           "w-full xl:w-10/12 max-w-screen-2x flex flex-col p-4 xl:p-8 gap-8 py-16 md:px-0"
@@ -65,7 +68,6 @@ export const Block4 = () => {
               <TextReg customClass={""} text={"• 35% IN CIRCULATION"} />
             </div>
             <button
-              disabled
               onClick={onBuy}
               className="px-8 py-4 md:mt-0 mt-8 self-center w-full md:w-1/2 text-2xl cursor-pointer rounded-xl bg-[#313131] text-white text-center hover:scale-[1.02] transition-all duration-300"
             >
