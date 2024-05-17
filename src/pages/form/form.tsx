@@ -102,11 +102,11 @@ export const Form = () => {
         </div>
         <div className="w-full md:w-3/4 xl:w-full flex flex-col xl:flex-row gap-8 p-4 justify-center items-center">
           <div className="w-full xl:w-[46%] relative">
-            {blurredAirdrop && (
+            {/* {blurredAirdrop && (
               <h3 className="text-4xl font-bold text-center z-50 absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 text-green-900">
                 Airdrop enrollment is done
               </h3>
-            )}
+            )} */}
             <div
               className={
                 "w-full " +
