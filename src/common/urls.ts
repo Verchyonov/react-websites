@@ -1,4 +1,4 @@
-export const CA = "Coming";
+export const CA = "DNvXa6zFwwuKaqrpxFxtLB5cXmWNT88bH752JdDtFBEV";
 export const TELEGRAM = "http://t.me/TarotofMeme";
 export const TWITTER = "https://twitter.com/tarotofmeme";
 
